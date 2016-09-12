@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find raspimouse_description)/urdf/body/body.gazebo.xacro"/>
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="velocity_scale_factor" value="1.0"/>
+  <xacro:macro name="base" params="parent *joint_origin">
+    <joint name="base_joint" type="fixed">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent}"/>
+      <child link="base_link"/>
+    </joint>
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://raspimouse_description/meshes/dae/body/RasPiMouse_body.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://raspimouse_description/meshes/dae/body/RasPiMouse_body.dae"/>
+        </geometry>
+      </collision>
+      <inertial>
+
+        <!-- NOTE BEGINNING -->
+        <!-- Biased origin causes the slipping problem. -->
+        <!-- Not solved yet. -->
+        <!-- NOTE END -->
+        <!-- real origin -->
+        <!-- <origin xyz="&#45;0.005075 &#45;0.000427 0.029879"/> -->
+        <!-- virtual origin -->
+        <origin xyz="-0.001 0.0 0.029879"/>
+
+        <mass value="0.7186"/>
+        <inertia ixx="0.001238161833" ixy="0.000000904986" iyy="0.001368529369" ixz="0.000100297310" iyz="0.000022118177" izz="0.000784319117"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+</robot>

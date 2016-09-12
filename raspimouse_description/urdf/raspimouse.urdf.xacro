@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot name="raspimouse"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find raspimouse_description)/urdf/body/body.urdf.xacro"/>
+  <xacro:include filename="$(find raspimouse_description)/urdf/wheel/wheel.urdf.xacro"/>
+  <xacro:include filename="$(find raspimouse_description)/urdf/sensors/lightsens.urdf.xacro"/>
+
+  <!-- =============== Link & Joint =============== -->
+  <!-- Base -->
+  <link name="base_footprint"/>
+
+  <xacro:base parent="base_footprint">
+    <origin xyz="0 0 0.00185"/>
+  </xacro:base>
+
+  <!-- Wheel -->
+  <xacro:wheel prefix="right" parent="base_link">
+    <origin xyz="0 -0.0425 0.02215" rpy="1.57 0 0"/>
+    <axis xyz="0 0 -1"/>
+  </xacro:wheel>
+  <xacro:wheel prefix="left" parent="base_link">
+    <origin xyz="0 0.0425 0.02215" rpy="-1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+  </xacro:wheel>
+
+  <!-- Sensors -->
+  <xacro:light_sensor prefix="rf" parent="base_link">
+    <origin xyz="0.04 -0.045 0.032" rpy="0 0 0"/>
+  </xacro:light_sensor>
+
+  <xacro:light_sensor prefix="rs" parent="base_link">
+    <origin xyz="0.059 -0.01 0.032" rpy="0 0 -1.04"/>
+  </xacro:light_sensor>
+
+  <xacro:light_sensor prefix="ls" parent="base_link">
+    <origin xyz="0.059 0.01 0.032" rpy="0 0 1.04"/>
+  </xacro:light_sensor>
+
+  <xacro:light_sensor prefix="lf" parent="base_link">
+    <origin xyz="0.04 0.045 0.032" rpy="0 0 0"/>
+  </xacro:light_sensor>
+
+  <!-- ===============  Transmission =============== -->
+  <!-- <xacro:wheel_trans prefix="right" interface="EffortJointInterface"/> -->
+  <!-- <xacro:wheel_trans prefix="left" interface="EffortJointInterface"/> -->
+  <xacro:wheel_trans prefix="right" interface="VelocityJointInterface"/>
+  <xacro:wheel_trans prefix="left" interface="VelocityJointInterface"/>
+
+  <!-- =============== Gazebo =============== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>raspimouse</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!-- Base -->
+  <xacro:base_gazebo/>
+
+  <!-- Wheel -->
+  <xacro:wheel_gazebo prefix="right"/>
+  <xacro:wheel_gazebo prefix="left"/>
+  
+  <!-- Sensors -->
+  <xacro:lightsensor_gazebo prefix="rf" base_rad="0" rad_range="0.3" min_range="0.01" max_range="0.6"/>
+  <xacro:lightsensor_gazebo prefix="rs" base_rad="-1.04" rad_range="0.3" min_range="0.01" max_range="0.6"/>
+  <xacro:lightsensor_gazebo prefix="ls" base_rad="1.04" rad_range="0.3" min_range="0.01" max_range="0.6"/>
+  <xacro:lightsensor_gazebo prefix="lf" base_rad="0" rad_range="0.3" min_range="0.01" max_range="0.6"/>
+
+  <raspimouse/>
+</robot>

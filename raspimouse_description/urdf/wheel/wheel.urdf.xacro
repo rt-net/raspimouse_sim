@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find raspimouse_description)/urdf/wheel/wheel.transmission.xacro"/>
+  <xacro:include filename="$(find raspimouse_description)/urdf/wheel/wheel.gazebo.xacro"/>
+  <!-- <property name="wheel_radius" value="0.0239"/> -->
+  <property name="wheel_radius" value="0.0249"/>
+  <property name="wheel_length" value="0.01"/>
+  <property name="wheel_mass" value="0.0113"/>
+  <xacro:macro name="wheel" params="prefix parent *joint_origin *joint_axis">
+  <joint name="${prefix}_wheel_joint" type="continuous">
+    <insert_block name="joint_origin"/>
+    <insert_block name="joint_axis"/>
+    <parent link="${parent}"/>
+    <child link="${prefix}_wheel"/>
+    <limit effort="70" velocity="15"/>
+    <safety_controller  k_velocity="10" />
+    <dynamics damping="1.0" friction="1.0" />
+  </joint>
+  <link name="${prefix}_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://raspimouse_description/meshes/dae/wheel/RasPiMouse_wheel.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- <insert_block name="joint_origin"/> -->
+        <geometry>
+          <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+          <mesh filename="package://raspimouse_description/meshes/dae/wheel/RasPiMouse_wheel.dae"/>
+        </geometry>
+    </collision>
+      <inertial>
+        <origin xyz="-0.000107 0 0.002875"/>
+        <mass value="${wheel_mass}"/>
+        <inertia ixx="0.000002208187" ixy="0.000000000001" iyy="0.00000218412" ixz="0.000000004787" iyz="0.000000000003" izz="0.000004078299"/>
+      </inertial>
+  </link>
+  </xacro:macro>
+</robot>
