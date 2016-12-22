@@ -1,3 +1,0 @@
-[submodule "raspimouse_ros"]
-	path = raspimouse_ros
-	url = https://github.com/ryuichiueda/raspimouse_ros.git
