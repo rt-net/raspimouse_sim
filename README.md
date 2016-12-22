@@ -18,6 +18,7 @@ requires the following to run:
 After `git clone`, run git submodule update command shown below.
 
 ```
+sudo apt install ros-kinetic-ros-control ros-kinetic-ros-controllers
 git submodule update --init
 ```
 
