@@ -39,6 +39,11 @@ git clone https://github.com/rt-net/raspimouse_sim.git
 cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
 ```
 
+## Screenshots
+![](./docs/images/raspimouse_samplemaze.png)
+
+![](./docs/images/raspimouse_urg.png)
+
 ## License
 
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).
