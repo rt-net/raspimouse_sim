@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="lrf_gazebo" params="prefix base_rad rad_range min_range max_range">
+    <gazebo reference="${prefix}_lrf_link">
+      <sensor type="ray" name="${prefix}_lrf_sensor">
+        <!-- <pose>0.0 0.0 0.05315 0 0 0</pose> -->
+        <pose>0 0 1 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>10</update_rate>
+        <!-- <update_rate>1</update_rate> -->
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <!-- <samples>10</samples> -->
+              <resolution>1</resolution>
+              <min_angle>${base_rad-rad_range/2}</min_angle>
+              <max_angle>${base_rad+rad_range/2}</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>${min_range}</min>
+            <max>${max_range}</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.03</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_${prefix}_lrf_controller" filename="libgazebo_ros_laser.so">
+          <!-- <topicName>/hokuyo/${prefix}/scan</topicName> -->
+          <topicName>/raspimouse/scan</topicName>
+          <frameName>${prefix}_lrf_link</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+</robot>
