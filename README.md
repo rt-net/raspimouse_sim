@@ -19,7 +19,7 @@ requires the following to run:
 ### Simple Installation
 
 ```
-curl -sSfL https://git.io/raspimouse-sim-installer | bash -eux
+bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
 
 ### Manual Installation

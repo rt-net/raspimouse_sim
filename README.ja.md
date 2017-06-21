@@ -19,7 +19,7 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 ### 一発インストール
 
 ```
-curl -sSfL https://git.io/raspimouse-sim-installer | bash -eux
+bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
 
 ### 手動でのインストール
