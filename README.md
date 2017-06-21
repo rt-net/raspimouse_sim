@@ -16,6 +16,13 @@ requires the following to run:
   * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
 
 ## Installation
+### Simple Installation
+
+```
+curl -sSfL https://git.io/raspimouse-sim-installer | bash -eux
+```
+
+### Manual Installation
 
 Install the latest stable version of ros_control.
 
@@ -50,7 +57,7 @@ This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).
 
 Unless attributed otherwise, everything is under the MIT license.
 
-### Includings
+### Includings & References
 
 * [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg ) - BSD (BSD 3-Clause License)
   * urdf model xacro files
