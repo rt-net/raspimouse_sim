@@ -2,9 +2,11 @@
 
 Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
 
+チュートリアルと詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+
 ## 動作環境
 
-以下の環境を前提としています。
+以下の環境を前提として動作確認しています。
 
 * Ubuntu
   * Ubuntu Trusty 14.04
