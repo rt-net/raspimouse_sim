@@ -1,33 +1,20 @@
-dist: trusty
+os: linux
+language: generic
 sudo: required
-language:
-  - generic
-
+dist: trusty
+group: edge
+cache: 
+    - apt
 env:
   global:
     - HOME=/home/travis
-
-before_script:
-  - cd /tmp
-  - git clone https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu14.04_server.git
-  - cd ./ros_setup_scripts_Ubuntu14.04_server
-  - bash ./step0.bash
-  - bash ./step1.bash
-  - 
-  - mkdir -p ~/catkin_ws/src
-  - cd ~/catkin_ws/src
-  - source /opt/ros/indigo/setup.bash
-  - catkin_init_workspace
-  - cd ~/catkin_ws
-  - catkin_make
-
-script:
-  - cd ~/catkin_ws/src/
-  - sudo apt-get install ros-indigo-desktop-full
-  - sudo apt-get install ros-indigo-gazebo-ros-control ros-indigo-ros-controllers
-  - git clone https://github.com/ryuichiueda/raspimouse_ros.git
-  - rsync -av /home/travis/build/*/raspimouse_sim ~/catkin_ws/src/raspimouse_sim/
-  - source /opt/ros/indigo/setup.bash
-  - source ~/catkin_ws/devel/setup.bash
-  - cd ~/catkin_ws
-  - catkin_make
+  before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get upgrade -qq
+    - rsync -av ./ ~/
+  script:
+    - export PATH=/usr/bin:$PATH
+    - bash -eux -c "$(curl -SsfL https://git.io/ros-kinetic-desktop)"
+    - source ~/.bashrc
+    - mkdir -p $HOME/catkin_ws/src && cd $HOME/catkin_ws && catkin_init_workspace src && echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+    - catkin_make  && source ~/.bashrc
