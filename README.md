@@ -2,6 +2,8 @@
 
 ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
+日本語版READMEは[こちら](./README.ja.md)です。
+
 ## Requirements
 
 requires the following to run:
