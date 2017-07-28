@@ -18,3 +18,4 @@ script:
     - source ~/.bashrc
     - mkdir -p $HOME/catkin_ws/src && cd $HOME/catkin_ws && catkin_init_workspace src && echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     - catkin_make  && source ~/.bashrc
+    - bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
