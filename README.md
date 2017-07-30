@@ -1,5 +1,7 @@
 # raspimouse_sim 
 
+[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=indigo-devel)](https://travis-ci.org/rt-net/raspimouse_sim)
+
 ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 日本語版READMEは[こちら](./README.ja.md)です。

@@ -1,5 +1,7 @@
 # raspimouse_sim 
 
+[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=indigo-devel)](https://travis-ci.org/rt-net/raspimouse_sim)
+
 Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
 
 チュートリアルと詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
