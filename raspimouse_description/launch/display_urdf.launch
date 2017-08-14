@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <!-- arguments -->
   <arg name="model" default="$(find raspimouse_description)/urdf/raspimouse.urdf"/>

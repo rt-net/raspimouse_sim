@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist
 
 if __name__ == '__main__':
     rospy.init_node('vel_publisher')
-    pub = rospy.Publisher('/raspimouse/diff_drive_controller/cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('/raspimouse_on_gazebo/diff_drive_controller/cmd_vel', Twist, queue_size=10)
     try:
         while not rospy.is_shutdown():
             vel = Twist()
