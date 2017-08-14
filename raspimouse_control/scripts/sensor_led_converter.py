@@ -50,10 +50,10 @@ def sensor4_callback(data):
     write_to_file(hoge)
 
 def listener():
-    rospy.Subscriber("/raw_raspimouse/rf/scan", LaserScan, sensor1_callback)
-    rospy.Subscriber("/raw_raspimouse/rs/scan", LaserScan, sensor2_callback)
-    rospy.Subscriber("/raw_raspimouse/ls/scan", LaserScan, sensor3_callback)
-    rospy.Subscriber("/raw_raspimouse/lf/scan", LaserScan, sensor4_callback)
+    rospy.Subscriber("/raspimouse_on_gazebo/rf_scan", LaserScan, sensor1_callback)
+    rospy.Subscriber("/raspimouse_on_gazebo/rs_scan", LaserScan, sensor2_callback)
+    rospy.Subscriber("/raspimouse_on_gazebo/ls_scan", LaserScan, sensor3_callback)
+    rospy.Subscriber("/raspimouse_on_gazebo/lf_scan", LaserScan, sensor4_callback)
 
 if __name__ == "__main__":
     hoge = [15, 15, 15, 15]
