@@ -34,20 +34,20 @@ def write_to_file(data):
         rospy.logerr("failed to open rtlightsensor0")
 
 def sensor1_callback(data):
-    hoge[0] = range_to_led(data.ranges)
-    # write_to_file(hoge)
+    led_val[0] = range_to_led(data.ranges)
+    # write_to_file(led_val)
 
 def sensor2_callback(data):
-    hoge[1] = range_to_led(data.ranges)
-    # write_to_file(hoge)
+    led_val[1] = range_to_led(data.ranges)
+    # write_to_file(led_val)
 
 def sensor3_callback(data):
-    hoge[2] = range_to_led(data.ranges)
-    # write_to_file(hoge)
+    led_val[2] = range_to_led(data.ranges)
+    # write_to_file(led_val)
 
 def sensor4_callback(data):
-    hoge[3] = range_to_led(data.ranges)
-    write_to_file(hoge)
+    led_val[3] = range_to_led(data.ranges)
+    write_to_file(led_val)
 
 def listener():
     rospy.Subscriber("/raspimouse_on_gazebo/rf_scan", LaserScan, sensor1_callback)
@@ -56,7 +56,7 @@ def listener():
     rospy.Subscriber("/raspimouse_on_gazebo/lf_scan", LaserScan, sensor4_callback)
 
 if __name__ == "__main__":
-    hoge = [15, 15, 15, 15]
+    led_val = [15, 15, 15, 15]
     rospy.init_node("sensor_data_converter", anonymous=True)
     listener()
     rospy.spin()
