@@ -18,41 +18,22 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
   * Gazebo 2.x
 * ROS Package
   * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
+  * ros-indigo-desktop-full
+  * ros-indigo-gazebo-ros-control
+  * ros-indigo-ros-controllers
 
 ## インストール方法
-### 一発インストール
+ターミナルを開き、以下のコマンドを実行してください。
 
 ```
 bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
 
-### 手動でのインストール
-
-最新版のros_controlをインストールしてください。
-
-```
-sudo apt-get install ros-indigo-desktop-full ros-indigo-gazebo-ros-control ros-indigo-ros-controllers
-```
-
-`raspimouse_ros` を `~/catkin_ws/src` にダウンロードし、ビルドしてください。
-
-```
-cd ~/catkin_ws/src
-git clone https://github.com/ryuichiueda/raspimouse_ros.git
-cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
-```
-
-このリポジトリ(`raspimouse_sim`) を `~/catkin_ws/src` にダウンロードし、ビルドしてください。
-
-```
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/raspimouse_sim.git
-cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
-```
-
 ## スクリーンショット
+### サンプル迷路での動作例
 ![](./docs/images/raspimouse_samplemaze.png)
 
+### URG付きモデルでの動作例
 ![](./docs/images/raspimouse_urg.png)
 
 ## ライセンス

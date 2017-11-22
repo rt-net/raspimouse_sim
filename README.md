@@ -20,40 +20,23 @@ requires the following to run:
   * Gazebo 2.x
 * ROS Package
   * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
+  * ros-indigo-desktop-full
+  * ros-indigo-gazebo-ros-control
+  * ros-indigo-ros-controllers
 
 ## Installation
-### Simple Installation
 
 ```
 bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
 
-### Manual Installation
-
-Install the latest stable version of ros_control.
-
-```
-sudo apt-get install ros-indigo-desktop-full ros-indigo-gazebo-ros-control ros-indigo-ros-controllers
-```
-
-Download the dependent ROS package into `~/catkin_ws/src` and build it.
-
-```
-cd ~/catkin_ws/src
-git clone https://github.com/ryuichiueda/raspimouse_ros.git
-cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
-```
-
-Download this repository and build it.
-
-```
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/raspimouse_sim.git
-cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
-```
-
 ## Screenshots
+
+### moving in sample maze
+
 ![](./docs/images/raspimouse_samplemaze.png)
+
+### moving with URG
 
 ![](./docs/images/raspimouse_urg.png)
 
