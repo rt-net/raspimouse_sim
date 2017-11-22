@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <arg name="model" default="$(find raspimouse_description)/urdf/raspimouse.urdf.xacro" />
   <arg name="rvizconfig" default="$(find raspimouse_description)/launch/config/urdf.rviz" />

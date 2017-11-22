@@ -1,17 +1,17 @@
-raspimouse:
-  # Publish
+raspimouse_on_gazebo:
+  # Publisher
   joint_state_controller:
-    type: joint_state_controller/JointStateController
+    type: "joint_state_controller/JointStateController"
     publish_rate: 50
 
   # Controllers 
-
+  
   # left_joint_position_controller:
-  #   type: position_controllers/JointPositionController
+  #   type: "position_controllers/JointPositionController"
   #   joint: left_wheel_joint
   #
   # right_joint_position_controller:
-  #   type: position_controllers/JointPositionController
+  #   type: "position_controllers/JointPositionController"
   #   joint: right_wheel_joint
 
   diff_drive_controller:
@@ -30,3 +30,4 @@ raspimouse:
     wheel_radius_multiplier: 1.0 #default: 1.0
     wheel_separation_multiplier: 1.0 #default: 1.0
     base_frame_id: base_footprint
+    enable_odom_tf: true

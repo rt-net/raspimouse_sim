@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="raspimouse"
+<robot name="raspimouse_on_gazebo"
        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
@@ -59,7 +59,7 @@
   <!-- =============== Gazebo =============== -->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>raspimouse</robotNamespace>
+      <robotNamespace>raspimouse_on_gazebo</robotNamespace>
     </plugin>
   </gazebo>
 
@@ -77,5 +77,5 @@
   <xacro:lightsensor_gazebo prefix="lf" base_rad="0" rad_range="0.3" min_range="0.01" max_range="0.6"/>
   <xacro:lrf_gazebo prefix="urg" base_rad="0" rad_range="4.71" min_range="0.10" max_range="5.6"/>
 
-  <raspimouse/>
+  <raspimouse_on_gazebo/>
 </robot>

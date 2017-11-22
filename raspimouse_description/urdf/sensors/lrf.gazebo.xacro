@@ -31,7 +31,7 @@
         </ray>
         <plugin name="gazebo_ros_${prefix}_lrf_controller" filename="libgazebo_ros_laser.so">
           <!-- <topicName>/hokuyo/${prefix}/scan</topicName> -->
-          <topicName>/raspimouse/scan</topicName>
+          <topicName>/scan</topicName>
           <frameName>${prefix}_lrf_link</frameName>
         </plugin>
       </sensor>

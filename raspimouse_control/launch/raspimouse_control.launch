@@ -3,7 +3,7 @@
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find raspimouse_control)/config/controller.yaml" command="load" />
 
-  <group ns="raspimouse">
+  <group ns="raspimouse_on_gazebo">
     <!-- load the controllers -->
     <node name="controller_spawner" pkg="controller_manager"
       type="spawner" output="screen" 
@@ -11,11 +11,14 @@
       diff_drive_controller 
       "/>
     <!-- convert joint states to TF transforms for rviz, etc -->
+    <!-- this requires joint_state_controller -->
     <node name="robot_state_publisher" pkg="robot_state_publisher"
       type="robot_state_publisher"
       respawn="false" output="screen" />
-    <!-- convert sensor values -->
-    <node name="lightsensors" pkg="raspimouse_control" type="sensor_led_converter.py" />
   </group>
+    <!-- convert sensor values -->
+    <!-- <node name="dev_file_generator" pkg="raspimouse_control" type="gen_dev_file.sh" /> -->
+    <node name="lightsensor_subscriber" pkg="raspimouse_control" type="sensor_led_converter.py" />
+    <node name="lightsensor_publisher" pkg="raspimouse_ros" type="rtlightsensors.py" />
 </launch>
 
