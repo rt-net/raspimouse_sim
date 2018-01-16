@@ -6,7 +6,10 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 日本語版READMEは[こちら](./README.ja.md)です。
 
+Quick Startは[こちら](https://github.com/rt-net/raspimouse_sim/wiki/quickstart)です。
+
 チュートリアルと詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+
 
 ## Requirements
 
