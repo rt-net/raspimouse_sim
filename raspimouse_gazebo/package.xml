@@ -9,8 +9,6 @@
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
   <maintainer email="shop@rt-net.jp">RT Corp.</maintainer>
 
-  <author email="tiryoh@gmail.com">Daisuke Sato</author>
-
 
   <!-- One license tag required, multiple allowed, one license per tag -->
   <!-- Commonly used license strings: -->
@@ -22,12 +20,16 @@
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/raspimouse_gazebo</url> -->
+  <url type="website">https://github.com/rt-net/raspimouse_sim/wiki</url>
+  <url type="repository">https://github.com/rt-net/rasimouse_sim</url>
+  <url type="bugtracker">https://github.com/rt-net/rasimouse_sim/issues</url>
 
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->
   <!-- Authors do not have to be maintianers, but could be -->
   <!-- Example: -->
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <author email="tiryoh@gmail.com">Daisuke Sato</author>
 
 
   <!-- The *_depend tags are used to specify dependencies -->
@@ -42,6 +44,28 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>transmission_interface</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>hardware_interface</run_depend>
+  <run_depend>joint_limits_interface</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>gazebo_plugins</run_depend>
+
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>transmission_interface</build_depend>
+  <build_depend>gazebo_ros_control</build_depend>
+  <build_depend>hardware_interface</build_depend>
+  <build_depend>joint_limits_interface</build_depend>
+  <build_depend>urdf</build_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
