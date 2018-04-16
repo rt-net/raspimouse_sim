@@ -44,6 +44,7 @@ def get_motor_freq():
                     vel.angular.z = (rhz-lhz)*math.pi/800.0
                     #print(vel)
                     pub.publish(vel)
+
         except rospy.ROSInterruptException:
             pass
 

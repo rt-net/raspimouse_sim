@@ -8,7 +8,6 @@ array=(
 	rtswitch0
 	rtswitch1
 	rtswitch2
-	rtswitch3
 	rtbuzzer0
 	rtlightsensor0
 	rtmotoren0
