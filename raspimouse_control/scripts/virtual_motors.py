@@ -23,26 +23,28 @@ def get_motor_freq():
                 open(rfile,'r') as rf:
                     lhz_str = lf.readline().rstrip()
                     rhz_str = rf.readline().rstrip()
-                if len(lhz_str)+len(rhz_str)==0:
-                    print("Reset /dev/rtmotor_raw_*")
-                    with open(lfile,'w') as lf,\
-                    open(rfile,'w') as rf:
-                        rf.write('0')
+                if len(lhz_str)==0:
+                    print("Reset /dev/rtmotor_raw_l0")
+                    with open(lfile,'w') as lf:
                         lf.write('0')
+                if len(rhz_str)==0:
+                    print("Reset /dev/rtmotor_raw_r0")
+                    with open(rfile,'w') as rf:
+                        rf.write('0')
                 else:
                     try:
                         lhz = int(lhz_str)
                     except:
                         lhz = 0
                     try:
-                        rhz = int(lhz_str)
+                        rhz = int(rhz_str)
                     except:
                         rhz = 0
-                    if lhz+rhz!=0:
-                        vel.linear.x = (lhz+rhz)*9*math.pi/160000.0
-                        vel.angular.z = (rhz-lhz)*math.pi/800.0
-                        print(vel)
-                        pub.publish(vel)
+                    vel.linear.x = (lhz+rhz)*9*math.pi/160000.0
+                    vel.angular.z = (rhz-lhz)*math.pi/800.0
+                    #print(vel)
+                    pub.publish(vel)
+
         except rospy.ROSInterruptException:
             pass
 
@@ -51,5 +53,3 @@ if __name__ == "__main__":
     pub = rospy.Publisher('/raspimouse_on_gazebo/diff_drive_controller/cmd_vel', Twist, queue_size=10)
     get_motor_freq()
     rospy.spin()
-
-
