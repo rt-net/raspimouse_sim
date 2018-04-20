@@ -16,34 +16,27 @@ def get_motor_freq():
             if motor_power_status=='0':
                 sound_count = 0
             if motor_power_status=='1' and sound_count == 0:
-                subprocess.call("aplay ~/catkin_ws/src/raspimouse_sim/raspimouse_control/scripts/ms_sound.wav", shell=True)
+                subprocess.call("aplay $(rospack find raspimouse_control)/scripts/ms_sound.wav", shell=True)
                 sound_count = 1
             if motor_power_status=='1':
                 with open(lfile,'r') as lf,\
                 open(rfile,'r') as rf:
                     lhz_str = lf.readline().rstrip()
                     rhz_str = rf.readline().rstrip()
-                if len(lhz_str)==0:
-                    print("Reset /dev/rtmotor_raw_l0")
-                    with open(lfile,'w') as lf:
-                        lf.write('0')
-                if len(rhz_str)==0:
-                    print("Reset /dev/rtmotor_raw_r0")
-                    with open(rfile,'w') as rf:
-                        rf.write('0')
-                else:
+                if len(rhz_str)!=0:
                     try:
                         lhz = int(lhz_str)
                     except:
                         lhz = 0
+                if len(lhz_str)!=0:
                     try:
                         rhz = int(rhz_str)
                     except:
                         rhz = 0
-                    vel.linear.x = (lhz+rhz)*9*math.pi/160000.0
-                    vel.angular.z = (rhz-lhz)*math.pi/800.0
-                    #print(vel)
-                    pub.publish(vel)
+                vel.linear.x = (lhz+rhz)*9*math.pi/160000.0
+                vel.angular.z = (rhz-lhz)*math.pi/800.0
+                print(vel)
+                pub.publish(vel)
 
         except rospy.ROSInterruptException:
             pass
