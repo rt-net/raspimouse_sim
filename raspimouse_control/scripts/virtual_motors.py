@@ -16,7 +16,7 @@ def get_motor_freq():
             if motor_power_status=='0':
                 sound_count = 0
             if motor_power_status=='1' and sound_count == 0:
-                subprocess.call("aplay $(rospack find raspimouse_control)/scripts/ms_sound.wav", shell=True)
+                subprocess.call("aplay $(rospack find raspimouse_control)/misc/ms_sound.wav", shell=True)
                 sound_count = 1
             if motor_power_status=='1':
                 with open(lfile,'r') as lf,\
