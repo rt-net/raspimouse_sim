@@ -4,12 +4,11 @@
   <version>0.0.0</version>
   <description>ROS package suite for Raspberry Pi Mouse Simulator</description>
 
-  <maintainer email="shop@rt-net.jp">RT Corp.</maintainer>
+  <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
 
   <author email="tiryoh@gmail.com">Daisuke Sato</author>
 
   <license>MIT</license>
-
 
   <url type="website">https://github.com/rt-net/raspimouse_sim/wiki</url>
   <url type="repository">https://github.com/rt-net/rasimouse_sim</url>
