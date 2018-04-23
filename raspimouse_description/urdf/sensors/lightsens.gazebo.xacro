@@ -11,7 +11,7 @@
             <horizontal>
               <!-- <samples>720</samples> -->
               <samples>1</samples>
-              <resolution>0.001</resolution>
+              <resolution>1</resolution>
               <min_angle>${base_rad-rad_range/2}</min_angle>
               <max_angle>${base_rad+rad_range/2}</max_angle>
             </horizontal>
@@ -24,7 +24,7 @@
           <noise>
             <type>gaussian</type>
             <mean>0.0</mean>
-            <stddev>0.03</stddev>
+            <stddev>0.01</stddev>
           </noise>
         </ray>
         <plugin name="gazebo_ros_${prefix}_lightsensor_controller" filename="libgazebo_ros_laser.so">
