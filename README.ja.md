@@ -17,12 +17,12 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 * Gazebo
   * Gazebo 7.x
 * ROS Package
-  * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
   * ros-kinetic-desktop-full
   * ros-kinetic-gazebo-ros-control
   * ros-kinetic-ros-controllers
 
 ## インストール方法
+
 ターミナルを開き、以下のコマンドを実行してください。
 
 ```

@@ -20,7 +20,6 @@ requires the following to run:
 * Gazebo
   * Gazebo 7.x
 * ROS Package
-  * [raspimouse_ros_2](https://github.com/ryuichiueda/raspimouse_ros_2)
   * ros-kinetic-desktop-full
   * ros-kinetic-gazebo-ros-control
   * ros-kinetic-ros-controllers
