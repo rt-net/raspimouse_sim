@@ -6,9 +6,7 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 日本語版READMEは[こちら](./README.ja.md)です。
 
-Quick Startは[こちら](https://github.com/rt-net/raspimouse_sim/wiki/quickstart)です。
-
-チュートリアルと詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
 
 
 ## Requirements
@@ -16,22 +14,33 @@ Quick Startは[こちら](https://github.com/rt-net/raspimouse_sim/wiki/quicksta
 requires the following to run:
 
 * Ubuntu
-  * Ubuntu Trusty 14.04
+  * Ubuntu Xenial 16.04
 * ROS
   * ROS Indigo
 * Gazebo
-  * Gazebo 2.x
+  * Gazebo 7.x
 * ROS Package
-  * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
-  * ros-indigo-desktop-full
-  * ros-indigo-gazebo-ros-control
-  * ros-indigo-ros-controllers
+  * [raspimouse_ros_2](https://github.com/ryuichiueda/raspimouse_ros_2)
+  * ros-kinetic-desktop-full
+  * ros-kinetic-gazebo-ros-control
+  * ros-kinetic-ros-controllers
 
 ## Installation
 
 ```
 bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
+
+## QuickStart
+
+After the installation, run the followings:
+
+```
+rosrun raspimouse_control gen_dev_file.sh
+roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
+```
+
+Checkout [this page](https://github.com/rt-net/raspimouse_sim/wiki/quickstart) for details.
 
 ## Screenshots
 
@@ -47,7 +56,7 @@ bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).
 
-Unless attributed otherwise, everything is under the MIT license.
+Unless attributed otherwise, everything in this repository is under the MIT license.
 
 ### Includings & References
 

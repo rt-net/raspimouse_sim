@@ -4,23 +4,23 @@
 
 Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
 
-チュートリアルと詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
 
 ## 動作環境
 
 以下の環境を前提として動作確認しています。
 
 * Ubuntu
-  * Ubuntu Trusty 14.04
+  * Ubuntu Xenial 16.04
 * ROS
-  * ROS Indigo
+  * ROS Kinetic
 * Gazebo
-  * Gazebo 2.x
+  * Gazebo 7.x
 * ROS Package
   * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
-  * ros-indigo-desktop-full
-  * ros-indigo-gazebo-ros-control
-  * ros-indigo-ros-controllers
+  * ros-kinetic-desktop-full
+  * ros-kinetic-gazebo-ros-control
+  * ros-kinetic-ros-controllers
 
 ## インストール方法
 ターミナルを開き、以下のコマンドを実行してください。
@@ -29,11 +29,25 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
 
+## QuickStart
+
+シミュレータのインストール後、次のコマンドを入力して起動してください。
+
+```
+rosrun raspimouse_control gen_dev_file.sh
+roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
+```
+
+詳細は[このページ](https://github.com/rt-net/raspimouse_sim/wiki/quickstart)をお読みください。
+
 ## スクリーンショット
+
 ### サンプル迷路での動作例
+
 ![](./docs/images/raspimouse_samplemaze.png)
 
 ### URG付きモデルでの動作例
+
 ![](./docs/images/raspimouse_urg.png)
 
 ## ライセンス
