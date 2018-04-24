@@ -17,7 +17,6 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 * Gazebo
   * Gazebo 2.x
 * ROS Package
-  * [raspimouse_ros](https://github.com/ryuichiueda/raspimouse_ros)
   * ros-indigo-desktop-full
   * ros-indigo-gazebo-ros-control
   * ros-indigo-ros-controllers

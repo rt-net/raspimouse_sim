@@ -60,7 +60,6 @@
   <build_depend>controller_manager</build_depend>
   <build_depend>hardware_interface</build_depend>
   <build_depend>gazebo_ros_control</build_depend>
-  <build_depend>raspimouse_ros</build_depend>
 
   <run_depend>rospy</run_depend>
   <!-- <run_depend>roscpp</run_depend> -->
@@ -77,7 +76,6 @@
   <run_depend>controller_manager</run_depend>
   <run_depend>hardware_interface</run_depend>
   <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>raspimouse_ros</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

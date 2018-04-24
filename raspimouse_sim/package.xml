@@ -19,7 +19,6 @@
   <run_depend>raspimouse_description</run_depend>
   <run_depend>raspimouse_gazebo</run_depend>
   <run_depend>raspimouse_control</run_depend>
-  <run_depend>raspimouse_ros</run_depend>
 
   <export>
     <metapackage/>
