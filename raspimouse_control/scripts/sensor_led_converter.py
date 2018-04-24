@@ -14,6 +14,8 @@ def range_to_led(range_value):
         if distance < 4:
             distance = 8 - distance
 
+        # This formula is calculated from the measurement result of actual sensor.
+        # http://products.rt-net.jp/micromouse/archives/3361
         led_value = int( 761000 / math.pow(distance,1.66) )
 
         if led_value > 4000:
