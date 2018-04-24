@@ -6,9 +6,7 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 日本語版READMEは[こちら](./README.ja.md)です。
 
-Quick Startは[こちら](https://github.com/rt-net/raspimouse_sim/wiki/quickstart)です。
-
-チュートリアルと詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
 
 
 ## Requirements
@@ -33,6 +31,17 @@ requires the following to run:
 bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 ```
 
+## QuickStart
+
+After the installation, run the followings:
+
+```
+rosrun raspimouse_control gen_dev_file.sh
+roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
+```
+
+Checkout [this page](https://github.com/rt-net/raspimouse_sim/wiki/quickstart) for details.
+
 ## Screenshots
 
 ### moving in sample maze
@@ -47,7 +56,7 @@ bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
 
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).
 
-Unless attributed otherwise, everything is under the MIT license.
+Unless attributed otherwise, everything in this repository is under the MIT license.
 
 ### Includings & References
 
