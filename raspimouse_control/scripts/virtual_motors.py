@@ -26,12 +26,16 @@ def get_motor_freq():
                         open(rfile, "r") as rf:
                     lhz_str = lf.readline().rstrip()
                     rhz_str = rf.readline().rstrip()
-                if len(rhz_str) != 0:
+                if len(lhz_str) == 0:
+                    lhz = 0
+                else:
                     try:
                         lhz = int(lhz_str)
                     except:
                         lhz = 0
-                if len(lhz_str) != 0:
+                if len(rhz_str) == 0:
+                    rhz = 0
+                else:
                     try:
                         rhz = int(rhz_str)
                     except:
