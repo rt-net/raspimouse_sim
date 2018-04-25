@@ -11,8 +11,8 @@
   <license>MIT</license>
 
   <url type="website">https://github.com/rt-net/raspimouse_sim/wiki</url>
-  <url type="repository">https://github.com/rt-net/rasimouse_sim</url>
-  <url type="bugtracker">https://github.com/rt-net/rasimouse_sim/issues</url>
+  <url type="repository">https://github.com/rt-net/raspimouse_sim</url>
+  <url type="bugtracker">https://github.com/rt-net/raspimouse_sim/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
