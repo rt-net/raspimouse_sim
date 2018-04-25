@@ -22,4 +22,5 @@ array=(
 for targetfile in ${array[@]} ; do
 	sudo touch /dev/$targetfile
 	sudo chmod 666 /dev/$targetfile
+	echo 0 > /dev/$targetfile
 done
