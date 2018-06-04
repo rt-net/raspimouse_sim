@@ -11,15 +11,13 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 以下の環境を前提として動作確認しています。
 
 * Ubuntu
-  * Ubuntu Xenial 16.04
+  * Ubuntu Xenial Xerus 16.04.\*
 * ROS
-  * ROS Kinetic
+  * ROS Kinetic Kame
 * Gazebo
   * Gazebo 7.x
 * ROS Package
   * ros-kinetic-desktop-full
-  * ros-kinetic-gazebo-ros-control
-  * ros-kinetic-ros-controllers
 
 ## インストール方法
 
