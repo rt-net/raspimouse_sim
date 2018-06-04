@@ -14,15 +14,13 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 requires the following to run:
 
 * Ubuntu
-  * Ubuntu Xenial 16.04
+  * Ubuntu Bionic Beaver 18.04
 * ROS
-  * ROS Indigo
+  * ROS Melodic Molenia
 * Gazebo
-  * Gazebo 7.x
+  * Gazebo 9.x
 * ROS Package
-  * ros-kinetic-desktop-full
-  * ros-kinetic-gazebo-ros-control
-  * ros-kinetic-ros-controllers
+  * ros-melodic-desktop-full
 
 ## Installation
 
