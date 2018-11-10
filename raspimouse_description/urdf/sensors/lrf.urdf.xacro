@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <robot name="light_sensor" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find raspimouse_description)/urdf/sensors/lrf.gazebo.xacro"/>
+  <xacro:include filename="$(find raspimouse_description)/urdf/sensors/lrf.gazebo.xacro" />
 
   <xacro:macro name="lrf_sensor" params="prefix parent *joint_origin">
     <joint name="${prefix}_joint" type="fixed">
-      <insert_block name="joint_origin"/>
-      <parent link="${parent}"/>
-      <child link="${prefix}"/>
+      <xacro:insert_block name="joint_origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}" />
     </joint>
 
     <link name="${prefix}">
       <visual>
         <geometry>
-          <mesh filename="package://raspimouse_description/meshes/dae/sensor/URG_center.dae"/>
+          <mesh filename="package://raspimouse_description/meshes/dae/sensor/URG_center.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://raspimouse_description/meshes/dae/sensor/URG_center.dae"/>
+          <mesh filename="package://raspimouse_description/meshes/dae/sensor/URG_center.dae" />
         </geometry>
       </collision>
       <inertial>
