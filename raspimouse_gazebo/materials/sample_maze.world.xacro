@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <sdf version="1.4" xmlns:xacro="http://ros.org/wiki/xacro">
 <!-- <sdf version="1.4"> -->
-<xacro:include filename="$(find raspimouse_gazebo)/materials/sample_maze.wall.xacro"/>
+<xacro:include filename="$(find raspimouse_gazebo)/materials/sample_maze.wall.xacro" />
 <world name="default">
-  <include>
+  <xacro:include>
     <uri>model://ground_plane</uri>
-  </include>
+  </xacro:include>
 
   <light name='sun' type='directional'>
     <cast_shadows>1</cast_shadows>

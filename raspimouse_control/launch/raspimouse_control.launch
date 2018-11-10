@@ -11,7 +11,7 @@
       type="spawner" output="screen" 
       args="joint_state_controller 
       diff_drive_controller 
-      "/>
+      " />
     <!-- convert joint states to TF transforms for rviz, etc -->
     <!-- this requires joint_state_controller -->
     <node name="robot_state_publisher" pkg="robot_state_publisher"
