@@ -12,15 +12,15 @@ if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
             vel = Twist()
-            direction = raw_input('w: forward, s: backward, a: left, d: right > ')
+            direction = raw_input('w: forward, s: backward, a: left, d: right, q: quit > ')
             if 'w' in direction:
-                vel.linear.x = 0.35
+                vel.linear.x = 0.18
             if 's' in direction:
-                vel.linear.x = -0.35
+                vel.linear.x = -0.18
             if 'a' in direction:
-                vel.angular.z = 3.21
+                vel.angular.z = 90*3.14/180.0
             if 'd' in direction:
-                vel.angular.z = -3.21
+                vel.angular.z = -90*3.14/180.0
             if 'q' in direction:
                 break
             print vel
