@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- arguments -->
-  <arg name="model" default="$(find raspimouse_description)/urdf/raspimouse.urdf"/>
+  <arg name="model" default="$(find raspimouse_description)/urdf/raspimouse.urdf" />
   <arg name="rvizconfig" default="$(find raspimouse_description)/launch/config/urdf.rviz" />
   <arg name="gui" default="True" />
   <!-- prameters -->

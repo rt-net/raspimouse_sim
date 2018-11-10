@@ -3,7 +3,7 @@
   <xacro:macro name="wall" params="*pose">
     <model name='wall'>
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
-      <insert_block name="pose"/>
+      <xacro:insert_block name="pose" />
       <link name='link'>
         <inertial>
           <mass>10</mass>
