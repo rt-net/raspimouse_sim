@@ -1,22 +1,28 @@
 os: linux
+group: stable
 sudo: required
 dist: trusty
+services:
+  - docker
 language: generic
-group: stable
-cache: 
-    - apt
+python:
+  - "2.7"
 env:
-  global:
-    - HOME=/home/travis
-before_script:
-    - sudo apt-get update -qq
-    - sudo apt-get remove -y postgresql*
-    - sudo apt-get upgrade -qq --allow-unauthenticated
-    - rsync -av ./ ~/
+  matrix:
+    - ROS_DISTRO=indigo ROS_REPO=ros UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=trusty
+    - ROS_DISTRO=indigo ROS_REPO=ros-shadow-fixed UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=trusty
+    - ROS_DISTRO=kinetic ROS_REPO=ros UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=xenial
+    - ROS_DISTRO=kinetic ROS_REPO=ros-shadow-fixed UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=xenial
+    - ROS_DISTRO=melodic ROS_REPO=ros UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=bionic
+    - ROS_DISTRO=melodic ROS_REPO=ros-shadow-fixed UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=bionic
+matrix:
+  allow_failures:
+    - env: ROS_DISTRO=indigo ROS_REPO=ros UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=trusty
+    - env: ROS_DISTRO=indigo ROS_REPO=ros-shadow-fixed UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=trusty
+    - env: ROS_DISTRO=kinetic ROS_REPO=ros-shadow-fixed UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=xenial
+    - env: ROS_DISTRO=melodic ROS_REPO=ros UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=bionic
+    - env: ROS_DISTRO=melodic ROS_REPO=ros-shadow-fixed UPSTREAM_WORKSPACE=debian OS_NAME=ubuntu OS_CODE_NAME=bionic
+install:
+    - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config
 script:
-    - export PATH=/usr/bin:$PATH
-    - bash -eux -c "$(curl -SsfL https://git.io/ros-kinetic-desktop)"
-    - source ~/.bashrc
-    - mkdir -p $HOME/catkin_ws/src && cd $HOME/catkin_ws && catkin_init_workspace src && echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-    - catkin_make  && source ~/.bashrc
-    - bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
+    - source .ci_config/travis.sh
