@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="use_devfile" default="true" />
+
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find raspimouse_control)/config/controller.yaml" command="load" />
 
@@ -17,8 +19,10 @@
       respawn="false" output="screen" />
     <!-- convert sensor values -->
     <!-- <node name="dev_file_generator" pkg="raspimouse_control" type="gen_dev_file.sh" /> -->
-    <node name="lightsensor_subscriber" pkg="raspimouse_control" type="virtual_led_sensors.py" />
-    <node name="stepper_cmd_vel_publisher" pkg="raspimouse_control" type="virtual_motors.py" />
+    <group if="$(arg use_devfile)">
+      <node name="lightsensor_subscriber" pkg="raspimouse_control" type="virtual_led_sensors.py" />
+      <node name="stepper_cmd_vel_publisher" pkg="raspimouse_control" type="virtual_motors.py" />
+    </group>
   </group>
 </launch>
 
