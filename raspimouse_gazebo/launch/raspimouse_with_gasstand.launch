@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="use_devfile" default="true" />
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="model" default="$(find raspimouse_description)/urdf/raspimouse_urg.urdf.xacro"/>
   <arg name="paused" default="false"/>
@@ -25,5 +26,7 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model RaspberryPiMouseV2 -param raspimouse_on_gazebo/robot_description"/>
 
   <!-- ros_control motoman launch file -->
-  <include file="$(find raspimouse_control)/launch/raspimouse_control.launch"/>
+  <include file="$(find raspimouse_control)/launch/raspimouse_control.launch">
+    <arg name="use_devfile" value="$(arg use_devfile)" />
+  </include>
 </launch>
