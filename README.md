@@ -8,9 +8,9 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 ## ROS Package Status
 
-|master|Kinetic + Ubuntu Xenial|Melodic + Ubuntu Bionic|
+|Kinetic + Ubuntu Xenial|Melodic + Ubuntu Bionic|master|
 |:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=master)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=kinetic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=melodic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|
+|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=kinetic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=melodic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=master)](https://travis-ci.org/rt-net/raspimouse_sim)|
 
 
 ## Requirements
@@ -18,24 +18,24 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 requires the following to run:
 
 * Ubuntu
-  * Ubuntu Bionic Beaver 18.04
-* ROS
-  * ROS Melodic Molenia
-* Gazebo
-  * Gazebo 9.x
-* ROS Package
-  * ros-melodic-desktop-full
-
-or
-
-* Ubuntu
-  * Ubuntu Xenial Xerus 16.04.\*
+  * Ubuntu Xenial Xerus 16.04.*
 * ROS
   * ROS Kinetic Kame
 * Gazebo
   * Gazebo 7.x
 * ROS Package
   * ros-kinetic-desktop-full
+
+or
+
+* Ubuntu
+  * Ubuntu Bionic Beaver 18.04.*
+* ROS
+  * ROS Melodic Morenia
+* Gazebo
+  * Gazebo 9.x
+* ROS Package
+  * ros-melodic-desktop-full
 
 ## Installation
 
