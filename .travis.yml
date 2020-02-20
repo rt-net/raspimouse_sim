@@ -1,6 +1,6 @@
 os: linux
 sudo: required
-dist: trusty
+dist: bionic
 language: generic
 group: stable
 cache: 
@@ -15,7 +15,7 @@ before_script:
     - rsync -av ./ ~/
 script:
     - export PATH=/usr/bin:$PATH
-    - bash -eux -c "$(curl -SsfL https://git.io/ros-kinetic-desktop)"
+    - bash -eux -c "$(curl -SsfL https://git.io/ros-melodic-desktop)"
     - source ~/.bashrc
     - mkdir -p $HOME/catkin_ws/src && cd $HOME/catkin_ws && catkin_init_workspace src && echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     - catkin_make  && source ~/.bashrc

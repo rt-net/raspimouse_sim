@@ -1,17 +1,36 @@
 # raspimouse_sim 
 
-[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=indigo-devel)](https://travis-ci.org/rt-net/raspimouse_sim)
-
 Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
 
 詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+
+![](./docs/images/raspimouse_samplemaze.png)
+
+## ROS Package Status
+
+|Kinetic + Ubuntu Xenial|Melodic + Ubuntu Bionic|master|
+|:---:|:---:|:---:|
+|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=kinetic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=melodic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=master)](https://travis-ci.org/rt-net/raspimouse_sim)|
+
 
 ## 動作環境
 
 以下の環境を前提として動作確認しています。
 
+
 * Ubuntu
-  * Ubuntu Bionic Beaver 18.04
+  * Ubuntu Xenial Xerus 16.04.*
+* ROS
+  * ROS Kinetic Kame
+* Gazebo
+  * Gazebo 7.x
+* ROS Package
+  * ros-kinetic-desktop-full
+
+または
+
+* Ubuntu
+  * Ubuntu Bionic Beaver 18.04.*
 * ROS
   * ROS Melodic Morenia
 * Gazebo
