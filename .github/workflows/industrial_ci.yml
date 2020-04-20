@@ -14,6 +14,7 @@ on:
 
 jobs:
   industrial_ci:
+    continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
         env:
@@ -21,11 +22,12 @@ jobs:
           - { ROS_DISTRO: kinetic, ROS_REPO: testing }
           - { ROS_DISTRO: melodic, ROS_REPO: main }
           - { ROS_DISTRO: melodic, ROS_REPO: testing }
-      include:
-        env:
-          - { ROS_DISTRO: kinetic, ROS_REPO: testing }
-          - { ROS_DISTRO: melodic, ROS_REPO: testing }
-        continue-on-error: true
+        experimental: [false]
+        include:
+          - env: { ROS_DISTRO: kinetic, ROS_REPO: testing }
+            experimental: true
+          - env: { ROS_DISTRO: melodic, ROS_REPO: testing }
+            experimental: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
