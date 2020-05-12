@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>raspimouse_sim</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <description>ROS package suite for Raspberry Pi Mouse Simulator</description>
 
   <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
@@ -17,9 +17,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>raspimouse_description</run_depend>
-  <run_depend>raspimouse_gazebo</run_depend>
-  <run_depend>raspimouse_control</run_depend>
+  <depend>raspimouse_description</depend>
+  <depend>raspimouse_gazebo</depend>
+  <depend>raspimouse_control</depend>
 
   <export>
     <metapackage/>
