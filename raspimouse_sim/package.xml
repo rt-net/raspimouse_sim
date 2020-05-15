@@ -17,9 +17,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>raspimouse_description</depend>
-  <depend>raspimouse_gazebo</depend>
-  <depend>raspimouse_control</depend>
+  <exec_depend>raspimouse_description</exec_depend>
+  <exec_depend>raspimouse_control</exec_depend>
+  <exec_depend>raspimouse_gazebo</exec_depend>
 
   <export>
     <metapackage/>
