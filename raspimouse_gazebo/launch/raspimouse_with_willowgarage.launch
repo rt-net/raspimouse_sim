@@ -7,6 +7,7 @@
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
   <arg name="debug" default="false" />
+  <arg name="use_devfile" default="true" />
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -25,5 +26,7 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model RasPiMouseV2 -param raspimouse_on_gazebo/robot_description" />
 
   <!-- ros_control motoman launch file -->
-  <include file="$(find raspimouse_control)/launch/raspimouse_control.launch" />
+  <include file="$(find raspimouse_control)/launch/raspimouse_control.launch">
+    <arg name="use_devfile" value="$(arg use_devfile)" />
+  </include>
 </launch>
