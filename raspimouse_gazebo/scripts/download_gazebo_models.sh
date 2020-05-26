@@ -13,7 +13,7 @@ function download_model(){
 	fi
 }
 
-mkdir -p ~/.gazebo/models && cd ~/.gazebo/models
+mkdir -p ~/.gazebo/models
 cd /tmp 
 TMPDIR=$(mktemp -d tmp.XXXXXXXXXX) 
 cd $TMPDIR 
