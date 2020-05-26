@@ -12,6 +12,9 @@ on:
   schedule:
     - cron: "0 1 * * 2" # Weekly on Tuesdays at 01:00(GMT)
 
+env:
+  UPSTREAM_WORKSPACE: .ci.rosinstall
+
 jobs:
   industrial_ci:
     continue-on-error: ${{ matrix.experimental }}
