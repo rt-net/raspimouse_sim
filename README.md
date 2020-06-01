@@ -39,13 +39,24 @@ or
 
 ## Installation
 
+* Download this ROS package
+
 ```
-bash -exv -c "$(curl -sSfL https://git.io/raspimouse-sim-installer)"
+cd ~/catkin_ws/src
+git clone https://github.com/rt-net/raspimouse_sim.git
+```
+
+* Download the dependent ROS package
+
+```
+cd ~/catkin_ws/src
+git clone https://github.com/rt-net/raspimouse_description.git
+rosdep install -r -y -i --from-paths raspimouse*
 ```
 
 ## QuickStart
 
-After the installation, run the followings:
+After the installation, run the following commands.
 
 ```
 rosrun raspimouse_control gen_dev_file.sh
@@ -58,9 +69,17 @@ Checkout [this page](https://github.com/rt-net/raspimouse_sim/wiki/quickstart) f
 
 ### moving in sample maze
 
+```
+roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
+```
+
 ![](./docs/images/raspimouse_samplemaze.png)
 
 ### moving with URG
+
+```
+roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
+```
 
 ![](./docs/images/raspimouse_urg.png)
 
