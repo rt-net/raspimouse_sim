@@ -24,3 +24,7 @@ for targetfile in ${array[@]} ; do
 	sudo chmod 666 /dev/$targetfile
 	echo 0 > /dev/$targetfile
 done
+
+echo 1 > /dev/rtswitch0
+echo 1 > /dev/rtswitch1
+echo 1 > /dev/rtswitch2
