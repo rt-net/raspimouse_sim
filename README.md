@@ -4,7 +4,7 @@
 
 ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
-![](./docs/images/raspimouse_samplemaze.png)
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze_animation.gif)
 
 ## ROS Package Status
 
@@ -86,7 +86,7 @@ Checkout [this page](https://github.com/rt-net/raspimouse_sim/wiki/quickstart) f
 roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 ```
 
-![](./docs/images/raspimouse_samplemaze.png)
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze.png)
 
 ### moving with URG
 
@@ -94,12 +94,11 @@ roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
 ```
 
-![](./docs/images/raspimouse_urg.png)
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg.png)
 
 ## License
 
-This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).
-
+This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).  
 Unless attributed otherwise, everything in this repository is under the MIT license.
 
 ### Includings & References
