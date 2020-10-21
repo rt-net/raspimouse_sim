@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
+    <scene>
+      <shadows>0</shadows>
+    </scene>
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -11,9 +14,6 @@
       <uri>model://gas_station</uri>
       <name>gas_station</name>
       <pose>-2.0 7.0 0 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://raspimouse</uri>
     </include>
   </world>
 </sdf>

@@ -6,6 +6,9 @@
 <sdf version="1.4" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- <sdf version="1.4"> -->
   <world name="default">
+    <scene>
+      <shadows>0</shadows>
+    </scene>
     <include>
       <uri>model://ground_plane</uri>
     </include>
