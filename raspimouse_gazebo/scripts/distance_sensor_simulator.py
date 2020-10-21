@@ -38,10 +38,10 @@ def sensor4_callback(data):
     sensor4.ranges = data.ranges
 
 def listener():
-    rospy.Subscriber("{}rf_scan".format(rospy.get_namespace()), LaserScan, sensor1_callback)
-    rospy.Subscriber("{}rs_scan".format(rospy.get_namespace()), LaserScan, sensor2_callback)
-    rospy.Subscriber("{}ls_scan".format(rospy.get_namespace()), LaserScan, sensor3_callback)
-    rospy.Subscriber("{}lf_scan".format(rospy.get_namespace()), LaserScan, sensor4_callback)
+    rospy.Subscriber("{}raspimouse_on_gazebo/rf_scan".format(rospy.get_namespace()), LaserScan, sensor1_callback)
+    rospy.Subscriber("{}raspimouse_on_gazebo/rs_scan".format(rospy.get_namespace()), LaserScan, sensor2_callback)
+    rospy.Subscriber("{}raspimouse_on_gazebo/ls_scan".format(rospy.get_namespace()), LaserScan, sensor3_callback)
+    rospy.Subscriber("{}raspimouse_on_gazebo/lf_scan".format(rospy.get_namespace()), LaserScan, sensor4_callback)
 
 def talker():
     if not rospy.is_shutdown():
