@@ -40,7 +40,7 @@
 
   <group if="$(arg use_devfile)">
     <!-- Simulate device file -->
-    <!-- TODO -->
+    <include file="$(find raspimouse_fake)/launch/virtual_device_file.launch" />
   </group>
   <group unless="$(arg use_devfile)">
     <!-- Simulate led distance sensor -->

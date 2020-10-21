@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>raspimouse_control</name>
+  <name>raspimouse_fake</name>
   <version>0.1.1</version>
   <description>The raspimouse_control package</description>
 
@@ -17,11 +17,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>controller_manager</depend>
-  <depend>diff_drive_controller</depend>
-  <depend>geometry_msgs</depend>
-  <depend>joint_state_controller</depend>
-  <depend>robot_state_publisher</depend>
+  <depend>raspimouse_ros_2</depend>
   <depend>rospy</depend>
   <depend>sensor_msgs</depend>
 

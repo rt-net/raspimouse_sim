@@ -17,7 +17,7 @@
 
   <depend>gazebo_ros</depend>
   <depend>gazebo_ros_control</depend>
-  <depend>raspimouse_control</depend>
+  <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
   <depend>xacro</depend>
 

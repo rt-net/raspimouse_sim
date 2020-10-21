@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# (C) 2016 Daisuke Sato <tiryoh@gmail.com>
+# (C) 2020 RT Corporation <support@rt-net.jp>
+# Released under the MIT License 
+# https://opensource.org/licenses/MIT
+
 from __future__ import print_function
 import rospy, math
 from sensor_msgs.msg import LaserScan
@@ -11,7 +16,7 @@ def range_to_led(range_value):
         distance = int(range_value[0] * 1000)  # distance[mm]
         if distance < 4: distance = 8 - distance
         # This formula is calculated from the measurement result of actual sensor.
-        # http://products.rt-net.jp/micromouse/archives/3361
+        # https://rt-net.jp/mobility/archives/3361
         led_value = int(761000 / math.pow(distance, 1.66))
         if led_value > 4000: led_value = 4000
         if led_value < 15: led_value = 15
@@ -54,6 +59,6 @@ def listener():
 
 if __name__ == "__main__":
     led_val = [15, 15, 15, 15]
-    rospy.init_node("sensor_data_converter", anonymous=True)
+    rospy.init_node("virtual_led_sensors", anonymous=True)
     listener()
     rospy.spin()

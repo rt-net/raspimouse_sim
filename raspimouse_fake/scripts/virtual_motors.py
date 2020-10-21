@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# (C) 2017 Yuki Watanabe <yukipass19@gmail.com>
+# (C) 2018 Daisuke Sato <tiryoh@gmail.com>
+# (C) 2020 RT Corporation <support@rt-net.jp>
+# Released under the MIT License 
+# https://opensource.org/licenses/MIT
+
 import rospy, math
 from geometry_msgs.msg import Twist
 import subprocess
@@ -19,7 +25,7 @@ def get_motor_freq():
             if motor_power_status == "0":
                 sound_count = 0
             if motor_power_status == "1" and sound_count == 0:
-                subprocess.call("aplay $(rospack find raspimouse_control)/misc/ms_sound.wav", shell=True)
+                subprocess.call("aplay $(rospack find raspimouse_fake)/misc/ms_sound.wav", shell=True)
                 sound_count = 1
             if motor_power_status == "1":
                 with open(lfile, "r") as lf, \
@@ -51,6 +57,6 @@ def get_motor_freq():
 
 if __name__ == "__main__":
     rospy.init_node("virtual_motors")
-    pub = rospy.Publisher(rospy.get_namespace() + "diff_drive_controller/cmd_vel", Twist, queue_size=10)
+    pub = rospy.Publisher("cmd_vel", Twist, queue_size=10)
     get_motor_freq()
     rospy.spin()
