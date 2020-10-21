@@ -14,7 +14,7 @@
   <!-- Load the Gazebo simulator with specified world file -->
   <include file="$(find raspimouse_gazebo)/launch/raspimouse_with_emptyworld.launch">
     <arg name="world_name" value="$(find raspimouse_gazebo)/worlds/sample_maze.world" />
-    <arg name="xacro_option" value="lidar:=urg" />
+    <arg name="xacro_option" value="lidar:=none" />
     <arg name="use_devfile" value="$(arg use_devfile)" />
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
