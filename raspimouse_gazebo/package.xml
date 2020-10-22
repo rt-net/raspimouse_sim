@@ -20,6 +20,7 @@
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
   <depend>xacro</depend>
+  <exec_depend>teleop_twist_keyboard</exec_depend>
 
   <export>
   </export>
