@@ -51,6 +51,9 @@ def talker():
             d.right_side = range_to_led(sensor2.ranges)
             d.left_side = range_to_led(sensor3.ranges)
             d.left_forward = range_to_led(sensor4.ranges)
+            d.sum_all = range_to_led(sensor1.ranges) + range_to_led(sensor2.ranges) \
+                        + range_to_led(sensor3.ranges) + range_to_led(sensor4.ranges)
+            d.sum_forward = range_to_led(sensor1.ranges) + range_to_led(sensor4.ranges)
             pub.publish(d)
         except:
             rospy.logerr("Failed to convert sensor data")
