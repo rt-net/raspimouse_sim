@@ -17,7 +17,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>raspimouse_ros_2</depend>
+  <depend>geometry_msgs</depend>
   <depend>rospy</depend>
   <depend>sensor_msgs</depend>
 
