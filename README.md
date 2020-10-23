@@ -50,6 +50,7 @@ Download the dependent ROS package.
 
 ```
 cd ~/catkin_ws/src
+git clone https://github.com/ryuichiueda/raspimouse_ros_2.git
 git clone https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
@@ -72,7 +73,7 @@ rosrun raspimouse_gazebo download_gazebo_models.sh
 After the installation, run the following commands.
 
 ```
-rosrun raspimouse_control gen_dev_file.sh
+rosrun raspimouse_fake gen_dev_file.sh
 roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 ```
 

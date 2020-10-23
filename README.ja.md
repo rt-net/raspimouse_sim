@@ -44,6 +44,7 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 
 ```
 cd ~/catkin_ws/src
+git clone https://github.com/ryuichiueda/raspimouse_ros_2.git
 git clone https://github.com/rt-net/raspimouse_sim.git
 ```
 
@@ -73,7 +74,7 @@ rosrun raspimouse_gazebo download_gazebo_models.sh
 シミュレータのインストール後、次のコマンドを入力して起動してください。
 
 ```
-rosrun raspimouse_control gen_dev_file.sh
+rosrun raspimouse_fake gen_dev_file.sh
 roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 ```
 
