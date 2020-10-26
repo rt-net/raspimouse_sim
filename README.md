@@ -8,9 +8,14 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 ## ROS Package Status
 
-|Kinetic + Ubuntu Xenial|Melodic + Ubuntu Bionic|master|
+| main develop<br>(master)|Kinetic + Ubuntu Xenial<br>(kinetic-devel)|Melodic + Ubuntu Bionic<br>(melodic-devel)|
 |:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=kinetic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=melodic-devel)](https://travis-ci.org/rt-net/raspimouse_sim)|[![Build Status](https://travis-ci.org/rt-net/raspimouse_sim.svg?branch=master)](https://travis-ci.org/rt-net/raspimouse_sim)|
+|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=kinetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Akinetic-devel+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
+
+The follwing branches are not maintained.
+
+* rpim_book_version
+* indigo-devel
 
 
 ## Requirements
@@ -73,7 +78,6 @@ rosrun raspimouse_gazebo download_gazebo_models.sh
 After the installation, run the following commands.
 
 ```
-rosrun raspimouse_fake gen_dev_file.sh
 roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 ```
 
@@ -102,10 +106,20 @@ roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).  
 Unless attributed otherwise, everything in this repository is under the MIT license.
 
-### Includings & References
+### Acknowledgements
 
-* [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg ) - BSD (BSD 3-Clause License)
-  * urdf model xacro files
-  * ros_control definition files
-* [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki ) - BSD (BSD 3-Clause License)
-  * launch files
+* [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg )
+  * ```
+    <author email="groadpg@gmail.com">RyodoTanaka</author>
+    <maintainer email="groadpg@gmail.com">RyodoTanaka</maintainer>
+    ```
+  * BSD (BSD 3-Clause License)
+* [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki )
+  * ```
+    <author>Daniel Stonier</author>
+    <author>Younghun Ju</author>
+    <author>Jorge Santos Simon</author>
+    <author>Marcus Liebhardt</author>
+    <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
+    ```
+  * BSD (BSD 3-Clause License)
