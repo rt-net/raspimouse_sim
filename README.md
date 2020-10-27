@@ -1,8 +1,10 @@
-[English](README.md) | [日本語](README.ja.md)
+[English](README.en.md) | [日本語](README.md)
 
-# raspimouse_sim
+# raspimouse_sim 
 
-ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
+Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
+
+詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze_animation.gif)
 
@@ -12,15 +14,16 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 |:---:|:---:|:---:|
 |[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=kinetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Akinetic-devel+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
 
-The follwing branches are not maintained.
+以下のブランチのメンテナンスは終了しています。
 
 * rpim_book_version
 * indigo-devel
 
 
-## Requirements
+## 動作環境
 
-requires the following to run:
+以下の環境を前提として動作確認しています。
+
 
 * Ubuntu
   * Ubuntu Xenial Xerus 16.04.*
@@ -31,7 +34,7 @@ requires the following to run:
 * ROS Package
   * ros-kinetic-desktop-full
 
-or
+または
 
 * Ubuntu
   * Ubuntu Bionic Beaver 18.04.*
@@ -42,16 +45,16 @@ or
 * ROS Package
   * ros-melodic-desktop-full
 
-## Installation
+## インストール方法
 
-Download this ROS package.
+このROSパッケージをダウンロードします。
 
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/rt-net/raspimouse_sim.git
 ```
 
-Download the dependent ROS package.
+依存しているROSパッケージをインストールします。
 
 ```
 cd ~/catkin_ws/src
@@ -60,14 +63,14 @@ git clone https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
-Build this package using `catkin_make`.
+`catkin build`を使用してパッケージをビルドします。
 
 ```
-cd ~/catkin_ws && catkin_make
+cd ~/catkin_ws && catkin build
 source ~/catkin_ws/devel/setup.bash
 ```
 
-Download the hardware model data that will be used in Gazebo.
+Gazeboで使用するハードウェアモデルデータをダウンロードします。
 
 ```
 rosrun raspimouse_gazebo download_gazebo_models.sh
@@ -75,17 +78,17 @@ rosrun raspimouse_gazebo download_gazebo_models.sh
 
 ## QuickStart
 
-After the installation, run the following commands.
+シミュレータのインストール後、次のコマンドを入力して起動してください。
 
 ```
 roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 ```
 
-Checkout [this page](https://github.com/rt-net/raspimouse_sim/wiki/quickstart) for details.
+詳細は[このページ](https://github.com/rt-net/raspimouse_sim/wiki/quickstart)をお読みください。
 
-## Screenshots
+## スクリーンショット
 
-### moving in sample maze
+### サンプル迷路での動作例
 
 ```
 roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
@@ -93,7 +96,7 @@ roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze.png)
 
-### moving with URG
+### URG付きモデルでの動作例
 
 ```
 roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
@@ -101,12 +104,28 @@ roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg.png)
 
-## License
+### URG付きモデルでSLAM動作例
 
-This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).  
-Unless attributed otherwise, everything in this repository is under the MIT license.
+```
+# 1つ目の端末で
+roslaunch raspimouse_gazebo raspimouse_with_willowgarage.launch
+# 2つ目の端末で
+roslaunch raspimouse_ros_examples slam_gmapping.launch
+# 3つ目の端末で
+roslaunch raspimouse_ros_examples teleop.launch key:=true mouse:=false
+```
 
-### Acknowledgements
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg_slam_gmapping.png)
+
+
+## ライセンス
+
+このリポジトリはMITライセンスに基づいて公開されています。  
+MITライセンスについては[LICENSE]( ./LICENSE )を確認してください。
+
+### 謝辞
+
+以下のリポジトリのファイルをベースに開発されています。
 
 * [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg )
   * ```
