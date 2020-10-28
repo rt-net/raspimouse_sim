@@ -126,7 +126,7 @@ Unless attributed otherwise, everything in this repository is under the MIT lice
     <author email="groadpg@gmail.com">RyodoTanaka</author>
     <maintainer email="groadpg@gmail.com">RyodoTanaka</maintainer>
     ```
-  * BSD (BSD 3-Clause License)
+  * BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
 * [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki )
   * ```
     <author>Daniel Stonier</author>
@@ -135,4 +135,4 @@ Unless attributed otherwise, everything in this repository is under the MIT lice
     <author>Marcus Liebhardt</author>
     <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
     ```
-  * BSD (BSD 3-Clause License)
+  * BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
