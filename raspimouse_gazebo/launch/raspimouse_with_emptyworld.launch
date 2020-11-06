@@ -52,8 +52,6 @@
     <node name="distance_sensor_simulator" pkg="raspimouse_gazebo" type="distance_sensor_simulator.py" />
     <!-- Load the URDF into the ROS Parameter Server -->
     <param name="robot_description"
-      command="$(find xacro)/xacro --inorder '$(arg model)' gazebo_plugin:=true tf:=true diffdrive_namespace:='/' $(arg xacro_option)" />
-    <param name="robot_description"
       command="$(find xacro)/xacro --inorder '$(arg model)' gazebo_plugin:=true tf:=true
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='/'
