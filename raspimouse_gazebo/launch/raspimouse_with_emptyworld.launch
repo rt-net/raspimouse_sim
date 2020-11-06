@@ -10,7 +10,7 @@
   <arg name="use_devfile" default="false" />
   <arg name="world_name" default="$(find raspimouse_gazebo)/worlds/empty.world" />
   <arg name="xacro_option" default="lidar:=none" />
-  <arg name="robot_namespace" default="" />
+  <arg name="robot_namespace" default="/" />
   
   <!-- Initial position in Gazebo -->
   <arg name="x0" default="0"/>
@@ -43,7 +43,7 @@
     <param name="robot_description"
       command="$(find xacro)/xacro --inorder '$(arg model)' gazebo_plugin:=true tf:=false
                 robot_namespace:='$(arg robot_namespace)'
-                diffdrive_namespace:='/raspimouse_on_gazebo'
+                diffdrive_namespace:='$(arg robot_namespace)raspimouse_on_gazebo'
                 sensor_namespace:='raspimouse_on_gazebo'
                 $(arg xacro_option)" />
   </group>
@@ -54,7 +54,7 @@
     <param name="robot_description"
       command="$(find xacro)/xacro --inorder '$(arg model)' gazebo_plugin:=true tf:=true
                 robot_namespace:='$(arg robot_namespace)'
-                diffdrive_namespace:='/'
+                diffdrive_namespace:='$(arg robot_namespace)'
                 sensor_namespace:='raspimouse_on_gazebo'
                 $(arg xacro_option)" />
   </group>
