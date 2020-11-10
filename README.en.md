@@ -122,17 +122,19 @@ Unless attributed otherwise, everything in this repository is under the MIT lice
 ### Acknowledgements
 
 * [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg )
-  * ```
-    <author email="groadpg@gmail.com">RyodoTanaka</author>
-    <maintainer email="groadpg@gmail.com">RyodoTanaka</maintainer>
-    ```
+  * author
+    * RyodoTanaka
+  * maintainer
+    * RyodoTanaka
   * BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
+  * See [package.xml](https://github.com/CIR-KIT/fourth_robot_pkg/blob/indigo-devel/fourth_robot_control/package.xml) for details.
 * [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki )
-  * ```
-    <author>Daniel Stonier</author>
-    <author>Younghun Ju</author>
-    <author>Jorge Santos Simon</author>
-    <author>Marcus Liebhardt</author>
-    <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
-    ```
+  * authors
+    * Daniel Stonier
+    * Younghun Ju
+    * Jorge Santos Simon
+    * Marcus Liebhardt
+  * maintainer
+    * Daniel Stonier
   * BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
+  * See [package.xml](https://github.com/yujinrobot/kobuki/blob/melodic/kobuki/package.xml) for details。
