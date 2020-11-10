@@ -114,6 +114,18 @@ roslaunch raspimouse_ros_examples teleop.launch key:=true mouse:=false
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg_slam_gmapping.png)
 
+[rt-net/raspimouse_ros_examples](https://github.com/rt-net/raspimouse_ros_examples) is required to launch nodes in raspimouse_ros_examples.  
+Run the following commands to install it.
+
+```
+cd ~/catkin_ws/src
+git clone https://github.com/rt-net/raspimouse_ros_examples.git
+rosdep install -r -y -i --from-paths raspimouse*
+cd ~/catkin_ws && catkin_make
+source ~/catkin_ws/devel/setup.bash
+```
+
+
 ## License
 
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).  

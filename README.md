@@ -63,10 +63,10 @@ git clone https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
-`catkin build`を使用してパッケージをビルドします。
+`catkin_make`を使用してパッケージをビルドします。
 
 ```
-cd ~/catkin_ws && catkin build
+cd ~/catkin_ws && catkin_make
 source ~/catkin_ws/devel/setup.bash
 ```
 
@@ -117,6 +117,17 @@ roslaunch raspimouse_ros_examples teleop.launch key:=true mouse:=false
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg_slam_gmapping.png)
 
+※raspimouse_ros_examplesを使う際には[rt-net/raspimouse_ros_examples](https://github.com/rt-net/raspimouse_ros_examples)のインストールが必要です。
+
+以下のコマンドでインストールができます。
+
+```
+cd ~/catkin_ws/src
+git clone https://github.com/rt-net/raspimouse_ros_examples.git
+rosdep install -r -y -i --from-paths raspimouse*
+cd ~/catkin_ws && catkin_make
+source ~/catkin_ws/devel/setup.bash
+```
 
 ## ライセンス
 
