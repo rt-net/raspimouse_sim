@@ -10,6 +10,7 @@
   <arg name="use_devfile" default="false" />
   <arg name="world_name" default="$(find raspimouse_gazebo)/worlds/empty.world" />
   <arg name="xacro_option" default="lidar:=none" />
+  <arg name="robot_namespace" default="/" />
   
   <!-- Initial position in Gazebo -->
   <arg name="x0" default="0"/>
@@ -26,12 +27,9 @@
     <arg name="headless" value="$(arg headless)" />
   </include>
 
-  <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg model)' $(arg xacro_option)" />
-  
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -model RasPiMouseV2 -param robot_description -x $(arg x0) -y $(arg y0) -z $(arg z0)"/>
+    args="-urdf -model RaspberryPiMouse -param robot_description -x $(arg x0) -y $(arg y0) -z $(arg z0)"/>
 
   <!-- Convert joint states to TF transforms for rviz, etc -->
   <!-- this requires joint_state_controller -->
@@ -41,11 +39,23 @@
   <group if="$(arg use_devfile)">
     <!-- Simulate device file -->
     <include file="$(find raspimouse_fake)/launch/virtual_device_file.launch" />
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <param name="robot_description"
+      command="$(find xacro)/xacro --inorder '$(arg model)' gazebo_plugin:=true tf:=false
+                robot_namespace:='$(arg robot_namespace)'
+                diffdrive_namespace:='$(arg robot_namespace)raspimouse_on_gazebo'
+                sensor_namespace:='raspimouse_on_gazebo'
+                $(arg xacro_option)" />
   </group>
   <group unless="$(arg use_devfile)">
     <!-- Simulate led distance sensor -->
     <node name="distance_sensor_simulator" pkg="raspimouse_gazebo" type="distance_sensor_simulator.py" />
-    <!-- Convert sensor values -->
-    <node name="cmd_vel_remapper" pkg="topic_tools" type="relay" args="cmd_vel raspimouse_on_gazebo/cmd_vel" />
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <param name="robot_description"
+      command="$(find xacro)/xacro --inorder '$(arg model)' gazebo_plugin:=true tf:=true
+                robot_namespace:='$(arg robot_namespace)'
+                diffdrive_namespace:='$(arg robot_namespace)'
+                sensor_namespace:='raspimouse_on_gazebo'
+                $(arg xacro_option)" />
   </group>
 </launch>
