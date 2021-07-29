@@ -6,6 +6,9 @@
 <sdf version="1.4" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- <sdf version="1.4"> -->
   <world name="default">
+    <scene>
+      <shadows>0</shadows>
+    </scene>
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -35,7 +38,7 @@
       </camera>
     </gui>
     <!-- horizontal -->
-    <model name="wall">
+    <model name="wall01">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>-0.090 0.006 0.025 0 0 1.57</pose>
       <link name="link">
@@ -90,7 +93,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall02">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>-0.090 -0.174 0.025 0 0 1.57</pose>
       <link name="link">
@@ -145,7 +148,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall03">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>-0.090 -0.354 0.025 0 0 1.57</pose>
       <link name="link">
@@ -201,7 +204,7 @@
       <static>1</static>
     </model>
     <!-- vertical -->
-    <model name="wall">
+    <model name="wall04">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.006 0.090 0.025 0 0 0</pose>
       <link name="link">
@@ -256,7 +259,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall05">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.186 0.090 0.025 0 0 0</pose>
       <link name="link">
@@ -311,7 +314,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall06">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.366 0.090 0.025 0 0 0</pose>
       <link name="link">
@@ -367,7 +370,7 @@
       <static>1</static>
     </model>
     <!-- horizontal -->
-    <model name="wall">
+    <model name="wall07">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.450 0.006 0.025 0 0 1.57</pose>
       <link name="link">
@@ -422,7 +425,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall08">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.450 -0.174 0.025 0 0 1.57</pose>
       <link name="link">
@@ -477,7 +480,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall09">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.450 -0.354 0.025 0 0 1.57</pose>
       <link name="link">
@@ -533,7 +536,7 @@
       <static>1</static>
     </model>
     <!-- vertical -->
-    <model name="wall">
+    <model name="wall10">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.006 -0.450 0.025 0 0 0</pose>
       <link name="link">
@@ -588,7 +591,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall11">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.186 -0.450 0.025 0 0 0</pose>
       <link name="link">
@@ -643,7 +646,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall12">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.366 -0.450 0.025 0 0 0</pose>
       <link name="link">
@@ -699,7 +702,7 @@
       <static>1</static>
     </model>
     <!-- plus alpha -->
-    <model name="wall">
+    <model name="wall13">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.186 -0.270 0.025 0 0 0</pose>
       <link name="link">
@@ -754,7 +757,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall14">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.366 -0.090 0.025 0 0 0</pose>
       <link name="link">
@@ -809,7 +812,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall15">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.270 -0.174 0.025 0 0 1.57</pose>
       <link name="link">
@@ -864,7 +867,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name="wall">
+    <model name="wall16">
       <!-- <pose>&#45;0.09 0 0.5 0 0 1.57</pose> -->
       <pose>0.006 -0.090 0.025 0 0 0</pose>
       <link name="link">

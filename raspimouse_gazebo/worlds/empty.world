@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
+    <scene>
+      <shadows>0</shadows>
+    </scene>
     <include>
       <uri>model://ground_plane</uri>
     </include>

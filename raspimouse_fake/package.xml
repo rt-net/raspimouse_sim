@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>raspimouse_sim</name>
+  <name>raspimouse_fake</name>
   <version>0.1.1</version>
-  <description>ROS package suite for Raspberry Pi Mouse Simulator</description>
+  <description>The raspimouse_control package</description>
 
   <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
 
@@ -17,10 +17,11 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <exec_depend>raspimouse_fake</exec_depend>
-  <exec_depend>raspimouse_gazebo</exec_depend>
+  <depend>geometry_msgs</depend>
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
 
   <export>
-    <metapackage/>
+
   </export>
 </package>
