@@ -9,8 +9,10 @@
   <arg name="debug" default="false" />
   <arg name="use_devfile" default="false" />
   <arg name="world_name" default="$(find raspimouse_gazebo)/worlds/empty.world" />
-  <arg name="xacro_option" default="lidar:=none" />
   <arg name="robot_namespace" default="/" />
+  <arg name="urg" default="false" />
+  <arg name="laser_option" default="laser_visual:=false" />
+  <arg name="lidar_frame" default="laser" />
   
   <!-- Initial position in Gazebo -->
   <arg name="x0" default="0"/>
@@ -36,6 +38,9 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
     respawn="false" output="screen" />
 
+  <arg name="urg_option" value="lidar:='urg'" if="$(arg urg)" />
+  <arg name="urg_option" value="lidar:='none'" unless="$(arg urg)" />
+
   <group if="$(arg use_devfile)">
     <!-- Simulate device file -->
     <include file="$(find raspimouse_fake)/launch/virtual_device_file.launch" />
@@ -45,7 +50,7 @@
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='$(arg robot_namespace)raspimouse_on_gazebo'
                 sensor_namespace:='raspimouse_on_gazebo'
-                $(arg xacro_option)" />
+                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'" />
   </group>
   <group unless="$(arg use_devfile)">
     <!-- Simulate led distance sensor -->
@@ -56,6 +61,6 @@
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='$(arg robot_namespace)'
                 sensor_namespace:='raspimouse_on_gazebo'
-                $(arg xacro_option)" />
+                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'" />
   </group>
 </launch>
