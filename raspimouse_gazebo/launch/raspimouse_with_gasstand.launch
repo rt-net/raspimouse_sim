@@ -12,7 +12,6 @@
   <arg name="x0" default="0" />
   <arg name="y0" default="0" />
   <arg name="z0" default="0.01" />
-  <arg name="xacro_option" default="lidar:=urg" />
 
   <!-- Load the Gazebo simulator with specified world file -->
   <include file="$(find raspimouse_gazebo)/launch/raspimouse_with_emptyworld.launch">
