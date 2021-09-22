@@ -13,6 +13,7 @@
   <arg name="urg" default="false" />
   <arg name="laser_option" default="laser_visual:=false" />
   <arg name="lidar_frame" default="laser" />
+  <arg name="xacro_option" default="" />
   
   <!-- Initial position in Gazebo -->
   <arg name="x0" default="0"/>
@@ -50,7 +51,8 @@
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='$(arg robot_namespace)raspimouse_on_gazebo'
                 sensor_namespace:='raspimouse_on_gazebo'
-                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'" />
+                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'
+                $(arg xacro_option)" />
   </group>
   <group unless="$(arg use_devfile)">
     <!-- Simulate led distance sensor -->
@@ -61,6 +63,7 @@
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='$(arg robot_namespace)'
                 sensor_namespace:='raspimouse_on_gazebo'
-                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'" />
+                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'
+                $(arg xacro_option)" />
   </group>
 </launch>
