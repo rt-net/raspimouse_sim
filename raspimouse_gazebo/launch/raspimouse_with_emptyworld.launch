@@ -9,8 +9,13 @@
   <arg name="debug" default="false" />
   <arg name="use_devfile" default="false" />
   <arg name="world_name" default="$(find raspimouse_gazebo)/worlds/empty.world" />
-  <arg name="xacro_option" default="lidar:=none" />
   <arg name="robot_namespace" default="/" />
+  <arg name="urg" default="false" />
+  <arg name="laser_option" default="laser_visual:=false" />
+  <arg name="lidar_frame" default="laser" />
+  <arg name="camera" default="false" />
+  <arg name="camera_visual_option" default="camera_visual:=false" />
+  <arg name="xacro_option" default="" />
   
   <!-- Initial position in Gazebo -->
   <arg name="x0" default="0"/>
@@ -36,6 +41,12 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
     respawn="false" output="screen" />
 
+  <arg name="urg_option" value="lidar:='urg'" if="$(arg urg)" />
+  <arg name="urg_option" value="lidar:='none'" unless="$(arg urg)" />
+
+  <arg name="camera_option" value="camera:=true" if="$(arg camera)" />
+  <arg name="camera_option" value="camera:=false" unless="$(arg camera)" />
+
   <group if="$(arg use_devfile)">
     <!-- Simulate device file -->
     <include file="$(find raspimouse_fake)/launch/virtual_device_file.launch" />
@@ -45,6 +56,8 @@
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='$(arg robot_namespace)raspimouse_on_gazebo'
                 sensor_namespace:='raspimouse_on_gazebo'
+                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'
+                $(arg camera_option) $(arg camera_visual_option)
                 $(arg xacro_option)" />
   </group>
   <group unless="$(arg use_devfile)">
@@ -56,6 +69,8 @@
                 robot_namespace:='$(arg robot_namespace)'
                 diffdrive_namespace:='$(arg robot_namespace)'
                 sensor_namespace:='raspimouse_on_gazebo'
+                $(arg urg_option) $(arg laser_option) lidar_frame:='$(arg lidar_frame)'
+                $(arg camera_option) $(arg camera_visual_option)
                 $(arg xacro_option)" />
   </group>
 </launch>
