@@ -8,6 +8,10 @@ catkin_package()
 install(PROGRAMS
   scripts/clean_dev_file.sh
   scripts/gen_dev_file.sh
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS
   scripts/virtual_led_sensors.py
   scripts/virtual_motors.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
