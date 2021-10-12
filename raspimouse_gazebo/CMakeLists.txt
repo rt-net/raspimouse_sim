@@ -7,6 +7,10 @@ catkin_package()
 
 install(PROGRAMS
   scripts/download_gazebo_models.sh
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS
   scripts/distance_sensor_simulator.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
