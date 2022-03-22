@@ -8,30 +8,20 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 ## ROS Package Status
 
-| main develop<br>(master)|Kinetic + Ubuntu Xenial<br>(kinetic-devel)|Melodic + Ubuntu Bionic<br>(melodic-devel)|
-|:---:|:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=kinetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Akinetic-devel+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
+| main develop<br>(master)|Melodic + Ubuntu Bionic<br>(melodic-devel)|
+|:---:|:---:|
+|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
 
 The follwing branches are not maintained.
 
 * rpim_book_version
 * indigo-devel
+* kinetic-devel
 
 
 ## Requirements
 
 requires the following to run:
-
-* Ubuntu
-  * Ubuntu Xenial Xerus 16.04.*
-* ROS
-  * ROS Kinetic Kame
-* Gazebo
-  * Gazebo 7.x
-* ROS Package
-  * ros-kinetic-desktop-full
-
-or
 
 * Ubuntu
   * Ubuntu Bionic Beaver 18.04.*
