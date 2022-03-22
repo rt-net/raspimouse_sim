@@ -2,7 +2,7 @@
 
 # raspimouse_sim 
 
-Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
+Gazebo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
 
 詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
 
@@ -10,31 +10,20 @@ Gaezbo上でシミュレートできるRaspberry Pi MouseのROSパッケージ�
 
 ## ROS Package Status
 
-| main develop<br>(master)|Kinetic + Ubuntu Xenial<br>(kinetic-devel)|Melodic + Ubuntu Bionic<br>(melodic-devel)|
-|:---:|:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=kinetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Akinetic-devel+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
+| main develop<br>(master)|Melodic + Ubuntu Bionic<br>(melodic-devel)|
+|:---:|:---:|
+|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
 
 以下のブランチのメンテナンスは終了しています。
 
 * rpim_book_version
 * indigo-devel
+* kinetic-devel
 
 
 ## 動作環境
 
 以下の環境を前提として動作確認しています。
-
-
-* Ubuntu
-  * Ubuntu Xenial Xerus 16.04.*
-* ROS
-  * ROS Kinetic Kame
-* Gazebo
-  * Gazebo 7.x
-* ROS Package
-  * ros-kinetic-desktop-full
-
-または
 
 * Ubuntu
   * Ubuntu Bionic Beaver 18.04.*
