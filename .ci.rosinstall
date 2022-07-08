@@ -4,6 +4,6 @@
     version: master
 
 - git:
-    uri: https://github.com/ryuichiueda/raspimouse_ros_2.git
-    local-name: raspimouse_ros_2
+    uri: https://github.com/rt-net/raspimouse.git
+    local-name: raspimouse
     version: master

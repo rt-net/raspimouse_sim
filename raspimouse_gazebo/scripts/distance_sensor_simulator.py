@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # distance_sensor_simulator.py
-# (C) 2016 - 2020 RT Corporation <support@rt-net.jp>
+# (C) 2016 - 2022 RT Corporation <support@rt-net.jp>
 # Released under the MIT License
 # https://opensource.org/licenses/MIT
 
 import rospy
 import math
-from raspimouse_ros_2.msg import LightSensorValues
+from raspimouse_msgs.msg import LightSensorValues
 from sensor_msgs.msg import LaserScan
 
 

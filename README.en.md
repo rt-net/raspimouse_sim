@@ -55,7 +55,7 @@ Download the dependent ROS packages.
 
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/ryuichiueda/raspimouse_ros_2.git
+git clone https://github.com/rt-net/raspimouse.git
 git clone https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```

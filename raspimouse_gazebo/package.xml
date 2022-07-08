@@ -19,7 +19,7 @@
   <depend>gazebo_ros_control</depend>
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
-  <depend>raspimouse_ros_2</depend>
+  <depend>raspimouse_msgs</depend>
   <depend>xacro</depend>
   <exec_depend>teleop_twist_keyboard</exec_depend>
 
