@@ -8,29 +8,29 @@ ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 ## ROS Package Status
 
-| main develop<br>(master)|Melodic + Ubuntu Bionic<br>(melodic-devel)|
+| main develop<br>(master)|Noetic + Ubuntu Focal<br>(noetic-devel)|
 |:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=melodic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amelodic-devel+workflow%3Aindustrial_ci)|
+|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=noetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Anoetic-devel+workflow%3Aindustrial_ci)|
 
 The follwing branches are not maintained.
 
 * rpim_book_version
 * indigo-devel
 * kinetic-devel
-
+* melodic-devel
 
 ## Requirements
 
 requires the following to run:
 
 * Ubuntu
-  * Ubuntu Bionic Beaver 18.04.*
+  * Ubuntu Focal Fossa 20.04.*
 * ROS
-  * ROS Melodic Morenia
+  * ROS Noetic Ninjemys
 * Gazebo
-  * Gazebo 9.x
+  * Gazebo 11.x
 * ROS Package
-  * ros-melodic-desktop-full
+  * ros-noetic-desktop-full
 
 ## Installation
 
