@@ -24,7 +24,6 @@
   <depend>controller_manager</depend>
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
-  <depend>raspimouse2</depend>
   <depend>robot_state_publisher</depend>
 
   <export>
