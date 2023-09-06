@@ -4,7 +4,10 @@ project(raspimouse_gazebo)
 find_package(ament_cmake REQUIRED)
 
 install(DIRECTORY
+  launch
   worlds
+  gui
+  config
   DESTINATION share/${PROJECT_NAME}/
 )
 

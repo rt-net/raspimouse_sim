@@ -21,9 +21,11 @@
   <test_depend>ament_lint_common</test_depend>
 
   <depend>ros_gz</depend>
+  <depend>controller_manager</depend>
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
   <depend>raspimouse2</depend>
+  <depend>robot_state_publisher</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
