@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>raspimouse_gazebo</name>
-  <version>0.1.1</version>
+  <version>1.0.0</version>
   <description>The raspimouse_gazebo package</description>
 
   <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
   <author email="tiryoh@gmail.com">Daisuke Sato</author>
+  <author email="yusuke.kato@rt-net.jp">Yusuke Kato</author>
 
   <license>MIT</license>
 
@@ -13,16 +15,17 @@
   <url type="repository">https://github.com/rt-net/raspimouse_sim</url>
   <url type="bugtracker">https://github.com/rt-net/raspimouse_sim/issues</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>gazebo_ros</depend>
-  <depend>gazebo_ros_control</depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <depend>ros_gz</depend>
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
-  <depend>raspimouse_ros_2</depend>
-  <depend>xacro</depend>
-  <exec_depend>teleop_twist_keyboard</exec_depend>
+  <depend>raspimouse2</depend>
 
   <export>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>

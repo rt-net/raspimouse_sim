@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>raspimouse_fake</name>
-  <version>0.1.1</version>
+  <version>1.0.0</version>
   <description>The raspimouse_control package</description>
 
   <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
 
   <author email="tiryoh@gmail.com">Daisuke Sato</author>
   <author email="yukipass19@gmail.com">Yuki Watanabe</author>
+  <author email="yusuke.kato@rt-net.jp">Yusuke Kato</author>
 
   <license>MIT</license>
 
@@ -15,13 +17,15 @@
   <url type="repository">https://github.com/rt-net/raspimouse_sim</url>
   <url type="bugtracker">https://github.com/rt-net/raspimouse_sim/issues</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <depend>geometry_msgs</depend>
-  <depend>rospy</depend>
   <depend>sensor_msgs</depend>
 
   <export>
-
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
