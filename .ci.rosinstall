@@ -1,4 +1,0 @@
-- git:
-    uri: https://github.com/rt-net/raspimouse_description.git
-    local-name: raspimouse_description
-    version: humble-devel
