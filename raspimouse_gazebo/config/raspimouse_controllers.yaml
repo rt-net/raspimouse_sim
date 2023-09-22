@@ -1,0 +1,30 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+diff_drive_controller:
+  ros__parameters:
+    left_wheel_names:
+      - left_wheel_joint
+
+    right_wheel_names:
+      - right_wheel_joint
+
+    wheel_separation : 0.09
+    wheels_per_side: 1
+    wheel_radius : 0.024
+    wheel_separation_multiplier : 1.055
+    left_wheel_radius_multiplier : 0.95
+    right_wheel_radius_multiplier : 0.95
+
+    odom_frame_id: odom
+    base_frame_id: base_footprint
+    open_loop: false
+    enable_odom_tf: true
+    use_stamped_vel : false
