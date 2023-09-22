@@ -67,6 +67,9 @@ def generate_launch_description():
     description_loader = RobotDescriptionLoader()
     description_loader.lidar = LaunchConfiguration('lidar')
     description_loader.lidar_frame = LaunchConfiguration('lidar_frame')
+    description_loader.use_gazebo = 'true'
+    description_loader.gz_control_config_package = 'raspimouse_gazebo'
+    description_loader.gz_control_config_file_path = 'config/raspimouse_controllers.yaml'
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -74,6 +77,18 @@ def generate_launch_description():
         output='screen',
         parameters=[{'robot_description': description_loader.load()}]
     )
+
+    spawn_joint_state_broadcaster = ExecuteProcess(
+                cmd=['ros2 run controller_manager spawner joint_state_broadcaster'],
+                shell=True,
+                output='screen',
+            )
+
+    spawn_diff_drive_controller = ExecuteProcess(
+                cmd=['ros2 run controller_manager spawner diff_drive_controller'],
+                shell=True,
+                output='screen',
+            )
 
     rviz_config_file = get_package_share_directory(
         'raspimouse_gazebo') + '/config/config.rviz'
@@ -99,6 +114,8 @@ def generate_launch_description():
         ign_gazebo,
         ignition_spawn_entity,
         robot_state_publisher,
+        spawn_joint_state_broadcaster,
+        spawn_diff_drive_controller,
         rviz,
         bridge
     ])
