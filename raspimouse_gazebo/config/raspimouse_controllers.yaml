@@ -19,9 +19,9 @@ diff_drive_controller:
     wheel_separation : 0.09
     wheels_per_side: 1
     wheel_radius : 0.024
-    wheel_separation_multiplier : 1.055
-    left_wheel_radius_multiplier : 0.95
-    right_wheel_radius_multiplier : 0.95
+    wheel_separation_multiplier : 1.0
+    left_wheel_radius_multiplier : 1.0
+    right_wheel_radius_multiplier : 1.0
 
     odom_frame_id: odom
     base_frame_id: base_footprint
