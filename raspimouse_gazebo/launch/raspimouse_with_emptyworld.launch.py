@@ -110,7 +110,7 @@ def generate_launch_description():
     )
 
     container = ComposableNodeContainer(
-            name='raspimouse',
+            name='fake_raspimouse_container',
             namespace='',
             package='rclcpp_components',
             executable='component_container_mt',
