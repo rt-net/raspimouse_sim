@@ -23,10 +23,12 @@
 #ifndef RASPIMOUSE_FAKE__FAKE_RASPIMOUSE_COMPONENT_HPP_
 #define RASPIMOUSE_FAKE__FAKE_RASPIMOUSE_COMPONENT_HPP_
 
+#include <memory>
 #include "raspimouse_fake/visibility_control.h"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 #include "rclcpp_lifecycle/lifecycle_publisher.hpp"
+#include <std_srvs/srv/set_bool.hpp>
 
 namespace fake_raspimouse
 {
@@ -36,6 +38,25 @@ class Raspimouse : public rclcpp_lifecycle::LifecycleNode
 public:
   RASPIMOUSE_FAKE_PUBLIC
   explicit Raspimouse(const rclcpp::NodeOptions & options);
+
+private:
+  rclcpp::Service<std_srvs::srv::SetBool>::SharedPtr motor_power_service_;
+
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
+  on_configure(const rclcpp_lifecycle::State &);
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
+  on_activate(const rclcpp_lifecycle::State &);
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
+  on_deactivate(const rclcpp_lifecycle::State &);
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
+  on_cleanup(const rclcpp_lifecycle::State &);
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
+  on_shutdown(const rclcpp_lifecycle::State &);
+
+  void handle_motor_power(
+    const std::shared_ptr<rmw_request_id_t> request_header,
+    const std::shared_ptr<std_srvs::srv::SetBool::Request> request,
+    const std::shared_ptr<std_srvs::srv::SetBool::Response> response);
 };
 
 }  // namespace fake_raspimouse

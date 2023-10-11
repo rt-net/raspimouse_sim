@@ -23,6 +23,11 @@
 #include "raspimouse_fake/fake_raspimouse_component.hpp"
 
 #include "rclcpp/rclcpp.hpp"
+#include "lifecycle_msgs/srv/change_state.hpp"
+#include "std_srvs/srv/set_bool.hpp"
+
+using namespace std::chrono_literals;
+using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
 namespace fake_raspimouse
 {
@@ -30,6 +35,60 @@ namespace fake_raspimouse
 Raspimouse::Raspimouse(const rclcpp::NodeOptions & options)
 : rclcpp_lifecycle::LifecycleNode("fake_raspimouse", options)
 {
+}
+
+CallbackReturn Raspimouse::on_configure(const rclcpp_lifecycle::State &)
+{
+  RCLCPP_INFO(this->get_logger(), "on_configure() is called.");
+
+  using namespace std::placeholders;  // for _1, _2, _3...
+
+  motor_power_service_ = create_service<std_srvs::srv::SetBool>(
+    "motor_power", std::bind(&Raspimouse::handle_motor_power, this, _1, _2, _3));
+
+  return CallbackReturn::SUCCESS;
+}
+
+CallbackReturn Raspimouse::on_activate(const rclcpp_lifecycle::State &)
+{
+  RCLCPP_INFO(this->get_logger(), "on_activate() is called.");
+
+  return CallbackReturn::SUCCESS;
+}
+
+CallbackReturn Raspimouse::on_deactivate(const rclcpp_lifecycle::State &)
+{
+  RCLCPP_INFO(this->get_logger(), "on_deactivate() is called.");
+
+  return CallbackReturn::SUCCESS;
+}
+
+CallbackReturn Raspimouse::on_cleanup(const rclcpp_lifecycle::State &)
+{
+  RCLCPP_INFO(this->get_logger(), "on_cleanup() is called.");
+
+  return CallbackReturn::SUCCESS;
+}
+
+CallbackReturn Raspimouse::on_shutdown(const rclcpp_lifecycle::State &)
+{
+  RCLCPP_INFO(this->get_logger(), "on_shutdown() is called.");
+
+  return CallbackReturn::SUCCESS;
+}
+
+void Raspimouse::handle_motor_power(
+  const std::shared_ptr<rmw_request_id_t> request_header,
+  const std::shared_ptr<std_srvs::srv::SetBool::Request> request,
+  const std::shared_ptr<std_srvs::srv::SetBool::Response> response)
+{
+  (void)request_header;
+  response->success = true;
+  if (request->data) {
+    response->message = "Motors are on";
+  } else {
+    response->message = "Motors are off";
+  }
 }
 
 }  // namespace fake_raspimouse

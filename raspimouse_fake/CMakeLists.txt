@@ -6,6 +6,7 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 
 include_directories(include)
 
@@ -16,13 +17,14 @@ target_compile_definitions(fake_raspimouse_component
 ament_target_dependencies(fake_raspimouse_component
   rclcpp
   rclcpp_components
-  rclcpp_lifecycle)
+  rclcpp_lifecycle
+  std_srvs)
 rclcpp_components_register_nodes(fake_raspimouse_component "fake_raspimouse::Raspimouse")
 
 add_executable(lifecycle_node_manager src/lifecycle_node_manager.cpp)
 ament_target_dependencies(lifecycle_node_manager
   rclcpp
-  lifecycle_msgs)
+  rclcpp_lifecycle)
 
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 
