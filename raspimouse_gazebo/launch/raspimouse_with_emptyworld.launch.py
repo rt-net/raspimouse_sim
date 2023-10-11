@@ -123,15 +123,6 @@ def generate_launch_description():
             output='screen',
     )
 
-    manager = Node(
-        name='manager',
-        package='raspimouse_fake',
-        executable='lifecycle_node_manager',
-        output='screen',
-        parameters=[{'components': ['raspimouse']}]
-
-    )
-
     return LaunchDescription([
         SetParameter(name='use_sim_time', value=True),
         declare_arg_lidar,
@@ -143,6 +134,5 @@ def generate_launch_description():
         spawn_diff_drive_controller,
         rviz,
         bridge,
-        container,
-        manager
+        container
     ])

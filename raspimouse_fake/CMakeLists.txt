@@ -21,11 +21,6 @@ ament_target_dependencies(fake_raspimouse_component
   std_srvs)
 rclcpp_components_register_nodes(fake_raspimouse_component "fake_raspimouse::Raspimouse")
 
-add_executable(lifecycle_node_manager src/lifecycle_node_manager.cpp)
-ament_target_dependencies(lifecycle_node_manager
-  rclcpp
-  rclcpp_lifecycle)
-
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 
 ament_export_dependencies(rclcpp)
@@ -50,7 +45,6 @@ install(TARGETS
   INCLUDES DESTINATION include)
 
 install(TARGETS
-  lifecycle_node_manager
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY
