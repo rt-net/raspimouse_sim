@@ -39,7 +39,7 @@ Raspimouse::Raspimouse(const rclcpp::NodeOptions & options)
 
 CallbackReturn Raspimouse::on_configure(const rclcpp_lifecycle::State &)
 {
-  RCLCPP_INFO(this->get_logger(), "on_configure() is called.");
+  RCLCPP_INFO(this->get_logger(), "fake_raspimouse node is configured.");
 
   using namespace std::placeholders;  // for _1, _2, _3...
 
@@ -51,28 +51,28 @@ CallbackReturn Raspimouse::on_configure(const rclcpp_lifecycle::State &)
 
 CallbackReturn Raspimouse::on_activate(const rclcpp_lifecycle::State &)
 {
-  RCLCPP_INFO(this->get_logger(), "on_activate() is called.");
+  RCLCPP_INFO(this->get_logger(), "fake_raspimouse node is activated.");
 
   return CallbackReturn::SUCCESS;
 }
 
 CallbackReturn Raspimouse::on_deactivate(const rclcpp_lifecycle::State &)
 {
-  RCLCPP_INFO(this->get_logger(), "on_deactivate() is called.");
+  RCLCPP_INFO(this->get_logger(), "fake_raspimouse node is deactivated.");
 
   return CallbackReturn::SUCCESS;
 }
 
 CallbackReturn Raspimouse::on_cleanup(const rclcpp_lifecycle::State &)
 {
-  RCLCPP_INFO(this->get_logger(), "on_cleanup() is called.");
+  RCLCPP_INFO(this->get_logger(), "fake_raspimouse node is cleaned up.");
 
   return CallbackReturn::SUCCESS;
 }
 
 CallbackReturn Raspimouse::on_shutdown(const rclcpp_lifecycle::State &)
 {
-  RCLCPP_INFO(this->get_logger(), "on_shutdown() is called.");
+  RCLCPP_INFO(this->get_logger(), "fake_raspimouse node is shutdown.");
 
   return CallbackReturn::SUCCESS;
 }
