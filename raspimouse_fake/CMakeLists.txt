@@ -26,6 +26,7 @@ ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ament_export_dependencies(rclcpp)
 ament_export_dependencies(rclcpp_components)
 ament_export_dependencies(rclcpp_lifecycle)
+ament_export_dependencies(std_srvs)
 
 ament_export_include_directories(include)
 ament_export_libraries(
