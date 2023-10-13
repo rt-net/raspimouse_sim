@@ -18,6 +18,7 @@ ament_target_dependencies(fake_raspimouse_component
   rclcpp
   rclcpp_components
   rclcpp_lifecycle
+  lifecycle_msgs
   std_srvs)
 rclcpp_components_register_nodes(fake_raspimouse_component "fake_raspimouse::Raspimouse")
 
@@ -27,6 +28,7 @@ ament_export_dependencies(rclcpp)
 ament_export_dependencies(rclcpp_components)
 ament_export_dependencies(rclcpp_lifecycle)
 ament_export_dependencies(std_srvs)
+ament_export_dependencies(lifecycle_msgs)
 
 ament_export_include_directories(include)
 ament_export_libraries(
