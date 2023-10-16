@@ -29,6 +29,8 @@ from launch.actions import DeclareLaunchArgument
 from launch_ros.actions import SetParameter
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import ComposableNodeContainer
+from launch_ros.descriptions import ComposableNode
 
 
 def generate_launch_description():
@@ -107,6 +109,20 @@ def generate_launch_description():
         output='screen'
     )
 
+    container = ComposableNodeContainer(
+            name='fake_raspimouse_container',
+            namespace='',
+            package='rclcpp_components',
+            executable='component_container_mt',
+            composable_node_descriptions=[
+                ComposableNode(
+                    package='raspimouse_fake',
+                    plugin='fake_raspimouse::Raspimouse',
+                    name='raspimouse'),
+            ],
+            output='screen',
+    )
+
     return LaunchDescription([
         SetParameter(name='use_sim_time', value=True),
         declare_arg_lidar,
@@ -117,5 +133,6 @@ def generate_launch_description():
         spawn_joint_state_broadcaster,
         spawn_diff_drive_controller,
         rviz,
-        bridge
+        bridge,
+        container
     ])
