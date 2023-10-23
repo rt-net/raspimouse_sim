@@ -30,5 +30,153 @@
       </uri>
     </include>
 
+    <model name="cube_5cm_red">
+      <link name="cube_red_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="cube_red_collision">
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="cube_red_visual">
+          <pose>0.3 0 0.025 0 0 0</pose>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cube_7.5cm_green">
+      <link name="cube_green_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="cube_green_collision">
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="cube_green_visual">
+          <pose>0 0.5 0.0375 0 0 0</pose>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.075</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cube_10cm_blue">
+      <link name="cube_blue_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="cube_blue_collision">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="cube_blue_visual">
+          <pose>-0.5 0 0.05 0 0 0</pose>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cube_15cm_yellow">
+      <link name="cube_yellow_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="cube_yellow_collision">
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.15</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="cube_green_visual">
+          <pose>0 -0.5 0.075 0 0 0</pose>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.15</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
   </world>
 </sdf>
