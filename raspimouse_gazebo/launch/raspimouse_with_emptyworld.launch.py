@@ -48,7 +48,7 @@ def generate_launch_description():
         description='Set "true" to mount rgb camera.')
     declare_arg_world_name = DeclareLaunchArgument(
         'world_name',
-        default_value='empty_world.sdf',
+        default_value=get_package_share_directory('raspimouse_gazebo')+'/worlds/empty_world.sdf',
         description='Set world name.')
 
     env = {'IGN_GAZEBO_SYSTEM_PLUGIN_PATH': os.environ['LD_LIBRARY_PATH'],
@@ -56,17 +56,10 @@ def generate_launch_description():
                get_package_share_directory('raspimouse_description')) + ':' +
            os.path.join(get_package_share_directory('raspimouse_gazebo'), 'models'),
            }
-    world_name = str(LaunchConfiguration('world_name', default='empty_world.sdf'))
-    print(world_name)
-    world_file = os.path.join(
-        get_package_share_directory('raspimouse_gazebo'),
-        'worlds',
-        LaunchConfiguration('world_name')
-    )
     gui_config = os.path.join(
         get_package_share_directory('raspimouse_gazebo'), 'gui', 'gui.config')
     ign_gazebo = ExecuteProcess(
-            cmd=['ign gazebo -r', world_file, '--gui-config', gui_config],
+            cmd=['ign gazebo -r', LaunchConfiguration('world_name'), '--gui-config', gui_config],
             output='screen',
             additional_env=env,
             shell=True
