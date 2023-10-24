@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="cube_15cm_yellow">
+      <link name="cube_yellow_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="cube_yellow_collision">
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.15</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="cube_yellow_visual">
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.15</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+</sdf>

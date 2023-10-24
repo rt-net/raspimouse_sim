@@ -49,7 +49,9 @@ def generate_launch_description():
 
     env = {'IGN_GAZEBO_SYSTEM_PLUGIN_PATH': os.environ['LD_LIBRARY_PATH'],
            'IGN_GAZEBO_RESOURCE_PATH': os.path.dirname(
-               get_package_share_directory('raspimouse_description'))}
+               get_package_share_directory('raspimouse_description')) + ':' +
+           os.path.join(get_package_share_directory('raspimouse_gazebo'), 'models'),
+           }
     world_file = os.path.join(
         get_package_share_directory('raspimouse_gazebo'), 'worlds', 'color_objects_world.sdf')
     gui_config = os.path.join(
