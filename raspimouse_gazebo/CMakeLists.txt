@@ -8,6 +8,7 @@ install(DIRECTORY
   worlds
   gui
   config
+  models
   DESTINATION share/${PROJECT_NAME}/
 )
 

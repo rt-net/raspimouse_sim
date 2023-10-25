@@ -42,16 +42,24 @@ def generate_launch_description():
         'lidar_frame',
         default_value='laser',
         description='Set lidar link name.')
+    declare_arg_use_rgb_camera = DeclareLaunchArgument(
+        'use_rgb_camera',
+        default_value='false',
+        description='Set "true" to mount rgb camera.')
+    declare_arg_world_name = DeclareLaunchArgument(
+        'world_name',
+        default_value=get_package_share_directory('raspimouse_gazebo')+'/worlds/empty_world.sdf',
+        description='Set world name.')
 
     env = {'IGN_GAZEBO_SYSTEM_PLUGIN_PATH': os.environ['LD_LIBRARY_PATH'],
            'IGN_GAZEBO_RESOURCE_PATH': os.path.dirname(
-               get_package_share_directory('raspimouse_description'))}
-    world_file = os.path.join(
-        get_package_share_directory('raspimouse_gazebo'), 'worlds', 'empty_world.sdf')
+               get_package_share_directory('raspimouse_description')) + ':' +
+           os.path.join(get_package_share_directory('raspimouse_gazebo'), 'models'),
+           }
     gui_config = os.path.join(
         get_package_share_directory('raspimouse_gazebo'), 'gui', 'gui.config')
     ign_gazebo = ExecuteProcess(
-            cmd=['ign gazebo -r', world_file, '--gui-config', gui_config],
+            cmd=['ign gazebo -r', LaunchConfiguration('world_name'), '--gui-config', gui_config],
             output='screen',
             additional_env=env,
             shell=True
@@ -70,6 +78,7 @@ def generate_launch_description():
     description_loader.lidar = LaunchConfiguration('lidar')
     description_loader.lidar_frame = LaunchConfiguration('lidar_frame')
     description_loader.use_gazebo = 'true'
+    description_loader.use_rgb_camera = LaunchConfiguration('use_rgb_camera')
     description_loader.gz_control_config_package = 'raspimouse_gazebo'
     description_loader.gz_control_config_file_path = 'config/raspimouse_controllers.yaml'
 
@@ -127,6 +136,8 @@ def generate_launch_description():
         SetParameter(name='use_sim_time', value=True),
         declare_arg_lidar,
         declare_arg_lidar_frame,
+        declare_arg_use_rgb_camera,
+        declare_arg_world_name,
         ign_gazebo,
         ignition_spawn_entity,
         robot_state_publisher,
