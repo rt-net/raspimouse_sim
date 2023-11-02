@@ -2,120 +2,89 @@
 
 # raspimouse_sim 
 
-Gazebo上でシミュレートできるRaspberry Pi MouseのROSパッケージ一式です。
+Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージです。
 
-詳細なセットアップ方法は[Wiki](https://github.com/rt-net/raspimouse_sim/wiki)にまとめています。
+## ROS 2 Package Status
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze_animation.gif)
-
-## ROS Package Status
-
-| main develop<br>(master)|Noetic + Ubuntu Focal<br>(noetic-devel)|
+| main develop<br>(ros2)|Humble + Ubuntu Jammy<br>(humble-devel)|
 |:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=noetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Anoetic-devel+workflow%3Aindustrial_ci)|
-
-以下のブランチのメンテナンスは終了しています。
-
-* rpim_book_version
-* indigo-devel
-* kinetic-devel
-* melodic-devel
+|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Aros2+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=humble-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Ahumble-devel+workflow%3Aindustrial_ci)|
 
 ## 動作環境
 
 以下の環境を前提として動作確認しています。
 
 * Ubuntu
-  * Ubuntu Focal Fossa 20.04.*
-* ROS
-  * ROS Noetic Ninjemys
+  * Ubuntu Jammy Jellyfish 22.04.*
+* ROS 2
+  * ROS Humble Hawksbill
 * Gazebo
-  * Gazebo 11.x
-* ROS Package
-  * ros-noetic-desktop-full
+  * Ignition Gazebo 6.x
+* ROS 2 Package
+  * ros-humble-desktop-full
 
 ## インストール方法
 
-このROSパッケージをダウンロードします。
+このROS 2パッケージをダウンロードします。
 
-```
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/raspimouse_sim.git
+```sh
+cd ~/ros2_ws/src
+git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
 ```
 
-依存しているROSパッケージをインストールします。
+依存しているROS 2パッケージをインストールします。
 
-```
-cd ~/catkin_ws/src
-git clone https://github.com/ryuichiueda/raspimouse_ros_2.git
-git clone https://github.com/rt-net/raspimouse_description.git
+```sh
+cd ~/ros2_ws/src
+git clone https://github.com/rt-net/raspimouse_ros2_examples.git
+git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
-`catkin_make`を使用してパッケージをビルドします。
+`colcon`を使用してパッケージをビルドします。
 
-```
-cd ~/catkin_ws && catkin_make
-source ~/catkin_ws/devel/setup.bash
-```
-
-Gazeboで使用するハードウェアモデルデータをダウンロードします。
-
-```
-rosrun raspimouse_gazebo download_gazebo_models.sh
+```sh
+cd ~/ros2_ws
+colcon build --symlink-install
+source ~/ros2_ws/install/setup.bash
 ```
 
 ## QuickStart
 
 シミュレータのインストール後、次のコマンドを入力して起動してください。
 
-```
-roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
-```
-
-詳細は[このページ](https://github.com/rt-net/raspimouse_sim/wiki/quickstart)をお読みください。
-
-## スクリーンショット
-
-### サンプル迷路での動作例
-
-```
-roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze.png)
+## サンプル動作例
 
-### URG付きモデルでの動作例
+### ジョイスティックコントローラによる操縦サンプル
 
-```
-roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
-```
+端末1で次のコマンドを実行すると、Gazeboシミュレータが起動します。
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg.png)
-
-### URG付きモデルでSLAM動作例
-
-```
-# 1つ目の端末で
-roslaunch raspimouse_gazebo raspimouse_with_willowgarage.launch
-# 2つ目の端末で
-roslaunch raspimouse_ros_examples slam_gmapping.launch
-# 3つ目の端末で
-roslaunch raspimouse_ros_examples teleop.launch key:=true mouse:=false
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg_slam_gmapping.png)
+端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
 
-※raspimouse_ros_examplesを使う際には[rt-net/raspimouse_ros_examples](https://github.com/rt-net/raspimouse_ros_examples)のインストールが必要です。
-
-以下のコマンドでインストールができます。
-
+```sh
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/raspimouse_ros_examples.git
-rosdep install -r -y -i --from-paths raspimouse*
-cd ~/catkin_ws && catkin_make
-source ~/catkin_ws/devel/setup.bash
+
+### RGBカメラを用いた色検出による物体追従サンプル
+
+端末1で次のコマンドを実行すると、色付きの立方体が配置されたワールドが表示されます。
+
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
+```
+
+端末2で次のコマンドを実行すると、Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
+
+```sh
+ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
 ```
 
 ## ライセンス

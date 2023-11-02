@@ -2,119 +2,90 @@
 
 # raspimouse_sim
 
-ROS package suite for Raspberry Pi Mouse Simulator runs on Gazebo
+ROS 2 package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze_animation.gif)
+## ROS 2 Package Status
 
-## ROS Package Status
-
-| main develop<br>(master)|Noetic + Ubuntu Focal<br>(noetic-devel)|
+| main develop<br>(ros2)|Humble + Ubuntu Jammy<br>(humble-devel)|
 |:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Amaster+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=noetic-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Anoetic-devel+workflow%3Aindustrial_ci)|
-
-The follwing branches are not maintained.
-
-* rpim_book_version
-* indigo-devel
-* kinetic-devel
-* melodic-devel
+|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Aros2+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=humble-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Ahumble-devel+workflow%3Aindustrial_ci)|
 
 ## Requirements
 
 requires the following to run:
 
 * Ubuntu
-  * Ubuntu Focal Fossa 20.04.*
-* ROS
-  * ROS Noetic Ninjemys
+  * Ubuntu Jammy Jellyfish 22.04.*
+* ROS 2
+  * ROS Humble Hawksbill
 * Gazebo
-  * Gazebo 11.x
-* ROS Package
-  * ros-noetic-desktop-full
+  * Ignition Gazebo 6.x
+* ROS 2 Package
+  * ros-humble-desktop-full
 
 ## Installation
 
-Download this ROS package.
+Download this ROS 2 package.
 
-```
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/raspimouse_sim.git
+```sh
+cd ~/ros2_ws/src
+git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
 ```
 
-Download the dependent ROS packages.
+Download the dependent ROS 2 packages.
 
-```
-cd ~/catkin_ws/src
-git clone https://github.com/ryuichiueda/raspimouse_ros_2.git
-git clone https://github.com/rt-net/raspimouse_description.git
+```sh
+cd ~/ros2_ws/src
+git clone https://github.com/rt-net/raspimouse_ros2_examples.git
+git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
-Build this package using `catkin_make`.
+Build this package using `colcon`.
 
-```
-cd ~/catkin_ws && catkin_make
-source ~/catkin_ws/devel/setup.bash
-```
-
-Download the hardware model data that will be used in Gazebo.
-
-```
-rosrun raspimouse_gazebo download_gazebo_models.sh
+```sh
+cd ~/ros2_ws
+colcon build --symlink-install
+source ~/ros2_ws/install/setup.bash
 ```
 
 ## QuickStart
 
 After the installation, run the following commands.
 
-```
-roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
-```
-
-Checkout [this page](https://github.com/rt-net/raspimouse_sim/wiki/quickstart) for details.
-
-## Screenshots
-
-### moving in sample maze
-
-```
-roslaunch raspimouse_gazebo raspimouse_with_samplemaze.launch
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_samplemaze.png)
+## Examples
 
-### moving with URG
+### Joystick Controll
 
-```
-roslaunch raspimouse_gazebo raspimouse_with_gasstand.launch
-```
+Terminal 1:
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg.png)
-
-### SLAM
-
-```
-# 1st terminal
-roslaunch raspimouse_gazebo raspimouse_with_willowgarage.launch
-# 2nd terminal
-roslaunch raspimouse_ros_examples slam_gmapping.launch
-# 3rd terminal
-roslaunch raspimouse_ros_examples teleop.launch key:=true mouse:=false
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_urg_slam_gmapping.png)
+Terminal 2:
 
-[rt-net/raspimouse_ros_examples](https://github.com/rt-net/raspimouse_ros_examples) is required to launch nodes in raspimouse_ros_examples.  
-Run the following commands to install it.
-
-```
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/raspimouse_ros_examples.git
-rosdep install -r -y -i --from-paths raspimouse*
-cd ~/catkin_ws && catkin_make
-source ~/catkin_ws/devel/setup.bash
+```sh
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
+### Object Tracking
+
+Terminal 1:
+
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
+```
+
+Terminal 2:
+
+```sh
+ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
+```
 
 ## License
 
