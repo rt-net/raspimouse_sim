@@ -4,6 +4,8 @@
 
 Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージです。
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
+
 ## ROS 2 Package Status
 
 | main develop<br>(ros2)|Humble + Ubuntu Jammy<br>(humble-devel)|
@@ -73,6 +75,8 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif)
+
 ### RGBカメラを用いた色検出による物体追従サンプル
 
 端末1で次のコマンドを実行すると、色付きの立方体が配置されたワールドが表示されます。
@@ -86,6 +90,8 @@ ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_ca
 ```sh
 ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
 ```
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
 
 ## ライセンス
 

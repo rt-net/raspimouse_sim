@@ -4,6 +4,8 @@
 
 ROS 2 package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
+
 ## ROS 2 Package Status
 
 | main develop<br>(ros2)|Humble + Ubuntu Jammy<br>(humble-devel)|
@@ -73,6 +75,8 @@ Terminal 2:
 ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif)
+
 ### Object Tracking
 
 Terminal 1:
@@ -86,6 +90,8 @@ Terminal 2:
 ```sh
 ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
 ```
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
 
 ## License
 
