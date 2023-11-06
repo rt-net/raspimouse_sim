@@ -53,7 +53,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## QuickStart
 
-After the installation, run the following commands.
+After building this package, run the following commands.
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
