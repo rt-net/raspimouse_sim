@@ -53,7 +53,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## QuickStart
 
-シミュレータのインストール後、次のコマンドを入力して起動してください。
+パッケージビルド後、次のコマンドを実行するとGazeboシミュレータが起動します。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
