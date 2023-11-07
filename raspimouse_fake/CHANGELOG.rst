@@ -2,8 +2,8 @@
 Changelog for package raspimouse_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2023-11-07)
+------------------
 * シミュレータ環境に擬似的なラズパイマウスノードを追加 (`#69 <https://github.com/rt-net/raspimouse_sim/issues/69>`_)
   Co-authored-by: Shota Aoki <s.aoki@rt-net.jp>
 * ROS 2 Humble環境のraspimouse_with_emptyworld.launch.pyを実装 (`#66 <https://github.com/rt-net/raspimouse_sim/issues/66>`_)

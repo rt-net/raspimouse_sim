@@ -2,8 +2,8 @@
 Changelog for package raspimouse_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2023-11-07)
+------------------
 * Gazebo上で画像トピックを配信できるようにbridgeを設定 (`#71 <https://github.com/rt-net/raspimouse_sim/issues/71>`_)
 * カメラサンプル用のcolor_objects_worldを作成 (`#70 <https://github.com/rt-net/raspimouse_sim/issues/70>`_)
 * シミュレータ環境に擬似的なラズパイマウスノードを追加 (`#69 <https://github.com/rt-net/raspimouse_sim/issues/69>`_)
