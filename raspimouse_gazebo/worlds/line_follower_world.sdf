@@ -34,42 +34,42 @@
       <include>
         <uri>model://course_straight</uri>
       </include>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.01 0 0 0</pose>
     </model>
 
     <model name="curve_1">
       <include>
         <uri>model://course_curve</uri>
       </include>
-      <pose>0.5 0 0 0 0 0</pose>
+      <pose>0.5 0 0.01 0 0 0</pose>
     </model>
 
     <model name="curve_2">
       <include>
         <uri>model://course_curve</uri>
       </include>
-      <pose>0.5 0.5 0 0 0 1.57</pose>
+      <pose>0.5 0.5 0.01 0 0 1.57</pose>
     </model>
 
     <model name="straight_2">
       <include>
         <uri>model://course_straight</uri>
       </include>
-      <pose>0 0.5 0 0 0 0</pose>
+      <pose>0 0.5 0.01 0 0 0</pose>
     </model>
 
     <model name="curve_3">
       <include>
         <uri>model://course_curve</uri>
       </include>
-      <pose>-0.5 0 0 0 0 -1.57</pose>
+      <pose>-0.5 0 0.01 0 0 -1.57</pose>
     </model>
 
     <model name="curve_4">
       <include>
         <uri>model://course_curve</uri>
       </include>
-      <pose>-0.5 0.5 0 0 0 3.14</pose>
+      <pose>-0.5 0.5 0.01 0 0 3.14</pose>
     </model>
 
   </world>
