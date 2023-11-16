@@ -32,7 +32,7 @@ def generate_launch_description():
     world_file = os.path.join(
         get_package_share_directory('raspimouse_gazebo'),
         'worlds',
-        'line_follower_world.sdf')
+        'line_follower_field1.sdf')
     world_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             get_package_share_directory('raspimouse_gazebo'),
