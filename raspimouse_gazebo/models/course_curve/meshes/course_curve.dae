@@ -2,11 +2,11 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <asset>
     <contributor>
-      <author>YusukeKato</author>
-      <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.0.0 commit date:2023-11-13, commit time:17:26, hash:878f71061b8e</authoring_tool>
     </contributor>
-    <created>2021-05-26T17:33:23</created>
-    <modified>2021-05-26T17:33:23</modified>
+    <created>2023-11-16T14:58:23</created>
+    <modified>2023-11-16T14:58:23</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -29,7 +29,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="course_curve_jpg-sampler" texcoord="UVMap"/>
+              <texture texture="course_curve_jpg-sampler" texcoord="Plane-mesh-map-0"/>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.45</float>
@@ -96,12 +96,12 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="Plane" name="Plane" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 1</matrix>
         <instance_geometry url="#Plane-mesh" name="Plane">
           <bind_material>
             <technique_common>
               <instance_material symbol="Material_001-material" target="#Material_001-material">
-                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="Plane-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>
           </bind_material>
