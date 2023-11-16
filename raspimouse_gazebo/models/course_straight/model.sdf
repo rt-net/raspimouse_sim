@@ -8,7 +8,7 @@
         <geometry>
           <mesh>
             <uri>model://course_straight/meshes/course_straight.dae</uri>
-            <scale>0.5 0.5 0.5</scale>
+            <scale>1 1 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -25,7 +25,7 @@
         <geometry>
           <mesh>
             <uri>model://course_straight/meshes/course_straight.dae</uri>
-            <scale>0.5 0.5 0.5</scale>
+            <scale>1 1 1</scale>
           </mesh>
         </geometry>
       </visual>
