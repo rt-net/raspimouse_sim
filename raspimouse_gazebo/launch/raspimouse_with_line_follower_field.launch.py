@@ -38,7 +38,10 @@ def generate_launch_description():
             get_package_share_directory('raspimouse_gazebo'),
             '/launch/raspimouse_with_emptyworld.launch.py']),
         launch_arguments={
-            'world_name': world_file
+            'world_name': world_file,
+            'spawn_x': '0.0',
+            'spawn_y': '0.0',
+            'spawn_z': '0.02'
             }.items()
     )
 
