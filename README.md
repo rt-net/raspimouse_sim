@@ -93,6 +93,31 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
 
+## モデルデータ一覧
+
+### course_curve_50x50cm
+
+ライントレース用の曲線コースパネルです。
+パネルサイズは50cm x 50cm、線の幅は4cmです。
+
+![](./raspimouse_gazebo/models/course_curve_50x50cm/meshes/course_curve.jpg)
+
+### course_straight_50x50cm
+
+ライントレース用の直線コースパネルです。
+パネルサイズは50cm x 50cm、線の幅は4cmです。
+
+![](./raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg)
+
+### cube_*cm_color-name
+それぞれ一辺5cm、7.5cm、10cm、15cmの立方体です。
+色は赤、黄、青、緑です。
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png)
+
+### daeファイルについて
+daeファイルはBlender 4.0で編集しています。
+
 ## ライセンス
 
 このリポジトリはMITライセンスに基づいて公開されています。  

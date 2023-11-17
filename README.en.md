@@ -93,6 +93,29 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
 
+## Model data list
+
+### course_curve_50x50cm
+Curve course panel for line following.
+Panel size is 50 cm x 50 cm and line width is 4 cm.
+
+![](./raspimouse_gazebo/models/course_curve_50x50cm/meshes/course_curve.jpg)
+
+### course_straight_50x50cm
+Straight course panel for line following.
+Panel size is 50 cm x 50 cm and line width is 4 cm.
+
+![](./raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg)
+
+### cube_*cm_color-name
+Each cube is 5 cm, 7.5 cm, 10 cm, and 15 cm on a side.
+The cube colors are red, yellow, blue, and green.
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png)
+
+### daeファイルについて
+The dae file is edited in Blender 4.0.
+
 ## License
 
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).  
