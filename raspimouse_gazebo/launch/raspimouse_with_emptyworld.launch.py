@@ -46,6 +46,10 @@ def generate_launch_description():
         'use_rgb_camera',
         default_value='false',
         description='Set "true" to mount rgb camera.')
+    declare_arg_camera_downward = DeclareLaunchArgument(
+        'camera_downward',
+        default_value='false',
+        description='Set "true" to point the camera downwards.')
     declare_arg_world_name = DeclareLaunchArgument(
         'world_name',
         default_value=get_package_share_directory('raspimouse_gazebo')+'/worlds/empty_world.sdf',
@@ -94,6 +98,7 @@ def generate_launch_description():
     description_loader.lidar_frame = LaunchConfiguration('lidar_frame')
     description_loader.use_gazebo = 'true'
     description_loader.use_rgb_camera = LaunchConfiguration('use_rgb_camera')
+    description_loader.camera_downward = LaunchConfiguration('camera_downward')
     description_loader.gz_control_config_package = 'raspimouse_gazebo'
     description_loader.gz_control_config_file_path = 'config/raspimouse_controllers.yaml'
 
@@ -154,6 +159,7 @@ def generate_launch_description():
         declare_arg_lidar,
         declare_arg_lidar_frame,
         declare_arg_use_rgb_camera,
+        declare_arg_camera_downward,
         declare_arg_world_name,
         declare_arg_spawn_x,
         declare_arg_spawn_y,
