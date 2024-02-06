@@ -135,6 +135,7 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
+                   '/scan@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan',
                    '/camera/color/image_raw@sensor_msgs/msg/Image@gz.msgs.Image',
                    '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'],
         output='screen'
