@@ -93,6 +93,71 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
 
+### camera_line_follower 
+
+Terminal 1:
+
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
+```
+
+Terminal 2:
+
+```sh
+ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
+```
+
+Terminal 3: Start
+
+```sh
+ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
+```
+
+Terminal 3: Stop
+```sh
+ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
+```
+
+For information on parameters in camera line follower, click [here](https://github.com/rt-net/raspimouse_ros2_examples/blob/master/README.en.md#parameters).
+
+### SLAM & Navigation
+
+#### SLAM
+
+Terminal 1:
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
+```
+The lidar option supports `urg`, `lds`, and `rplidar`.
+
+Terminal 2:
+```sh
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
+```
+
+Terminal 3:
+```sh
+ros2 launch raspimouse_slam pc_slam.launch.py
+```
+
+Terminal 4:
+```sh
+ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
+```
+
+#### Navigation
+
+Terminal 1:
+```sh
+ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
+```
+The lidar option supports `urg`, `lds`, and `rplidar`.
+
+Terminal 2:
+```sh
+ros2 launch raspimouse_navigation pc_navigation.launch.py map:=/path/to/MAP_NAME.yaml
+```
+
 ## Model data list
 
 ### course_curve_50x50cm
@@ -113,7 +178,7 @@ The cube colors are red, yellow, blue, and green.
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png)
 
-### daeファイルについて
+### about dae files
 The dae file is edited in Blender 4.0.
 
 ## License
