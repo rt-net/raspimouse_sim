@@ -42,5 +42,47 @@
       </uri>
     </include>
 
+    <model name="black_cube11">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>-0.5 0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube12">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>-0.5 1.0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube13">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>-0.5 -1.0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube21">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>2.0 0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube22">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>2.0 1.0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube23">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>2.0 -1.0 0.075 0 0 0</pose>
+    </model>
+
   </world>
 </sdf>
