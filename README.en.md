@@ -120,6 +120,8 @@ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, sw
 
 For information on parameters in camera line follower, click [here](https://github.com/rt-net/raspimouse_ros2_examples/blob/master/README.en.md#parameters).
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
+
 ### SLAM & Navigation
 
 #### SLAM
@@ -140,10 +142,14 @@ Terminal 3:
 ros2 launch raspimouse_slam pc_slam.launch.py
 ```
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam.png)
+
 Terminal 4:
 ```sh
 ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ```
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif)
 
 #### Navigation
 
@@ -157,6 +163,8 @@ Terminal 2:
 ```sh
 ros2 launch raspimouse_navigation pc_navigation.launch.py map:=/path/to/MAP_NAME.yaml
 ```
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif)
 
 ## Model data list
 
@@ -173,8 +181,8 @@ Panel size is 50 cm x 50 cm and line width is 4 cm.
 ![](./raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg)
 
 ### cube_*cm_color-name
-Each cube is 5 cm, 7.5 cm, 10 cm, and 15 cm on a side.
-The cube colors are red, yellow, blue, and green.
+Each cube is 5 cm, 7.5 cm, 10 cm, and 15 cm, 30 cm on a side.
+The cube colors are red, yellow, blue, green and black.
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png)
 

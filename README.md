@@ -118,6 +118,8 @@ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, sw
 
 カメラライントレースにおけるパラメータは[こちら](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters)を参照してください。
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
+
 ### LiDARを用いたSLAMとNavigationのサンプル
 
 #### SLAM
@@ -138,11 +140,15 @@ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js
 ros2 launch raspimouse_slam pc_slam.launch.py
 ```
 
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam.png)
+
 端末4で次のコマンドを実行すると、作成した地図を保存できます。
 ```sh
 ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ```
 `MAP_NAME`は任意の名前を指定できます。
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif)
 
 #### Navigation
 
@@ -157,6 +163,8 @@ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ros2 launch raspimouse_navigation pc_navigation.launch.py map:=/path/to/MAP_NAME.yaml
 ```
 `map:=/path/to/MAP_NAME.yaml`はSLAMで作成した地図ファイルのパスを指定してください。
+
+![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif)
 
 ## モデルデータ一覧
 
@@ -175,8 +183,8 @@ ros2 launch raspimouse_navigation pc_navigation.launch.py map:=/path/to/MAP_NAME
 ![](./raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg)
 
 ### cube_*cm_color-name
-それぞれ一辺5cm、7.5cm、10cm、15cmの立方体です。
-色は赤、黄、青、緑です。
+それぞれ一辺5cm、7.5cm、10cm、15cm、30cmの立方体です。
+色は赤、黄、青、緑、黒です。
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png)
 
