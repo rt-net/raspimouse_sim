@@ -20,6 +20,8 @@
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
   <depend>robot_state_publisher</depend>
+  <depend>diff_drive_controller</depend>
+  <depend>joint_state_broadcaster</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
