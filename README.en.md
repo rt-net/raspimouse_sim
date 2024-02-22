@@ -161,7 +161,7 @@ The lidar option supports `urg`, `lds`, and `rplidar`.
 
 Terminal 2:
 ```sh
-ros2 launch raspimouse_navigation pc_navigation.launch.py map:=/path/to/MAP_NAME.yaml
+ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif)
