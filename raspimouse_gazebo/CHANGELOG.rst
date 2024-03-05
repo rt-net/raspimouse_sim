@@ -2,6 +2,17 @@
 Changelog for package raspimouse_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* シミュレータ環境でSLAMとNavigationを実行 (`#77 <https://github.com/rt-net/raspimouse_sim/issues/77>`_)
+  Co-authored-by: Shota Aoki <s.aoki@rt-net.jp>
+* コントローラのパラメータを調整してオドメトリのズレを修正 (`#76 <https://github.com/rt-net/raspimouse_sim/issues/76>`_)
+* camera_downwardがtrueのときRGBカメラが斜め下を向くように変更 (`#75 <https://github.com/rt-net/raspimouse_sim/issues/75>`_)
+  Co-authored-by: Shota Aoki <s.aoki@rt-net.jp>
+* ライントレース用のコースを作成 (`#74 <https://github.com/rt-net/raspimouse_sim/issues/74>`_)
+  Co-authored-by: Shota Aoki <s.aoki@rt-net.jp>
+* Contributors: YusukeKato
+
 2.0.0 (2023-11-07)
 ------------------
 * Gazebo上で画像トピックを配信できるようにbridgeを設定 (`#71 <https://github.com/rt-net/raspimouse_sim/issues/71>`_)
