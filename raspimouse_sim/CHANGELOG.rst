@@ -2,6 +2,9 @@
 Changelog for package raspimouse_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.0 (2024-03-05)
+------------------
+
 2.0.0 (2023-11-07)
 ------------------
 * ROS 2 Humble環境のraspimouse_with_emptyworld.launch.pyを実装 (`#66 <https://github.com/rt-net/raspimouse_sim/issues/66>`_)
