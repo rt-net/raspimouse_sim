@@ -2,8 +2,8 @@
 Changelog for package raspimouse_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.0 (2024-03-05)
+------------------
 * シミュレータ環境でSLAMとNavigationを実行 (`#77 <https://github.com/rt-net/raspimouse_sim/issues/77>`_)
   Co-authored-by: Shota Aoki <s.aoki@rt-net.jp>
 * コントローラのパラメータを調整してオドメトリのズレを修正 (`#76 <https://github.com/rt-net/raspimouse_sim/issues/76>`_)
