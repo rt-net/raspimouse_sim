@@ -46,10 +46,26 @@ def generate_launch_description():
         'use_rgb_camera',
         default_value='false',
         description='Set "true" to mount rgb camera.')
+    declare_arg_camera_downward = DeclareLaunchArgument(
+        'camera_downward',
+        default_value='false',
+        description='Set "true" to point the camera downwards.')
     declare_arg_world_name = DeclareLaunchArgument(
         'world_name',
         default_value=get_package_share_directory('raspimouse_gazebo')+'/worlds/empty_world.sdf',
         description='Set world name.')
+    declare_arg_spawn_x = DeclareLaunchArgument(
+        'spawn_x',
+        default_value='0.0',
+        description='Set initial position x.')
+    declare_arg_spawn_y = DeclareLaunchArgument(
+        'spawn_y',
+        default_value='0.0',
+        description='Set initial position y.')
+    declare_arg_spawn_z = DeclareLaunchArgument(
+        'spawn_z',
+        default_value='0.02',
+        description='Set initial position z.')
 
     env = {'IGN_GAZEBO_SYSTEM_PLUGIN_PATH': os.environ['LD_LIBRARY_PATH'],
            'IGN_GAZEBO_RESOURCE_PATH': os.path.dirname(
@@ -71,6 +87,9 @@ def generate_launch_description():
         output='screen',
         arguments=['-topic', '/robot_description',
                    '-name', 'raspimouse',
+                   '-x', LaunchConfiguration('spawn_x'),
+                   '-y', LaunchConfiguration('spawn_y'),
+                   '-z', LaunchConfiguration('spawn_z'),
                    '-allow_renaming', 'true'],
     )
 
@@ -79,6 +98,7 @@ def generate_launch_description():
     description_loader.lidar_frame = LaunchConfiguration('lidar_frame')
     description_loader.use_gazebo = 'true'
     description_loader.use_rgb_camera = LaunchConfiguration('use_rgb_camera')
+    description_loader.camera_downward = LaunchConfiguration('camera_downward')
     description_loader.gz_control_config_package = 'raspimouse_gazebo'
     description_loader.gz_control_config_file_path = 'config/raspimouse_controllers.yaml'
 
@@ -115,6 +135,7 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
+                   '/scan@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan',
                    '/camera/color/image_raw@sensor_msgs/msg/Image@gz.msgs.Image',
                    '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'],
         output='screen'
@@ -139,7 +160,11 @@ def generate_launch_description():
         declare_arg_lidar,
         declare_arg_lidar_frame,
         declare_arg_use_rgb_camera,
+        declare_arg_camera_downward,
         declare_arg_world_name,
+        declare_arg_spawn_x,
+        declare_arg_spawn_y,
+        declare_arg_spawn_z,
         ign_gazebo,
         ignition_spawn_entity,
         robot_state_publisher,

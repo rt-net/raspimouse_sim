@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-sensors-system"
+      name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun
+      </uri>
+    </include>
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground%20Plane
+      </uri>
+    </include>
+
+    <include>
+      <pose>0 0 -7.0 0 0 0</pose>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Lake%20House
+      </uri>
+    </include>
+
+    <model name="black_cube11">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>-0.5 0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube12">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>-0.5 1.0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube13">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>-0.5 -1.0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube21">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>2.0 0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube22">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>2.0 1.0 0.075 0 0 0</pose>
+    </model>
+
+    <model name="black_cube23">
+      <include>
+        <uri>model://cube_30cm_black</uri>
+      </include>
+      <pose>2.0 -1.0 0.075 0 0 0</pose>
+    </model>
+
+  </world>
+</sdf>

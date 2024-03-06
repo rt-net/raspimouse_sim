@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>raspimouse_gazebo</name>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
   <description>The raspimouse_gazebo package</description>
   <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
   <license>MIT</license>
@@ -20,6 +20,8 @@
   <depend>raspimouse_fake</depend>
   <depend>raspimouse_description</depend>
   <depend>robot_state_publisher</depend>
+  <depend>diff_drive_controller</depend>
+  <depend>joint_state_broadcaster</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
