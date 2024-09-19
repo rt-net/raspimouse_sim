@@ -11,11 +11,11 @@
     </plugin>
     <plugin
       filename="gz-sim-user-commands-system"
-      name="ignition::gazebo::systems::UserCommands">
+      name="gz::sim::systems::UserCommands">
     </plugin>
     <plugin
-      filename="ignition-gazebo-scene-broadcaster-system"
-      name="ignition::gazebo::systems::SceneBroadcaster">
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
     </plugin>
 
     <include>
