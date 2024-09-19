@@ -67,21 +67,21 @@ def generate_launch_description():
         default_value='0.02',
         description='Set initial position z.')
 
-    env = {'IGN_GAZEBO_SYSTEM_PLUGIN_PATH': os.environ['LD_LIBRARY_PATH'],
-           'IGN_GAZEBO_RESOURCE_PATH': os.path.dirname(
+    env = {'GZ_SIM_SYSTEM_PLUGIN_PATH': os.environ['LD_LIBRARY_PATH'],
+           'GZ_SIM_RESOURCE_PATH': os.path.dirname(
                get_package_share_directory('raspimouse_description')) + ':' +
            os.path.join(get_package_share_directory('raspimouse_gazebo'), 'models'),
            }
     gui_config = os.path.join(
         get_package_share_directory('raspimouse_gazebo'), 'gui', 'gui.config')
-    ign_gazebo = ExecuteProcess(
-            cmd=['ign gazebo -r', LaunchConfiguration('world_name'), '--gui-config', gui_config],
+    gz_sim = ExecuteProcess(
+            cmd=['gz sim -r', LaunchConfiguration('world_name'), '--gui-config', gui_config],
             output='screen',
             additional_env=env,
             shell=True
         )
 
-    ignition_spawn_entity = Node(
+    gz_spawn_entity = Node(
         package='ros_gz_sim',
         executable='create',
         output='screen',
@@ -134,8 +134,8 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
-                   '/scan@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+                   '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
                    '/camera/color/image_raw@sensor_msgs/msg/Image@gz.msgs.Image',
                    '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'],
         output='screen'
@@ -165,8 +165,8 @@ def generate_launch_description():
         declare_arg_spawn_x,
         declare_arg_spawn_y,
         declare_arg_spawn_z,
-        ign_gazebo,
-        ignition_spawn_entity,
+        gz_sim,
+        gz_spawn_entity,
         robot_state_publisher,
         spawn_joint_state_broadcaster,
         spawn_diff_drive_controller,
