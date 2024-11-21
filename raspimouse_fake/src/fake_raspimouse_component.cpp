@@ -19,11 +19,10 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 #include "raspimouse_fake/fake_raspimouse_component.hpp"
 
-#include "rclcpp/rclcpp.hpp"
 #include "lifecycle_msgs/srv/change_state.hpp"
+#include "rclcpp/rclcpp.hpp"
 #include "std_srvs/srv/set_bool.hpp"
 
 using namespace std::chrono_literals;

@@ -24,28 +24,31 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
-from launch_ros.actions import SetParameter
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import SetParameter
 
 
 def generate_launch_description():
     world_file = os.path.join(
         get_package_share_directory('raspimouse_gazebo'),
         'worlds',
-        'line_follower_field1.sdf')
+        'line_follower_field1.sdf',
+    )
     world_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            get_package_share_directory('raspimouse_gazebo'),
-            '/launch/raspimouse_with_emptyworld.launch.py']),
+        PythonLaunchDescriptionSource(
+            [
+                get_package_share_directory('raspimouse_gazebo'),
+                '/launch/raspimouse_with_emptyworld.launch.py',
+            ]
+        ),
         launch_arguments={
             'world_name': world_file,
             'spawn_x': '0.0',
             'spawn_y': '0.0',
-            'spawn_z': '0.02'
-            }.items()
+            'spawn_z': '0.02',
+        }.items(),
     )
 
-    return LaunchDescription([
-        SetParameter(name='use_sim_time', value=True),
-        world_launch
-    ])
+    return LaunchDescription(
+        [SetParameter(name='use_sim_time', value=True), world_launch]
+    )
