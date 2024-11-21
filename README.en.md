@@ -118,7 +118,7 @@ For information on parameters in camera line follower, click [here](https://gith
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
 
-### SLAM & Navigation
+### SLAM & Navigation (Packag [raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) is required)
 
 #### SLAM
 

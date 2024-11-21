@@ -146,7 +146,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif)
 
-#### Navigation
+#### Navigation (パッケージ[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です)
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
 ```sh
