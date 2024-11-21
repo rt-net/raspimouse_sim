@@ -8,6 +8,11 @@ ROS 2 package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
+**This branch is intended for ROS 2 Jazzy. For other distributions, please refer to the corresponding branches listed below.**
+
+- ROS 2 Humble ([humble](https://github.com/rt-net/raspimouse_sim/tree/humble))
+
+
 ## Requirements
 
 requires the following to run:

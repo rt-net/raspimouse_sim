@@ -8,6 +8,10 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
+**本ブランチはROS 2 Jazzy向けです。他のディストリビューションについては、以下にリストされた対応するブランチを参照してください。**
+
+- ROS 2 Humble ([humble](https://github.com/rt-net/raspimouse_sim/tree/humble))
+
 ## 動作環境
 
 以下の環境を前提として動作確認しています。
