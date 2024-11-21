@@ -62,6 +62,8 @@ $ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 ## サンプル動作例
 
+各サンプルの動作には、[raspimouse_ros2_examples](https://github.com/rt-net/raspimouse_ros2_examples)が必要です。
+
 ### ジョイスティックコントローラによる操縦サンプル
 
 端末1で次のコマンドを実行すると、Gazeboシミュレータが起動します。
@@ -122,6 +124,8 @@ $ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, 
 
 ### LiDARを用いたSLAMとNavigationのサンプル
 
+本サンプルの動作には、raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
+
 #### SLAM
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
@@ -150,7 +154,7 @@ $ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif)
 
-#### Navigation (パッケージ[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です)
+#### Navigation
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
 ```sh

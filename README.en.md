@@ -62,6 +62,8 @@ $ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 ## Examples
 
+These exsamples require [raspimouse_ros2_examples](https://github.com/rt-net/raspimouse_ros2_examples) to operate.
+
 ### Joystick Controll
 
 Terminal 1:
@@ -123,7 +125,9 @@ For information on parameters in camera line follower, click [here](https://gith
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
 
-### SLAM & Navigation (Packag [raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) is required)
+### SLAM & Navigation
+
+This exsample requires [raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) to operate.
 
 #### SLAM
 
