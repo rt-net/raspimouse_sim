@@ -124,7 +124,7 @@ $ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, 
 
 ### LiDARを用いたSLAMとNavigationのサンプル
 
-本サンプルの動作には、raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
+本サンプルの動作には、[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
 
 #### SLAM
 
