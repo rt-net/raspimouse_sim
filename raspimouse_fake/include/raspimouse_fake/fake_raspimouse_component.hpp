@@ -24,7 +24,7 @@
 
 #include <memory>
 
-#include "raspimouse_fake/visibility_control.h"
+#include "raspimouse_fake/visibility_control.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 #include "rclcpp_lifecycle/lifecycle_publisher.hpp"

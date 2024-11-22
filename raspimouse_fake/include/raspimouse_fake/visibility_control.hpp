@@ -19,46 +19,47 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#ifndef RASPIMOUSE_FAKE__VISIBILITY_CONTROL_H_
-#define RASPIMOUSE_FAKE__VISIBILITY_CONTROL_H_
+#ifndef RASPIMOUSE_FAKE__VISIBILITY_CONTROL_HPP_
+#define RASPIMOUSE_FAKE__VISIBILITY_CONTROL_HPP_
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 // This logic was borrowed (then namespaced) from the examples on the gcc wiki:
 //     https://gcc.gnu.org/wiki/Visibility
 
 #if defined _WIN32 || defined __CYGWIN__
-#ifdef __GNUC__
-#define RASPIMOUSE_FAKE_EXPORT __attribute__((dllexport))
-#define RASPIMOUSE_FAKE_IMPORT __attribute__((dllimport))
+  #ifdef __GNUC__
+    #define RASPIMOUSE_FAKE_EXPORT __attribute__ ((dllexport))
+    #define RASPIMOUSE_FAKE_IMPORT __attribute__ ((dllimport))
+  #else
+    #define RASPIMOUSE_FAKE_EXPORT __declspec(dllexport)
+    #define RASPIMOUSE_FAKE_IMPORT __declspec(dllimport)
+  #endif
+  #ifdef RASPIMOUSE_FAKE_BUILDING_DLL
+    #define RASPIMOUSE_FAKE_PUBLIC RASPIMOUSE_FAKE_EXPORT
+  #else
+    #define RASPIMOUSE_FAKE_PUBLIC RASPIMOUSE_FAKE_IMPORT
+  #endif
+  #define RASPIMOUSE_FAKE_PUBLIC_TYPE RASPIMOUSE_FAKE_PUBLIC
+  #define RASPIMOUSE_FAKE_LOCAL
 #else
-#define RASPIMOUSE_FAKE_EXPORT __declspec(dllexport)
-#define RASPIMOUSE_FAKE_IMPORT __declspec(dllimport)
-#endif
-#ifdef RASPIMOUSE_FAKE_BUILDING_DLL
-#define RASPIMOUSE_FAKE_PUBLIC RASPIMOUSE_FAKE_EXPORT
-#else
-#define RASPIMOUSE_FAKE_PUBLIC RASPIMOUSE_FAKE_IMPORT
-#endif
-#define RASPIMOUSE_FAKE_PUBLIC_TYPE RASPIMOUSE_FAKE_PUBLIC
-#define RASPIMOUSE_FAKE_LOCAL
-#else
-#define RASPIMOUSE_FAKE_EXPORT __attribute__((visibility("default")))
-#define RASPIMOUSE_FAKE_IMPORT
-#if __GNUC__ >= 4
-#define RASPIMOUSE_FAKE_PUBLIC __attribute__((visibility("default")))
-#define RASPIMOUSE_FAKE_LOCAL __attribute__((visibility("hidden")))
-#else
-#define RASPIMOUSE_FAKE_PUBLIC
-#define RASPIMOUSE_FAKE_LOCAL
-#endif
-#define RASPIMOUSE_FAKE_PUBLIC_TYPE
+  #define RASPIMOUSE_FAKE_EXPORT __attribute__ ((visibility("default")))
+  #define RASPIMOUSE_FAKE_IMPORT
+  #if __GNUC__ >= 4
+    #define RASPIMOUSE_FAKE_PUBLIC __attribute__ ((visibility("default")))
+    #define RASPIMOUSE_FAKE_LOCAL  __attribute__ ((visibility("hidden")))
+  #else
+    #define RASPIMOUSE_FAKE_PUBLIC
+    #define RASPIMOUSE_FAKE_LOCAL
+  #endif
+  #define RASPIMOUSE_FAKE_PUBLIC_TYPE
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif  // RASPIMOUSE_FAKE__VISIBILITY_CONTROL_H_
+#endif  // RASPIMOUSE_FAKE__VISIBILITY_CONTROL_HPP_
