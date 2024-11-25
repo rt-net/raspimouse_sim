@@ -37,19 +37,19 @@ git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
 依存しているROS 2パッケージをインストールします。
 
 ```sh
-$ cd ~/ros2_ws/src
-$ git clone https://github.com/rt-net/raspimouse_ros2_examples.git
-$ git clone https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
-$ git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
-$ rosdep install -r -y -i --from-paths raspimouse*
+cd ~/ros2_ws/src
+git clone https://github.com/rt-net/raspimouse_ros2_examples.git
+git clone https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
+git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
+rosdep install -r -y -i --from-paths raspimouse*
 ```
 
 `colcon`を使用してパッケージをビルドします。
 
 ```sh
-$ cd ~/ros2_ws
-$ colcon build --symlink-install
-$ source ~/ros2_ws/install/setup.bash
+cd ~/ros2_ws
+colcon build --symlink-install
+source ~/ros2_ws/install/setup.bash
 ```
 
 ## QuickStart
@@ -57,7 +57,7 @@ $ source ~/ros2_ws/install/setup.bash
 パッケージビルド後、次のコマンドを実行するとGazeboシミュレータが起動します。
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
 ## サンプル動作例
@@ -69,13 +69,13 @@ $ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 端末1で次のコマンドを実行すると、Gazeboシミュレータが起動します。
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
 端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
 
 ```sh
-$ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif)
@@ -85,13 +85,13 @@ $ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/
 端末1で次のコマンドを実行すると、色付きの立方体が配置されたワールドが表示されます。
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
+ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
 ```
 
 端末2で次のコマンドを実行すると、Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
 
 ```sh
-$ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
+ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
@@ -100,22 +100,22 @@ $ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false us
 
 端末1で次のコマンドを実行すると、ライントレースのサンプルコースが配置されたワールドが表示されます。
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
+ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
 ```
 
 端末2で次のコマンドを実行すると、カメラライントレースのノードが起動します。
 ```sh
-$ ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
+ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
 ```
 
 端末3で次のコマンドを実行すると、Raspberry Pi Mouseが走行を開始します。
 ```sh
-$ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
+ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
 ```
 
 次のコマンドを実行すると、Raspberry Pi Mouseが停止します。
 ```sh
-$ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
+ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
 ```
 
 カメラライントレースにおけるパラメータは[こちら](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters)を参照してください。
@@ -130,25 +130,25 @@ $ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, 
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
+ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
 
 端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
 ```sh
-$ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
 端末3で次のコマンドを実行すると、SLAMが実行されます。
 ```sh
-$ ros2 launch raspimouse_slam pc_slam.launch.py
+ros2 launch raspimouse_slam pc_slam.launch.py
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam.png)
 
 端末4で次のコマンドを実行すると、作成した地図を保存できます。
 ```sh
-$ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
+ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ```
 `MAP_NAME`は任意の名前を指定できます。
 
@@ -158,13 +158,13 @@ $ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
+ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
 
 端末2で次のコマンドを実行すると、Navigationが実行されます。
 ```sh
-$ ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
+ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
 ```
 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
 

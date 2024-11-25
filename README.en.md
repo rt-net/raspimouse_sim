@@ -31,25 +31,25 @@ requires the following to run:
 Download this ROS 2 package.
 
 ```sh
-$ cd ~/ros2_ws/src
-$ git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
+cd ~/ros2_ws/src
+git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
 ```
 
 Download the dependent ROS 2 packages.
 
 ```sh
-$ cd ~/ros2_ws/src
-$ git clone https://github.com/rt-net/raspimouse_ros2_examples.git
-$ git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
-$ rosdep install -r -y -i --from-paths raspimouse*
+cd ~/ros2_ws/src
+git clone https://github.com/rt-net/raspimouse_ros2_examples.git
+git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
+rosdep install -r -y -i --from-paths raspimouse*
 ```
 
 Build this package using `colcon`.
 
 ```sh
-$ cd ~/ros2_ws
-$ colcon build --symlink-install
-$ source ~/ros2_ws/install/setup.bash
+cd ~/ros2_ws
+colcon build --symlink-install
+source ~/ros2_ws/install/setup.bash
 ```
 
 ## QuickStart
@@ -57,7 +57,7 @@ $ source ~/ros2_ws/install/setup.bash
 After building this package, run the following commands.
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
 ## Examples
@@ -69,13 +69,13 @@ These exsamples require [raspimouse_ros2_examples](https://github.com/rt-net/ras
 Terminal 1:
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
+ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
 Terminal 2:
 
 ```sh
-$ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif)
@@ -85,13 +85,13 @@ $ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/
 Terminal 1:
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
+ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
 ```
 
 Terminal 2:
 
 ```sh
-$ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
+ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
@@ -101,24 +101,24 @@ $ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false us
 Terminal 1:
 
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
+ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
 ```
 
 Terminal 2:
 
 ```sh
-$ ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
+ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
 ```
 
 Terminal 3: Start
 
 ```sh
-$ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
+ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
 ```
 
 Terminal 3: Stop
 ```sh
-$ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
+ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
 ```
 
 For information on parameters in camera line follower, click [here](https://github.com/rt-net/raspimouse_ros2_examples/blob/master/README.en.md#parameters).
@@ -133,25 +133,25 @@ This exsample requires [raspimouse_slam_navigation_ros2](https://github.com/rt-n
 
 Terminal 1:
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
+ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 The lidar option supports `urg`, `lds`, and `rplidar`.
 
 Terminal 2:
 ```sh
-$ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
+ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
 Terminal 3:
 ```sh
-$ ros2 launch raspimouse_slam pc_slam.launch.py
+ros2 launch raspimouse_slam pc_slam.launch.py
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam.png)
 
 Terminal 4:
 ```sh
-$ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
+ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif)
@@ -160,13 +160,13 @@ $ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 Terminal 1:
 ```sh
-$ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
+ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 The lidar option supports `urg`, `lds`, and `rplidar`.
 
 Terminal 2:
 ```sh
-$ ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
+ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif)
