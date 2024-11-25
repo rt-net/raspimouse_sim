@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright 2023 RT Corporation <support@rt-net.jp>
+// Copyright 2023-2024 RT Corporation <support@rt-net.jp>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of
 // this software and associated documentation files (the "Software"), to deal in
@@ -19,9 +19,8 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
-#ifndef RASPIMOUSE_FAKE__VISIBILITY_CONTROL_H_
-#define RASPIMOUSE_FAKE__VISIBILITY_CONTROL_H_
+#ifndef RASPIMOUSE_FAKE__VISIBILITY_CONTROL_HPP_
+#define RASPIMOUSE_FAKE__VISIBILITY_CONTROL_HPP_
 
 #ifdef __cplusplus
 extern "C"
@@ -63,4 +62,4 @@ extern "C"
 }
 #endif
 
-#endif  // RASPIMOUSE_FAKE__VISIBILITY_CONTROL_H_
+#endif  // RASPIMOUSE_FAKE__VISIBILITY_CONTROL_HPP_

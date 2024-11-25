@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright 2023 RT Corporation <support@rt-net.jp>
+// Copyright 2023-2024 RT Corporation <support@rt-net.jp>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of
 // this software and associated documentation files (the "Software"), to deal in
@@ -19,11 +19,10 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 #include "raspimouse_fake/fake_raspimouse_component.hpp"
 
-#include "rclcpp/rclcpp.hpp"
 #include "lifecycle_msgs/srv/change_state.hpp"
+#include "rclcpp/rclcpp.hpp"
 #include "std_srvs/srv/set_bool.hpp"
 
 using namespace std::chrono_literals;

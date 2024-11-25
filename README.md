@@ -1,29 +1,29 @@
 [English](README.en.md) | [日本語](README.md)
 
-# raspimouse_sim 
+# raspimouse_sim
+
+[![industrial_ci](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml)
 
 Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージです。
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
-## ROS 2 Package Status
+**本ブランチはROS 2 Jazzy向けです。他のディストリビューションについては、以下にリストされた対応するブランチを参照してください。**
 
-| main develop<br>(ros2)|Humble + Ubuntu Jammy<br>(humble-devel)|
-|:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Aros2+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=humble-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Ahumble-devel+workflow%3Aindustrial_ci)|
+- ROS 2 Humble ([humble](https://github.com/rt-net/raspimouse_sim/tree/humble))
 
 ## 動作環境
 
 以下の環境を前提として動作確認しています。
 
 * Ubuntu
-  * Ubuntu Jammy Jellyfish 22.04.*
+  * Ubuntu 24.04 Noble Numbat
 * ROS 2
-  * ROS Humble Hawksbill
+  * ROS 2 Jazzy Jalisco
 * Gazebo
-  * Ignition Gazebo 6.x
+  * Gazebo Sim 8.x
 * ROS 2 Package
-  * ros-humble-desktop-full
+  * ros-jazzy-desktop-full
 
 ## インストール方法
 
@@ -31,7 +31,7 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
 
 ```sh
 cd ~/ros2_ws/src
-git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_sim.git
 ```
 
 依存しているROS 2パッケージをインストールします。
@@ -40,7 +40,7 @@ git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
 cd ~/ros2_ws/src
 git clone https://github.com/rt-net/raspimouse_ros2_examples.git
 git clone https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
-git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
@@ -61,6 +61,8 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
 ## サンプル動作例
+
+各サンプルの動作には、[raspimouse_ros2_examples](https://github.com/rt-net/raspimouse_ros2_examples)が必要です。
 
 ### ジョイスティックコントローラによる操縦サンプル
 
@@ -121,6 +123,8 @@ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, sw
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
 
 ### LiDARを用いたSLAMとNavigationのサンプル
+
+本サンプルの動作には、[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
 
 #### SLAM
 
@@ -193,10 +197,10 @@ daeファイルはBlender 4.0で編集しています。
 
 ## ライセンス
 
-このリポジトリはMITライセンスに基づいて公開されています。  
+このリポジトリはMITライセンスに基づいて公開されています。
 MITライセンスについては[LICENSE]( ./LICENSE )を確認してください。
 
-※このソフトウェアは基本的にオープンソースソフトウェアとして「AS IS」（現状有姿のまま）で提供しています。本ソフトウェアに関する無償サポートはありません。  
+※このソフトウェアは基本的にオープンソースソフトウェアとして「AS IS」（現状有姿のまま）で提供しています。本ソフトウェアに関する無償サポートはありません。
 バグの修正や誤字脱字の修正に関するリクエストは常に受け付けていますが、それ以外の機能追加等のリクエストについては社内のガイドラインを優先します。
 
 ### 謝辞

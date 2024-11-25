@@ -2,28 +2,29 @@
 
 # raspimouse_sim
 
+[![industrial_ci](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml)
+
 ROS 2 package suite for Raspberry Pi Mouse Simulator runs on Gazebo
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
-## ROS 2 Package Status
+**This branch is intended for ROS 2 Jazzy. For other distributions, please refer to the corresponding branches listed below.**
 
-| main develop<br>(ros2)|Humble + Ubuntu Jammy<br>(humble-devel)|
-|:---:|:---:|
-|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Aros2+workflow%3Aindustrial_ci)|[![industrial_ci](https://github.com/rt-net/raspimouse_sim/workflows/industrial_ci/badge.svg?branch=humble-devel)](https://github.com/rt-net/raspimouse_sim/actions?query=branch%3Ahumble-devel+workflow%3Aindustrial_ci)|
+- ROS 2 Humble ([humble](https://github.com/rt-net/raspimouse_sim/tree/humble))
+
 
 ## Requirements
 
 requires the following to run:
 
 * Ubuntu
-  * Ubuntu Jammy Jellyfish 22.04.*
+  * Ubuntu 24.04 Noble Numbat
 * ROS 2
-  * ROS Humble Hawksbill
+  * ROS 2 Jazzy Jalisco
 * Gazebo
-  * Ignition Gazebo 6.x
+  * Gazebo Sim 8.x
 * ROS 2 Package
-  * ros-humble-desktop-full
+  * ros-jazzy-desktop-full
 
 ## Installation
 
@@ -31,7 +32,7 @@ Download this ROS 2 package.
 
 ```sh
 cd ~/ros2_ws/src
-git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_sim.git
 ```
 
 Download the dependent ROS 2 packages.
@@ -39,7 +40,7 @@ Download the dependent ROS 2 packages.
 ```sh
 cd ~/ros2_ws/src
 git clone https://github.com/rt-net/raspimouse_ros2_examples.git
-git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
@@ -60,6 +61,8 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
 ## Examples
+
+These exsamples require [raspimouse_ros2_examples](https://github.com/rt-net/raspimouse_ros2_examples) to operate.
 
 ### Joystick Controll
 
@@ -93,7 +96,7 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
 
-### camera_line_follower 
+### camera_line_follower
 
 Terminal 1:
 
@@ -123,6 +126,8 @@ For information on parameters in camera line follower, click [here](https://gith
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
 
 ### SLAM & Navigation
+
+This exsample requires [raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) to operate.
 
 #### SLAM
 
@@ -191,7 +196,7 @@ The dae file is edited in Blender 4.0.
 
 ## License
 
-This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).  
+This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE ).
 Unless attributed otherwise, everything in this repository is under the MIT license.
 
 ### Acknowledgements
