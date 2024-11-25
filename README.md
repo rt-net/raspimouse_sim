@@ -31,7 +31,7 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
 
 ```sh
 cd ~/ros2_ws/src
-git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_sim.git
 ```
 
 依存しているROS 2パッケージをインストールします。
@@ -40,7 +40,7 @@ git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
 cd ~/ros2_ws/src
 git clone https://github.com/rt-net/raspimouse_ros2_examples.git
 git clone https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
-git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 

@@ -32,7 +32,7 @@ Download this ROS 2 package.
 
 ```sh
 cd ~/ros2_ws/src
-git clone -b ros2 https://github.com/rt-net/raspimouse_sim.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_sim.git
 ```
 
 Download the dependent ROS 2 packages.
@@ -40,7 +40,7 @@ Download the dependent ROS 2 packages.
 ```sh
 cd ~/ros2_ws/src
 git clone https://github.com/rt-net/raspimouse_ros2_examples.git
-git clone -b ros2 https://github.com/rt-net/raspimouse_description.git
+git clone -b jazzy https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
