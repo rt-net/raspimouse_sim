@@ -2,6 +2,10 @@
 Changelog for package raspimouse_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.0 (2024-11-25)
+------------------
+* Support ROS 2 Jazzy (`#80 <https://github.com/rt-net/raspimouse_sim/issues/80>`_)
+
 2.1.0 (2024-03-05)
 ------------------
 

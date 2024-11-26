@@ -2,6 +2,12 @@
 Changelog for package raspimouse_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.0 (2024-11-25)
+------------------
+* Support ROS 2 Jazzy (`#80 <https://github.com/rt-net/raspimouse_sim/issues/80>`_)
+* Changed the header file extension from ".h" to ".hpp"
+* Contributors: Kazushi Kurasawa, YusukeKato
+
 2.1.0 (2024-03-05)
 ------------------
 
