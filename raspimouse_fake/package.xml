@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>raspimouse_fake</name>
-  <version>2.1.0</version>
+  <version>3.0.0</version>
   <description>The raspimouse_control package</description>
   <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
   <license>MIT</license>
@@ -10,6 +10,7 @@
   <author email="tiryoh@gmail.com">Daisuke Sato</author>
   <author email="yukipass19@gmail.com">Yuki Watanabe</author>
   <author email="yusuke.kato@rt-net.jp">Yusuke Kato</author>
+  <author email="kurasawa@rt-net.jp">Kazushi Kurasawa</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
