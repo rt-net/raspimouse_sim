@@ -2,6 +2,9 @@
 Changelog for package raspimouse_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.1 (2024-11-29)
+------------------
+
 3.0.0 (2024-11-25)
 ------------------
 * Support ROS 2 Jazzy (`#80 <https://github.com/rt-net/raspimouse_sim/issues/80>`_)
