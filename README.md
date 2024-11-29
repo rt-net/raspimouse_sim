@@ -164,7 +164,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 
 端末2で次のコマンドを実行すると、Navigationが実行されます。
 ```sh
-ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=True map:=$HOME/MAP_NAME.yaml
+ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
 ```
 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
 
