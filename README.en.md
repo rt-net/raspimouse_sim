@@ -32,15 +32,16 @@ Download this ROS 2 package.
 
 ```sh
 cd ~/ros2_ws/src
-git clone -b jazzy https://github.com/rt-net/raspimouse_sim.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_sim.git
 ```
 
 Download the dependent ROS 2 packages.
 
 ```sh
 cd ~/ros2_ws/src
-git clone https://github.com/rt-net/raspimouse_ros2_examples.git
-git clone -b jazzy https://github.com/rt-net/raspimouse_description.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_ros2_examples.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
@@ -166,7 +167,7 @@ The lidar option supports `urg`, `lds`, and `rplidar`.
 
 Terminal 2:
 ```sh
-ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
+ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
 ```
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif)

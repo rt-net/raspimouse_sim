@@ -31,16 +31,16 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
 
 ```sh
 cd ~/ros2_ws/src
-git clone -b jazzy https://github.com/rt-net/raspimouse_sim.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_sim.git
 ```
 
 依存しているROS 2パッケージをインストールします。
 
 ```sh
 cd ~/ros2_ws/src
-git clone https://github.com/rt-net/raspimouse_ros2_examples.git
-git clone https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
-git clone -b jazzy https://github.com/rt-net/raspimouse_description.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_ros2_examples.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
+git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_description.git
 rosdep install -r -y -i --from-paths raspimouse*
 ```
 
@@ -164,7 +164,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 
 端末2で次のコマンドを実行すると、Navigationが実行されます。
 ```sh
-ros2 launch raspimouse_navigation pc_navigation.launch.py map:=$HOME/MAP_NAME.yaml
+ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
 ```
 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
 
