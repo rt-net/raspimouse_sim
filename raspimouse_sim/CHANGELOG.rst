@@ -2,9 +2,15 @@
 Changelog for package raspimouse_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.1 (2024-11-29)
+------------------
+* Changed launch command options (`#83 <https://github.com/rt-net/raspimouse_sim/issues/83>`_)
+* Contributors: Kazushi Kurasawa, YusukeKato
+
 3.0.0 (2024-11-25)
 ------------------
 * Support ROS 2 Jazzy (`#80 <https://github.com/rt-net/raspimouse_sim/issues/80>`_)
+* Contributors: Kazushi Kurasawa, YusukeKato
 
 2.1.0 (2024-03-05)
 ------------------
