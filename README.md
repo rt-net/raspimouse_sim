@@ -27,7 +27,6 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
     - [Object Tracking](#object-tracking)
     - [Camera Line Follower](#camera_line_follower)
     - [SLAM & Navigation](#slam--navigation)
-  - [Mode data list](#etc-lifecycle-description等)
   - [License](#license)
   - [Contributing](#contributing)
   - [Acknowledgements](#acknowledgements)
@@ -82,177 +81,24 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-## How to Use Examples
-
-### Joystick Controll
-
-Raspberry Pi Mouseをジョイスティックコントローラで操作します。
-
-
-<img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif width=500 />
-
-
-端末1で次のコマンドを実行すると、Gazeboシミュレータが起動します。
-
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
-```
-
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
-v
-```sh
-ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
-```
-
-### Object Tracking
-
-Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
-
-<img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif width=500 />
-
-
-端末1で次のコマンドを実行すると、色付きの立方体が配置されたワールドが表示されます。
-
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
-```
-
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
-
-```sh
-ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
-```
-
-### camera_line_follower
-
-Raspberry Pi Mouseが、床に描かれた黒いラインを追従します。
-
-カメラライントレースにおけるパラメータは[こちら](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters)を参照してください。
-
-<img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif width=500 />
-
-
-端末1で次のコマンドを実行すると、ライントレースのサンプルコースが配置されたワールドが表示されます。
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
-```
-
-端末2で次のコマンドを実行すると、カメラライントレースのノードが起動します。
-```sh
-ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
-```
-
-端末3で次のコマンドを実行すると、Raspberry Pi Mouseが走行を開始します。
-```sh
-ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
-```
-
-次のコマンドを実行すると、Raspberry Pi Mouseが停止します。
-```sh
-ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
-```
-
-### SLAM & Navigation
-
-RapimouseがLiDARを使用したSLAMとNavigationを行います。
-
-> [!NOTE]
-> 本サンプルの動作には、[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
-
-#### SLAM
-
-SLAMによる自己位置推定と地図作成を行います。
-
-<img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam.png width=500 />
-<img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif width=500 />
-
-
-端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
-
-> [!NOTE]
-> `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
-
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
-```
-
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
-
-```sh
-ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
-```
-
-端末3で次のコマンドを実行すると、SLAMが実行されます。
-```sh
-ros2 launch raspimouse_slam pc_slam.launch.py
-```
-
-端末4で次のコマンドを実行すると、作成した地図を保存できます。
-
-> [!NOTE]
-> `MAP_NAME`は任意の名前を指定できます。
-
-```sh
-ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
-```
-
-#### Navigation
-
-作成した地図をもとにNavigationします。
-
-<img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif width=500 />
-
-端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
-
-> [!NOTE]
-> `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
-
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
-```
-
-端末2で次のコマンドを実行すると、Navigationが実行されます。
-
-> [!NOTE]
-> 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
-
-```sh
-ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
-```
-
 ## Packages
 
 - raspimouse_sim
-  - 本リポジトリ内の各種パッケージのメタ情報を管理します。
+  - 本リポジトリ内の各種パッケージのメタ情報を管理するパッケージです。
 - raspimouse_fake
-  - Raspberry Pi Mouseのモータ制御インターフェースを模擬するROS 2ライフサイクルコンポーネントノードを提供します。
+  - Raspberry Pi Mouseのモータ制御インターフェースを模擬するパッケージです。
 - raspimouse_gazebo
-  - Gazebo上でのシミュレーション環境を構築するためのモデルやスクリプトを提供します。
+  - [Gazebo](https://gazebosim.org/home)上でシミュレーション環境を構築するためのモデルやスクリプトを提供するパッケージです。
 
-## Model data list
+## How to Use Examples
 
-各種サンプルで使用しているモデルデータ一覧です。
+サンプルプログラムの詳細な動作方法は、`raspimouse_gazebo`パッケージののREADMEで説明しています。
 
-> [!NOTE]
-> daeファイルはBlender 4.0で編集されています。
-
-- `course_curve_50x50cm`
-  -   ライントレース用の曲線コースパネルです。
-  - パネルサイズは50cm x 50cm、線の幅は4cmです。
-
-    <img src=./raspimouse_gazebo/models/course_curve_50x50cm/meshes/course_curve.jpg width=300 />
-
-- `course_straight_50x50cm`
-  - ライントレース用の直線コースパネルです。
-  - パネルサイズは50cm x 50cm、線の幅は4cmです。
-  
-    <img src=./raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg width=300 />
-
-- `cube_*cm_color-name`
-  - それぞれ一辺5cm、7.5cm、10cm、15cm、30cmの立方体です。
-  - 色は赤、黄、青、緑、黒です。
-
-    <img src=https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png width=300 />
+- raspimouse_gazebo
+  - [Joystick Controll](./raspimouse_gazebo/README.md#joystick-controll)
+  - [Object Tracking](./raspimouse_gazebo/README.md#object-tracking)
+  - [Camera Line Follower](./raspimouse_gazebo/README.md#camera_line_follower)
+  - [SLAM & Navigation](./raspimouse_gazebo/README.md#slam--navigation)
 
 ## License
 
