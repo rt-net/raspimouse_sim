@@ -227,7 +227,7 @@ ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map
 - raspimouse_fake
   - Raspberry Pi Mouseのモータ制御インターフェースを模擬するROS 2ライフサイクルコンポーネントノードを提供します。
 - raspimouse_gazebo
-  - Gazebo上で動作するシミュレーション環境を構築するためのモデルや設定ファイルを提供します。
+  - Gazebo上でのシミュレーション環境を構築するためのモデルやスクリプトを提供します。
 
 ## Model data list
 
