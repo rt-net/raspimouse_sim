@@ -10,7 +10,7 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
 
 ## Table of Contents
 
-- [<リポジトリ名>](#リポジトリ名)
+- [raspimouse/_sim](#raspimouse_sim)
   - [Table of Contents](#table-of-contents)
   - [Supported ROS distributions](#supported-ros-distributions)
   - [Requirements](#requirements)
@@ -18,19 +18,19 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
     - [Binary Installation](#binary-installation)
     - [Source Build](#source-build)
   - [QuickStart](#quickstart)
-  - [How To Use Examples](#how-to-use-examples)
-    - [<Sample名>](#sample名)
   - [Packages](#packages)
-  - [Topics](#topics)
-    - [Subscribed](#subscribed)
-    - [Published](#published)
-  - [Services](#services)
-  - [Actions](#actions)
-  - [Parameters](#parameters)
-  - [<etc...Lifecycle,Description)>](#etc-lifecycle-description等)
+    - raspimouse_sim
+    - raspimouse_fake
+    - raspimouse_gazebo
+  - [How To Use Examples](#how-to-use-examples)
+    - [Joystick Controll](#joystick-controll)
+    - [Object Tracking](#object-tracking)
+    - [Camera Line Follower](#camera_line_follower)
+    - [SLAM & Navigation](#slam--navigation)
+  - [Mode data list](#etc-lifecycle-description等)
   - [License](#license)
   - [Contributing](#contributing)
-  - [Contributors](#contributors)
+  - [Acknowledgements](#acknowledgements)
 
 ## Supported ROS distributions
 
@@ -222,14 +222,12 @@ ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map
 
 ## Packages
 
-- [<raspimouse_sim](./Packegeファイルパス)
+- raspimouse_sim
   - 本リポジトリ内の各種パッケージのメタ情報を管理します。
-- [raspimouse_fake](./Packegeファイルパス)
-  - ([README](PackageのREADMEリンク))
-  - 説明の記述
-- [<raspimouse_gazebo](./Packegeファイルパス)
-  - ([README](PackageのREADMEリンク))
-  - 説明の記述
+- raspimouse_fake
+  - Raspberry Pi Mouseのモータ制御インターフェースを模擬するROS 2ライフサイクルコンポーネントノードを提供します。
+- raspimouse_gazebo
+  - Gazebo上で動作するシミュレーション環境を構築するためのモデルや設定ファイルを提供します。
 
 ## Model data list
 
