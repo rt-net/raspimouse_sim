@@ -10,7 +10,7 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
 
 ## Table of Contents
 
-- [raspimouse/_sim](#raspimouse_sim)
+- [raspimouse\_sim](#raspimouse_sim)
   - [Table of Contents](#table-of-contents)
   - [Supported ROS distributions](#supported-ros-distributions)
   - [Requirements](#requirements)
