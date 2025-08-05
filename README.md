@@ -23,10 +23,10 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
     - raspimouse_fake
     - raspimouse_gazebo
   - [How To Use Examples](#how-to-use-examples)
-    - [Joystick Controll](#joystick-controll)
-    - [Object Tracking](#object-tracking)
-    - [Camera Line Follower](#camera_line_follower)
-    - [SLAM & Navigation](#slam--navigation)
+    - Joystick Controll
+    - Object Tracking
+    - Camera Line Follower
+    - SLAM & Navigation
   - [License](#license)
   - [Contributing](#contributing)
   - [Acknowledgements](#acknowledgements)
