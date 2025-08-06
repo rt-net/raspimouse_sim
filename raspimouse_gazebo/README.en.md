@@ -105,12 +105,12 @@ Runs SLAM for localization and mapping.
 
 Run the following command in Terminal 1 to launch a world with the `Lake House` model placed in it.
 
-> [!NOTE]
-> The `lidar` option supports `urg`, `lds`, and `rplidar`.
-
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
+
+> [!NOTE]
+> The `lidar` option supports `urg`, `lds`, and `rplidar`.
 
 Run the following command in Terminal 2 to control the Raspberry Pi Mouse with a joystick controller.
 
@@ -126,12 +126,12 @@ ros2 launch raspimouse_slam pc_slam.launch.py
 
 Run the following command in Terminal 4 to save the created map.
 
-> [!NOTE]
-> You can specify any name for `MAP_NAME`.
-
 ```sh
 ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ```
+
+> [!NOTE]
+> You can specify any name for `MAP_NAME`.
 
 #### Navigation
 
@@ -141,21 +141,20 @@ Navigate using the created map.
  
 Run the following command in Terminal 1 to launch a world with the `Lake House` model placed in it.
 
-> [!NOTE]
-> The `lidar` option supports `urg`, `lds`, and `rplidar`.
-
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
+> [!NOTE]
+> The `lidar` option supports `urg`, `lds`, and `rplidar`.
 
 Run the following command in Terminal 2 to run Navigation.
-
-> [!NOTE]
-> Specify the path to the map file created by SLAM for the map argument.
 
 ```sh
 ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
 ```
+
+> [!NOTE]
+> Specify the path to the map file created by SLAM for the map argument.
 
 ## Model Data List
 
