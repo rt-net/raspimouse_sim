@@ -103,12 +103,12 @@ SLAMによる自己位置推定と地図作成を行います。
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
 
+> [!NOTE]
+> `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
+
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
-
-> [!NOTE]
-> `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
 
 端末2で次のコマンドを実行し、ジョイスティックコントローラでRaspberry Pi Mouseを手動操作します。
 
@@ -124,12 +124,12 @@ ros2 launch raspimouse_slam pc_slam.launch.py
 
 端末4で次のコマンドを実行し、作成した地図を保存します。
 
+> [!NOTE]
+> `MAP_NAME`は任意の名前を指定できます。
+
 ```sh
 ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ```
-
-> [!NOTE]
-> `MAP_NAME`は任意の名前を指定できます。
 
 #### Navigation
 
@@ -139,22 +139,21 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
 
+> [!NOTE]
+> `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 
-> [!NOTE]
-> `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
-
 端末2で次のコマンドを実行すると、Navigationが開始されます。
+
+> [!NOTE]
+> 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
 
 ```sh
 ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
 ```
-
-> [!NOTE]
-> 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
 
 ## Model Data List
 
