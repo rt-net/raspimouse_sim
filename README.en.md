@@ -92,7 +92,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 ## How to Use Examples
 
-Detailed usage of the sample program is explained in the README of the `raspimouse_gazebo` package.
+Detailed usage of the sample program is explained in the [README](./raspimouse_gazebo/README.en.md) of the `raspimouse_gazebo` package.
 
 - raspimouse_gazebo
   - [Joystick Control](./raspimouse_gazebo/README.md#joystick-control)
