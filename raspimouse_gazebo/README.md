@@ -163,7 +163,7 @@ ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map
 > daeファイルはBlender 4.0で編集されています。
 
 - `course_curve_50x50cm`
-  -   ライントレース用の曲線コースパネルです。
+  - ライントレース用の曲線コースパネルです。
   - パネルサイズは50cm x 50cm、線の幅は4cmです。
 
     <img src=../raspimouse_gazebo/models/course_curve_50x50cm/meshes/course_curve.jpg width=300 />
@@ -175,8 +175,8 @@ ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map
     <img src=../raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg width=300 />
 
 - `cube_*cm_color-name`
-  - それぞれ一辺5cm、7.5cm、10cm、15cm、30cmの立方体です。
   - 色は赤、黄、青、緑、黒です。
+  - それぞれ一辺5cm、7.5cm、10cm、15cm、30cmの立方体です。
 
     <img src=https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png width=300 />
 
