@@ -4,7 +4,7 @@
 
 [![industrial_ci](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml)
 
-ROS 2 package suite for Raspberry Pi Mouse Simulator runs on Gazebo
+ROS 2 package suite for simulating the Raspberry Pi Mouse in Gazebo
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
@@ -22,8 +22,8 @@ ROS 2 package suite for Raspberry Pi Mouse Simulator runs on Gazebo
     - raspimouse_sim
     - raspimouse_fake
     - raspimouse_gazebo
-  - [How To Use Examples](#how-to-use-examples)
-    - Joystick Controll
+  - [How to Use Examples](#how-to-use-examples)
+    - Joystick Control
     - Object Tracking
     - Camera Line Follower
     - SLAM & Navigation
@@ -75,7 +75,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## QuickStart
 
-After building this package, run the following commands.
+The following command launches the Gazebo simulator and displays the Raspberry Pi Mouse model.
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
@@ -84,18 +84,18 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ## Packages
 
 - raspimouse_sim
-  - This package manages the meta-information for the various packages in this repository.
+  - Manages meta-information for the packages in this repository.
 - raspimouse_fake
   - This package simulates the motor control interface of the Raspberry Pi Mouse.
 - raspimouse_gazebo
-  - This package provides models and scripts to set up a simulation environment on [Gazebo](https://gazebosim.org/home).
+  - This package provides models and scripts to set up a simulation environment on [Gazebo](https://gazebosim.org).
 
 ## How to Use Examples
 
 Detailed usage of the sample program is explained in the README of the `raspimouse_gazebo` package.
 
 - raspimouse_gazebo
-  - [Joystick Controll](./raspimouse_gazebo/README.md#joystick-controll)
+  - [Joystick Control](./raspimouse_gazebo/README.md#joystick-control)
   - [Object Tracking](./raspimouse_gazebo/README.md#object-tracking)
   - [Camera Line Follower](./raspimouse_gazebo/README.md#camera_line_follower)
   - [SLAM & Navigation](./raspimouse_gazebo/README.md#slam--navigation)
@@ -125,7 +125,7 @@ This repository is developed based on files from the following repository.
   - maintainer
     - RyodoTanaka
   - BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
-  - 詳細は [package.xml](https://github.com/CIR-KIT/fourth_robot_pkg/blob/indigo-devel/fourth_robot_control/package.xml) を参照してください。
+  - For details, see [package.xml](https://github.com/CIR-KIT/fourth_robot_pkg/blob/indigo-devel/fourth_robot_control/package.xml).
 - [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki )
   - authors
     - Daniel Stonier
@@ -135,4 +135,4 @@ This repository is developed based on files from the following repository.
   - maintainer
     - Daniel Stonier
   - BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
-  - 詳細は [package.xml](https://github.com/yujinrobot/kobuki/blob/melodic/kobuki/package.xml) を参照してください。
+  - For details, see [package.xml](https://github.com/yujinrobot/kobuki/blob/melodic/kobuki/package.xml).

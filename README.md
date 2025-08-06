@@ -88,7 +88,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 - raspimouse_fake
   - Raspberry Pi Mouseのモータ制御インターフェースを模擬するパッケージです。
 - raspimouse_gazebo
-  - [Gazebo](https://gazebosim.org/home)上でシミュレーション環境を構築するためのモデルやスクリプトを提供するパッケージです。
+  - [Gazebo](https://gazebosim.org)上でシミュレーション環境を構築するためのモデルやスクリプトを提供するパッケージです。
 
 ## How to Use Examples
 

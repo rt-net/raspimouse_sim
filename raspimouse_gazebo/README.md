@@ -2,7 +2,7 @@
 
 # raspimouse_gazebo
 
-Gazebo上でシミュレーション環境を構築するためのモデルやスクリプトを提供します。
+Gazebo上でシミュレーション環境を構築するためのモデルやスクリプトを提供するパッケージです。
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
@@ -11,7 +11,7 @@ Gazebo上でシミュレーション環境を構築するためのモデルや�
 - [raspimouse\_gazebo](#raspimouse_gazebo)
   - [Table of Contents](#table-of-contents)
   - [How To Use Examples](#how-to-use-examples)
-    - [Joystick Controll](#joystick-controll)
+    - [Joystick Control](#joystick-control)
     - [Object Tracking](#object-tracking)
     - [Camera Line Follower](#camera_line_follower)
     - [SLAM & Navigation](#slam--navigation)
@@ -19,22 +19,21 @@ Gazebo上でシミュレーション環境を構築するためのモデルや�
 
 ## How to Use Examples
 
-### Joystick Controll
+### Joystick Control
 
 Raspberry Pi Mouseをジョイスティックコントローラで操作します。
-
 
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif width=500 />
 
 
-端末1で次のコマンドを実行すると、Gazeboシミュレータが起動します。
+端末1で次のコマンドを実行し、Gazeboシミュレータを起動します。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
-v
+端末2で次のコマンドを実行し、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
+
 ```sh
 ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
@@ -46,7 +45,7 @@ Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif width=500 />
 
 
-端末1で次のコマンドを実行すると、色付きの立方体が配置されたワールドが表示されます。
+端末1で次のコマンドを実行し、色付きの立方体が配置されたワールドが表示します。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
@@ -89,7 +88,7 @@ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, sw
 
 ### SLAM & Navigation
 
-RapimouseがLiDARを使用したSLAMとNavigationを行います。
+RaspimouseがLiDARを使用したSLAMとNavigationを行います。
 
 > [!NOTE]
 > 本サンプルの動作には、[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
@@ -111,18 +110,19 @@ SLAMによる自己位置推定と地図作成を行います。
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
+端末2で次のコマンドを実行し、ジョイスティックコントローラでRaspberry Pi Mouseを手動操作します。
 
 ```sh
 ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
 端末3で次のコマンドを実行すると、SLAMが実行されます。
+
 ```sh
 ros2 launch raspimouse_slam pc_slam.launch.py
 ```
 
-端末4で次のコマンドを実行すると、作成した地図を保存できます。
+端末4で次のコマンドを実行し、作成した地図を保存します。
 
 > [!NOTE]
 > `MAP_NAME`は任意の名前を指定できます。
@@ -133,7 +133,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 #### Navigation
 
-作成した地図をもとにNavigationします。
+作成した地図をもとにNavigationを行います。
 
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif width=500 />
 
@@ -146,7 +146,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 
-端末2で次のコマンドを実行すると、Navigationが実行されます。
+端末2で次のコマンドを実行すると、Navigationが開始されます。
 
 > [!NOTE]
 > 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。

@@ -11,7 +11,7 @@ This package provides models and scripts to set up a simulation environment in G
 - [raspimouse\_gazebo](#raspimouse_gazebo)
   - [Table of Contents](#table-of-contents)
   - [How To Use Examples](#how-to-use-examples)
-    - [Joystick Controll](#joystick-controll)
+    - [Joystick Control](#joystick-control)
     - [Object Tracking](#object-tracking)
     - [Camera Line Follower](#camera_line_follower)
     - [SLAM & Navigation](#slam--navigation)
@@ -19,12 +19,11 @@ This package provides models and scripts to set up a simulation environment in G
 
 ## How to Use Examples
 
-### Joystick Controll
+### Joystick Control
 
-Operates the Raspberry Pi Mouse using a joystick controller.
+Operates using a joystick controller.
 
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif width=500 />
-
 
 Run the following command in Terminal 1 to launch the Gazebo simulator.
 
@@ -40,7 +39,7 @@ ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js
 
 ### Object Tracking
 
-Raspberry Pi Mouse follows an orange (red) object.
+Follows an orange (red) object.
 
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif width=500 />
 
@@ -59,7 +58,7 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ### camera_line_follower
 
-The Raspberry Pi Mouse follows a black line drawn on the floor.
+Follows a black line drawn on the floor.
 
 For parameters used in camera-based line tracing, please refer to this [section](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters).
 
@@ -172,7 +171,7 @@ This is a list of model data used in the various samples.
     <img src=../raspimouse_gazebo/models/course_curve_50x50cm/meshes/course_curve.jpg width=300 />
 
 - `course_straight_50x50cm`
-  - traight course panel for line following.
+  - Straight course panel for line following.
   - Panel size is 50 cm x 50 cm and line width is 4 cm.
   
     <img src=../raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg width=300 />
