@@ -4,7 +4,7 @@
 
 [![industrial_ci](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml)
 
-Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージです。
+Gazebo上でRaspberry Pi Mouseの動作をシミュレーションするためのROS 2パッケージです。
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
@@ -22,8 +22,8 @@ Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージ
     - raspimouse_sim
     - raspimouse_fake
     - raspimouse_gazebo
-  - [How To Use Examples](#how-to-use-examples)
-    - Joystick Controll
+  - [How to Use Examples](#how-to-use-examples)
+    - Joystick Control
     - Object Tracking
     - Camera Line Follower
     - SLAM & Navigation
@@ -75,7 +75,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## QuickStart
 
-次のコマンドを実行するとGazeboシミュレータが起動します。
+次のコマンドを実行するとGazeboシミュレータが起動し、Raspberry Pi Mouseのモデルが表示されます。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
@@ -84,7 +84,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ## Packages
 
 - raspimouse_sim
-  - 本リポジトリ内の各種パッケージのメタ情報を管理するパッケージです。
+  - 本リポジトリに含まれる複数のパッケージに関するメタ情報を管理します。
 - raspimouse_fake
   - Raspberry Pi Mouseのモータ制御インターフェースを模擬するパッケージです。
 - raspimouse_gazebo
@@ -92,10 +92,10 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 ## How to Use Examples
 
-サンプルプログラムの詳細な動作方法は、`raspimouse_gazebo`パッケージののREADMEで説明しています。
+サンプルプログラムの詳細な動作方法は、`raspimouse_gazebo`パッケージのREADMEで説明しています。
 
 - raspimouse_gazebo
-  - [Joystick Controll](./raspimouse_gazebo/README.md#joystick-controll)
+  - [Joystick Control](./raspimouse_gazebo/README.md#joystick-control)
   - [Object Tracking](./raspimouse_gazebo/README.md#object-tracking)
   - [Camera Line Follower](./raspimouse_gazebo/README.md#camera_line_follower)
   - [SLAM & Navigation](./raspimouse_gazebo/README.md#slam--navigation)
@@ -111,7 +111,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 - 本ソフトウェアはオープンソースですが、開発はオープンではありません。
 - 本ソフトウェアは基本的にオープンソースソフトウェアとして「AS IS」（現状有姿のまま）で提供しています。
-- 本ソフトウェアに関する無償サポートはありません。
+- 本ソフトウェアに関する無償サポートは行っていません。
 - バグの修正や誤字脱字の修正に関するリクエストは常に受け付けていますが、
 それ以外の機能追加等のリクエストについては社内のガイドラインを優先します。
 詳しくは[コントリビューションガイドライン](https://github.com/rt-net/.github/blob/master/CONTRIBUTING.md)に従ってください。
@@ -120,7 +120,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 本リポジトリは、以下のリポジトリのファイルをベースに開発されています。
 
-- [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg )
+- [CIR-KIT/fourth_robot_pkg](https://github.com/CIR-KIT/fourth_robot_pkg)
   - author
     - RyodoTanaka
   - maintainer
