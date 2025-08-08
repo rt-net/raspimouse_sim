@@ -51,7 +51,7 @@ Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
 ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
 ```
 
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
+端末2で次のコマンドを実行し、Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
 
 ```sh
 ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
@@ -66,17 +66,17 @@ Raspberry Pi Mouseが、床に描かれた黒いラインを追従します。
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif width=500 />
 
 
-端末1で次のコマンドを実行すると、ライントレースのサンプルコースが配置されたワールドが表示されます。
+端末1で次のコマンドを実行し、ライントレースのサンプルコースが配置されたワールドを表示します。
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
 ```
 
-端末2で次のコマンドを実行すると、カメラライントレースのノードが起動します。
+端末2で次のコマンドを実行し、カメラライントレースのノードを起動します。
 ```sh
 ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
 ```
 
-端末3で次のコマンドを実行すると、Raspberry Pi Mouseが走行を開始します。
+端末3で次のコマンドを実行し、Raspberry Pi Mouseを走行させます。
 ```sh
 ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
 ```
@@ -101,7 +101,7 @@ SLAMによる自己位置推定と地図作成を行います。
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif width=500 />
 
 
-端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
+端末1で次のコマンドを実行し、`Lake House`のモデルが配置されたワールドを表示します。
 
 > [!NOTE]
 > `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
@@ -116,7 +116,7 @@ ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
-端末3で次のコマンドを実行すると、SLAMが実行されます。
+端末3で次のコマンドを実行し、SLAMを開始します。
 
 ```sh
 ros2 launch raspimouse_slam pc_slam.launch.py
@@ -137,7 +137,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif width=500 />
 
-端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
+端末1で次のコマンドを実行し、`Lake House`のモデルが配置されたワールドが表示します。
 
 > [!NOTE]
 > `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
@@ -146,7 +146,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
 ```
 
-端末2で次のコマンドを実行すると、Navigationが開始されます。
+端末2で次のコマンドを実行し、Navigationを開始します。
 
 > [!NOTE]
 > 引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
