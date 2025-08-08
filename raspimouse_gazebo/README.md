@@ -45,7 +45,7 @@ Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif width=500 />
 
 
-端末1で次のコマンドを実行し、色付きの立方体が配置されたワールドが表示します。
+端末1で次のコマンドを実行し、色付きの立方体が配置されたワールドを表示します。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
