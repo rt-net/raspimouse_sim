@@ -68,7 +68,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## QuickStart
 
-次のコマンドを実行するとGazeboシミュレータが起動し、Raspberry Pi Mouseのモデルが表示されます。
+次のコマンドを実行し、Gazeboシミュレータを起動してRaspberry Pi Mouseのモデルを表示します。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
