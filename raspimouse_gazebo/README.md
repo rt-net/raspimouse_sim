@@ -88,7 +88,7 @@ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, sw
 
 ### SLAM & Navigation
 
-RaspimouseがLiDARを使用したSLAMとNavigationを行います。
+Raspberry Pi MouseがLiDARを使用したSLAMとNavigationを行います。
 
 > [!NOTE]
 > 本サンプルの動作には、[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
