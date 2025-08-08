@@ -137,7 +137,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
 
 <img src=https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif width=500 />
 
-端末1で次のコマンドを実行し、`Lake House`のモデルが配置されたワールドが表示します。
+端末1で次のコマンドを実行し、`Lake House`のモデルが配置されたワールドを表示します。
 
 > [!NOTE]
 > `lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
