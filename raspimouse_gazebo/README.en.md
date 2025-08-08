@@ -58,7 +58,7 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ### camera_line_follower
 
-Follows a black line drawn on the floor.
+Follows a black line.
 
 For parameters used in camera-based line tracing, please refer to this [section](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters).
 

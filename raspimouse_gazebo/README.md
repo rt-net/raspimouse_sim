@@ -59,7 +59,7 @@ ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_
 
 ### camera_line_follower
 
-Raspberry Pi Mouseが、床に描かれた黒いラインを追従します。
+Raspberry Pi Mouseが、黒いラインを追従します。
 
 カメラライントレースにおけるパラメータは[こちら](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters)を参照してください。
 
