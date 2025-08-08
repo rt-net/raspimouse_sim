@@ -92,6 +92,8 @@ ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, sw
 
 ### SLAM & Navigation
 
+Runs SLAM and navigation using LiDAR.
+
 > [!NOTE]
 > This sample requires [raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) to run.
 
