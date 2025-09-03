@@ -37,6 +37,10 @@ Run the following command in Terminal 2 to control the Raspberry Pi Mouse using 
 ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
 ```
 
+[back to example list](#how-to-use-examples)
+
+---
+
 ### Object Tracking
 
 Follows an orange (red) object.
