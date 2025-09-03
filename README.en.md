@@ -87,11 +87,10 @@ ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 
 Detailed usage of the sample program is explained in the [README](./raspimouse_gazebo/README.en.md) of the `raspimouse_gazebo` package.
 
-- raspimouse_gazebo
-  - [Joystick Control](./raspimouse_gazebo/README.md#joystick-control)
-  - [Object Tracking](./raspimouse_gazebo/README.md#object-tracking)
-  - [Camera Line Follower](./raspimouse_gazebo/README.md#camera_line_follower)
-  - [SLAM & Navigation](./raspimouse_gazebo/README.md#slam--navigation)
+- Joystick Control
+- Object Tracking
+- Camera Line Follower
+- SLAM & Navigation
 
 ## License
 
