@@ -60,6 +60,10 @@ Run the following command in Terminal 2 to make the Raspberry Pi Mouse follow an
 ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
 ```
 
+[back to example list](#how-to-use-examples)
+
+---
+
 ### camera_line_follower
 
 Follows a black line.
@@ -93,6 +97,10 @@ Run the following command to stop the Raspberry Pi Mouse.
 ```sh
 ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
 ```
+
+[back to example list](#how-to-use-examples)
+
+---
 
 ### SLAM & Navigation
 
@@ -162,6 +170,10 @@ Run the following command in Terminal 2 to run Navigation.
 ```sh
 ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
 ```
+
+[back to example list](#how-to-use-examples)
+
+---
 
 ## Model Data List
 
