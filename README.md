@@ -4,49 +4,63 @@
 
 [![industrial_ci](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/raspimouse_sim/actions/workflows/industrial_ci.yml)
 
-Gazebo上でシミュレートできるRaspberry Pi MouseのROS 2パッケージです。
+Gazebo上でRaspberry Pi Mouseの動作をシミュレーションするためのROS 2パッケージです。
 
 ![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_color_objects_world.png)
 
-**本ブランチはROS 2 Jazzy向けです。他のディストリビューションについては、以下にリストされた対応するブランチを参照してください。**
+## Table of Contents
 
-- ROS 2 Humble ([humble](https://github.com/rt-net/raspimouse_sim/tree/humble))
+- [raspimouse\_sim](#raspimouse_sim)
+  - [Table of Contents](#table-of-contents)
+  - [Supported ROS distributions](#supported-ros-distributions)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+    - [Binary Installation](#binary-installation)
+    - [Source Build](#source-build)
+  - [QuickStart](#quickstart)
+  - [Packages](#packages)
+  - [How to Use Examples](#how-to-use-examples)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Acknowledgements](#acknowledgements)
 
-## 動作環境
+## Supported ROS distributions
 
-以下の環境を前提として動作確認しています。
+### ROS 2
 
-* Ubuntu
-  * Ubuntu 24.04 Noble Numbat
-* ROS 2
-  * ROS 2 Jazzy Jalisco
-* Gazebo
-  * Gazebo Sim 8.x
-* ROS 2 Package
-  * ros-jazzy-desktop-full
+- [Humble Hawksbill](https://github.com/rt-net/raspimouse_sim/tree/humble)
+- [Jazzy Jalisco](https://github.com/rt-net/raspimouse_sim/tree/jazzy)
 
-## インストール方法
+## Requirements
 
-このROS 2パッケージをダウンロードします。
+- OS
+  - Ubuntu Desktop 24.04
+- ROS 2
+  - ROS 2 Jazzy Jalisco
+- Gazebo
+  - Gazebo Sim 8.x
 
-```sh
-cd ~/ros2_ws/src
+## Installation
+
+### Binary Installation
+
+```bash
+sudo apt install ros-jazzy-raspimouse-sim
+```
+
+### Source Build
+
+```bash
+# Create workspace directory
+mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
+
+# Clone package
 git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_sim.git
-```
 
-依存しているROS 2パッケージをインストールします。
+# Install dependencies
+rosdep install -r -y -i --from-paths .
 
-```sh
-cd ~/ros2_ws/src
-git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_ros2_examples.git
-git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_slam_navigation_ros2.git
-git clone -b $ROS_DISTRO https://github.com/rt-net/raspimouse_description.git
-rosdep install -r -y -i --from-paths raspimouse*
-```
-
-`colcon`を使用してパッケージをビルドします。
-
-```sh
+# Build & Install
 cd ~/ros2_ws
 colcon build --symlink-install
 source ~/ros2_ws/install/setup.bash
@@ -54,173 +68,65 @@ source ~/ros2_ws/install/setup.bash
 
 ## QuickStart
 
-パッケージビルド後、次のコマンドを実行するとGazeboシミュレータが起動します。
+次のコマンドを実行し、Gazeboシミュレータを起動してRaspberry Pi Mouseのモデルを表示します。
 
 ```sh
 ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
 ```
 
-## サンプル動作例
+## Packages
 
-各サンプルの動作には、[raspimouse_ros2_examples](https://github.com/rt-net/raspimouse_ros2_examples)が必要です。
+- raspimouse_sim
+  - 本リポジトリに含まれる複数のパッケージに関するメタ情報を管理します。
+- raspimouse_fake
+  - Raspberry Pi Mouseのモータ制御インターフェースを模擬するパッケージです。
+- raspimouse_gazebo
+  - [Gazebo](https://gazebosim.org)上でシミュレーション環境を構築するためのモデルやスクリプトを提供するパッケージです。
 
-### ジョイスティックコントローラによる操縦サンプル
+## How to Use Examples
 
-端末1で次のコマンドを実行すると、Gazeboシミュレータが起動します。
+サンプルプログラムの詳細な動作方法は、`raspimouse_gazebo`パッケージの[README](./raspimouse_gazebo/README.md)で説明しています。
 
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_emptyworld.launch.py
-```
+- Examples
+  - Joystick Control
+  - Object Tracking
+  - Camera Line Follower
+  - SLAM & Navigation
 
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
+## License
 
-```sh
-ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
-```
+(C) 2016 RT Corporation \<support@rt-net.jp\>
 
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_joystick.gif)
+各ファイルはライセンスがファイル中に明記されている場合、そのライセンスに従います。特に明記されていない場合は、MIT Licenseに基づき公開されています。
+ライセンスの全文は[LICENSE](./LICENSE)または[https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)から確認できます。
 
-### RGBカメラを用いた色検出による物体追従サンプル
+## Contributing
 
-端末1で次のコマンドを実行すると、色付きの立方体が配置されたワールドが表示されます。
+- 本ソフトウェアはオープンソースですが、開発はオープンではありません。
+- 本ソフトウェアは基本的にオープンソースソフトウェアとして「AS IS」（現状有姿のまま）で提供しています。
+- 本ソフトウェアに関する無償サポートは行っていません。
+- バグの修正や誤字脱字の修正に関するリクエストは常に受け付けていますが、
+それ以外の機能追加等のリクエストについては社内のガイドラインを優先します。
+詳しくは[コントリビューションガイドライン](https://github.com/rt-net/.github/blob/master/CONTRIBUTING.md)に従ってください。
 
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_color_objects.launch.py use_rgb_camera:=true
-```
+### Acknowledgements
 
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseがオレンジ色（赤色）の物体を追従します。
+本リポジトリは、以下のリポジトリのファイルをベースに開発されています。
 
-```sh
-ros2 launch raspimouse_ros2_examples object_tracking.launch.py mouse:=false use_camera_node:=false
-```
-
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_object_tracking.gif)
-
-### RGBカメラを用いたライントレースサンプル
-
-端末1で次のコマンドを実行すると、ライントレースのサンプルコースが配置されたワールドが表示されます。
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_line_follower_field.launch.py use_rgb_camera:=true camera_downward:=true
-```
-
-端末2で次のコマンドを実行すると、カメラライントレースのノードが起動します。
-```sh
-ros2 launch raspimouse_ros2_examples camera_line_follower.launch.py mouse:=false use_camera_node:=false
-```
-
-端末3で次のコマンドを実行すると、Raspberry Pi Mouseが走行を開始します。
-```sh
-ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: false, switch1: false, switch2: true}"
-```
-
-次のコマンドを実行すると、Raspberry Pi Mouseが停止します。
-```sh
-ros2 topic pub --once /switches raspimouse_msgs/msg/Switches "{switch0: true, switch1: false, switch2: false}"
-```
-
-カメラライントレースにおけるパラメータは[こちら](https://github.com/rt-net/raspimouse_ros2_examples?tab=readme-ov-file#parameters)を参照してください。
-
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_camerafollower_short.gif)
-
-### LiDARを用いたSLAMとNavigationのサンプル
-
-本サンプルの動作には、[raspimouse_slam_navigation_ros2](https://github.com/rt-net/raspimouse_slam_navigation_ros2) が必要です。
-
-#### SLAM
-
-端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
-```
-`lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
-
-端末2で次のコマンドを実行すると、Raspberry Pi Mouseをジョイスティックコントローラで操作できます。
-```sh
-ros2 launch raspimouse_ros2_examples teleop_joy.launch.py joydev:="/dev/input/js0" joyconfig:=f710 mouse:=false
-```
-
-端末3で次のコマンドを実行すると、SLAMが実行されます。
-```sh
-ros2 launch raspimouse_slam pc_slam.launch.py
-```
-
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam.png)
-
-端末4で次のコマンドを実行すると、作成した地図を保存できます。
-```sh
-ros2 run nav2_map_server map_saver_cli -f ~/MAP_NAME
-```
-`MAP_NAME`は任意の名前を指定できます。
-
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_slam_short.gif)
-
-#### Navigation
-
-端末1で次のコマンドを実行すると、`Lake House`のモデルが配置されたワールドが表示されます。
-```sh
-ros2 launch raspimouse_gazebo raspimouse_with_lakehouse.launch.py lidar:=urg
-```
-`lidar`は`urg`、`lds`、`rplidar`のいずれかを指定してください。
-
-端末2で次のコマンドを実行すると、Navigationが実行されます。
-```sh
-ros2 launch raspimouse_navigation pc_navigation.launch.py use_sim_time:=true map:=$HOME/MAP_NAME.yaml
-```
-引数`map`にはSLAMで作成した地図ファイルのパスを指定してください。
-
-![](https://rt-net.github.io/images/raspberry-pi-mouse/raspimouse_sim_navigation_short.gif)
-
-## モデルデータ一覧
-
-### course_curve_50x50cm
-
-ライントレース用の曲線コースパネルです。
-パネルサイズは50cm x 50cm、線の幅は4cmです。
-
-![](./raspimouse_gazebo/models/course_curve_50x50cm/meshes/course_curve.jpg)
-
-### course_straight_50x50cm
-
-ライントレース用の直線コースパネルです。
-パネルサイズは50cm x 50cm、線の幅は4cmです。
-
-![](./raspimouse_gazebo/models/course_straight_50x50cm/meshes/course_straight.jpg)
-
-### cube_*cm_color-name
-それぞれ一辺5cm、7.5cm、10cm、15cm、30cmの立方体です。
-色は赤、黄、青、緑、黒です。
-
-![](https://rt-net.github.io/images/raspberry-pi-mouse/color_objects.png)
-
-### daeファイルについて
-daeファイルはBlender 4.0で編集しています。
-
-## ライセンス
-
-このリポジトリはMITライセンスに基づいて公開されています。
-MITライセンスについては[LICENSE]( ./LICENSE )を確認してください。
-
-※このソフトウェアは基本的にオープンソースソフトウェアとして「AS IS」（現状有姿のまま）で提供しています。本ソフトウェアに関する無償サポートはありません。
-バグの修正や誤字脱字の修正に関するリクエストは常に受け付けていますが、それ以外の機能追加等のリクエストについては社内のガイドラインを優先します。
-
-### 謝辞
-
-以下のリポジトリのファイルをベースに開発されています。
-
-* [CIR-KIT/fourth_robot_pkg]( https://github.com/CIR-KIT/fourth_robot_pkg )
-  * author
-    * RyodoTanaka
-  * maintainer
-    * RyodoTanaka
-  * BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
-  * 詳細は [package.xml](https://github.com/CIR-KIT/fourth_robot_pkg/blob/indigo-devel/fourth_robot_control/package.xml) を参照してください。
-* [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki )
-  * authors
-    * Daniel Stonier
-    * Younghun Ju
-    * Jorge Santos Simon
-    * Marcus Liebhardt
-  * maintainer
-    * Daniel Stonier
-  * BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
-  * 詳細は [package.xml](https://github.com/yujinrobot/kobuki/blob/melodic/kobuki/package.xml) を参照してください。
+- [CIR-KIT/fourth_robot_pkg](https://github.com/CIR-KIT/fourth_robot_pkg)
+  - author
+    - RyodoTanaka
+  - maintainer
+    - RyodoTanaka
+  - BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
+  - 詳細は [package.xml](https://github.com/CIR-KIT/fourth_robot_pkg/blob/indigo-devel/fourth_robot_control/package.xml) を参照してください。
+- [yujinrobot/kobuki]( https://github.com/yujinrobot/kobuki )
+  - authors
+    - Daniel Stonier
+    - Younghun Ju
+    - Jorge Santos Simon
+    - Marcus Liebhardt
+  - maintainer
+    - Daniel Stonier
+  - BSD ([BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause))
+  - 詳細は [package.xml](https://github.com/yujinrobot/kobuki/blob/melodic/kobuki/package.xml) を参照してください。
