@@ -49,6 +49,4 @@ def generate_launch_description():
         }.items(),
     )
 
-    return LaunchDescription(
-        [SetParameter(name='use_sim_time', value=True), world_launch]
-    )
+    return LaunchDescription([SetParameter(name='use_sim_time', value=True), world_launch])

@@ -56,8 +56,7 @@ def generate_launch_description():
     )
     declare_arg_world_name = DeclareLaunchArgument(
         'world_name',
-        default_value=get_package_share_directory('raspimouse_gazebo')
-        + '/worlds/empty_world.sdf',
+        default_value=get_package_share_directory('raspimouse_gazebo') + '/worlds/empty_world.sdf',
         description='Set world name.',
     )
     declare_arg_spawn_x = DeclareLaunchArgument(
@@ -120,9 +119,7 @@ def generate_launch_description():
     description_loader.use_rgb_camera = LaunchConfiguration('use_rgb_camera')
     description_loader.camera_downward = LaunchConfiguration('camera_downward')
     description_loader.gz_control_config_package = 'raspimouse_gazebo'
-    description_loader.gz_control_config_file_path = (
-        'config/raspimouse_controllers.yaml'
-    )
+    description_loader.gz_control_config_file_path = 'config/raspimouse_controllers.yaml'
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -131,25 +128,25 @@ def generate_launch_description():
         parameters=[{'robot_description': description_loader.load()}],
     )
 
-    spawn_joint_state_broadcaster = ExecuteProcess(
-        cmd=['ros2 run controller_manager spawner joint_state_broadcaster'],
-        shell=True,
+    spawn_joint_state_broadcaster = Node(
+        package='controller_manager',
+        executable='spawner',
         output='screen',
+        arguments=['joint_state_broadcaster'],
     )
 
-    spawn_diff_drive_controller = ExecuteProcess(
-        cmd=['ros2 run controller_manager spawner diff_drive_controller'],
-        shell=True,
+    spawn_diff_drive_controller = Node(
+        package='controller_manager',
+        executable='spawner',
         output='screen',
+        arguments=['diff_drive_controller'],
     )
 
-    rviz_config_file = (
-        get_package_share_directory('raspimouse_gazebo') + '/config/config.rviz'
-    )
+    rviz_config_file = get_package_share_directory('raspimouse_gazebo') + '/config/config.rviz'
     rviz = Node(
+        name='rviz2',
         package='rviz2',
         executable='rviz2',
-        name='rviz2',
         output='screen',
         arguments=['-d', rviz_config_file],
     )
@@ -157,13 +154,13 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
+        output='screen',
         arguments=[
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
             '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
             '/camera/color/image_raw@sensor_msgs/msg/Image@gz.msgs.Image',
             '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
         ],
-        output='screen',
     )
 
     container = ComposableNodeContainer(
@@ -171,6 +168,7 @@ def generate_launch_description():
         namespace='',
         package='rclcpp_components',
         executable='component_container_mt',
+        output='screen',
         composable_node_descriptions=[
             ComposableNode(
                 package='raspimouse_fake',
@@ -178,7 +176,6 @@ def generate_launch_description():
                 name='raspimouse',
             ),
         ],
-        output='screen',
     )
 
     return LaunchDescription(
