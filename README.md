@@ -46,7 +46,7 @@ Gazebo上でRaspberry Pi Mouseの動作をシミュレーションするため�
 ### Binary Installation
 
 ```bash
-sudo apt install ros-$ROS_DISTRO-raspimouse
+sudo apt install ros-$ROS_DISTRO-raspimouse-sim
 ```
 
 ### Source Build
