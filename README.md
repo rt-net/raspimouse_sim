@@ -30,22 +30,23 @@ Gazebo上でRaspberry Pi Mouseの動作をシミュレーションするため�
 
 - [Humble Hawksbill](https://github.com/rt-net/raspimouse_sim/tree/humble)
 - [Jazzy Jalisco](https://github.com/rt-net/raspimouse_sim/tree/jazzy)
+- [Lyrical Luth](https://github.com/rt-net/raspimouse_sim/tree/lyrical)
 
 ## Requirements
 
 - OS
-  - Ubuntu Desktop 24.04
+  - Ubuntu Desktop 26.04
 - ROS 2
-  - ROS 2 Jazzy Jalisco
+  - ROS 2 Lyrical Luth
 - Gazebo
-  - Gazebo Sim 8.x
+  - Gazebo Sim 10.x
 
 ## Installation
 
 ### Binary Installation
 
 ```bash
-sudo apt install ros-jazzy-raspimouse-sim
+sudo apt install ros-$ROS_DISTRO-raspimouse
 ```
 
 ### Source Build
