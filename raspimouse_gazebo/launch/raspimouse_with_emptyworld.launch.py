@@ -148,6 +148,10 @@ def generate_launch_description():
             'diff_drive_controller',
             '--param-file',
             controller_config_file,
+            '--controller-ros-args',
+            '-r /diff_drive_controller/cmd_vel:=/cmd_vel',
+            '--controller-ros-args',
+            '-r /diff_drive_controller/odom:=/odom',
         ],
     )
 
