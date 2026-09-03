@@ -23,7 +23,7 @@ target_link_libraries(fake_raspimouse_component PUBLIC
   rclcpp_components::component
   rclcpp_lifecycle::rclcpp_lifecycle
   lifecycle_msgs::lifecycle_msgs__rosidl_generator_cpp
-  std_srvs::std_srvs__rosidl_generator_cpp)
+  std_srvs::std_srvs__rosidl_typesupport_cpp)
 rclcpp_components_register_nodes(fake_raspimouse_component "fake_raspimouse::Raspimouse")
 
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
