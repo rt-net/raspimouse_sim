@@ -46,7 +46,7 @@ ROS 2 package suite for simulating the Raspberry Pi Mouse in Gazebo
 ### Binary Installation
 
 ```bash
-sudo apt install ros-$ROS_DISTRO-raspimouse
+sudo apt install ros-$ROS_DISTRO-raspimouse-sim
 ```
 
 ### Source Build
