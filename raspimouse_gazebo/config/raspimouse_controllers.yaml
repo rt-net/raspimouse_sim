@@ -27,4 +27,3 @@ diff_drive_controller:
     base_frame_id: base_footprint
     open_loop: false
     enable_odom_tf: true
-    use_stamped_vel : false

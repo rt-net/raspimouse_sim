@@ -121,6 +121,11 @@ def generate_launch_description():
     description_loader.gz_control_config_package = 'raspimouse_gazebo'
     description_loader.gz_control_config_file_path = 'config/raspimouse_controllers.yaml'
 
+    controller_config_file = os.path.join(
+        get_package_share_directory('raspimouse_gazebo'),
+        description_loader.gz_control_config_file_path,
+    )
+
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -139,7 +144,15 @@ def generate_launch_description():
         package='controller_manager',
         executable='spawner',
         output='screen',
-        arguments=['diff_drive_controller'],
+        arguments=[
+            'diff_drive_controller',
+            '--param-file',
+            controller_config_file,
+            '--controller-ros-args',
+            '-r /diff_drive_controller/cmd_vel:=/cmd_vel',
+            '--controller-ros-args',
+            '-r /diff_drive_controller/odom:=/odom',
+        ],
     )
 
     rviz_config_file = get_package_share_directory('raspimouse_gazebo') + '/config/config.rviz'

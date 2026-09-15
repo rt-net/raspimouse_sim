@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 project(raspimouse_fake)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -8,18 +11,19 @@ find_package(rclcpp_lifecycle REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 
-include_directories(include)
-
 add_library(fake_raspimouse_component SHARED
   src/fake_raspimouse_component.cpp)
+target_include_directories(fake_raspimouse_component PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 target_compile_definitions(fake_raspimouse_component
   PRIVATE "RASPIMOUSE_FAKE_BUILDING_DLL")
-ament_target_dependencies(fake_raspimouse_component
-  rclcpp
-  rclcpp_components
-  rclcpp_lifecycle
-  lifecycle_msgs
-  std_srvs)
+target_link_libraries(fake_raspimouse_component PUBLIC
+  rclcpp::rclcpp
+  rclcpp_components::component
+  rclcpp_lifecycle::rclcpp_lifecycle
+  lifecycle_msgs::lifecycle_msgs__rosidl_generator_cpp
+  std_srvs::std_srvs__rosidl_typesupport_cpp)
 rclcpp_components_register_nodes(fake_raspimouse_component "fake_raspimouse::Raspimouse")
 
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
