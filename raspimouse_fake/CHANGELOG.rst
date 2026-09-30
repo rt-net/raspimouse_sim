@@ -5,8 +5,6 @@ Changelog for package raspimouse_fake
 4.0.0 (2026-09-28)
 ------------------
 * Support ROS 2 Lyrical (`#87 <https://github.com/rt-net/raspimouse_sim/issues/87>`_)
-* Migrate to Modern CMake and require C++20
-* Link std_srvs C++ type support to the fake Raspberry Pi Mouse component
 * Contributors: Kazushi Kurasawa
 
 3.0.1 (2024-11-29)

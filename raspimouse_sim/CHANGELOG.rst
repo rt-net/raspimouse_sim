@@ -5,7 +5,6 @@ Changelog for package raspimouse_sim
 4.0.0 (2026-09-28)
 ------------------
 * Support ROS 2 Lyrical (`#87 <https://github.com/rt-net/raspimouse_sim/issues/87>`_)
-* Migrate to Modern CMake and require C++20
 * Update package descriptions and example documentation (`#86 <https://github.com/rt-net/raspimouse_sim/issues/86>`_)
 * Contributors: Kazushi Kurasawa, YusukeKato, Kuwamai
 

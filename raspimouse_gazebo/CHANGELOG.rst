@@ -5,9 +5,6 @@ Changelog for package raspimouse_gazebo
 4.0.0 (2026-09-28)
 ------------------
 * Support ROS 2 Lyrical (`#87 <https://github.com/rt-net/raspimouse_sim/issues/87>`_)
-* Migrate to Modern CMake and require C++20
-* Pass controller parameters explicitly to the spawner and remap velocity and odometry topics to /cmd_vel and /odom
-* Remove the obsolete use_stamped_vel parameter
 * Refactor launch files to start controller spawners with Node actions (`#85 <https://github.com/rt-net/raspimouse_sim/issues/85>`_)
 * Add package README files with example instructions in Japanese and English (`#86 <https://github.com/rt-net/raspimouse_sim/issues/86>`_)
 * Contributors: Kazushi Kurasawa, YusukeKato, Kuwamai,
