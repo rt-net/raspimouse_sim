@@ -2,6 +2,11 @@
 Changelog for package raspimouse_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.0.0 (2026-09-28)
+------------------
+* Support ROS 2 Lyrical (`#87 <https://github.com/rt-net/raspimouse_sim/issues/87>`_)
+* Contributors: Kazushi Kurasawa
+
 3.0.1 (2024-11-29)
 ------------------
 
